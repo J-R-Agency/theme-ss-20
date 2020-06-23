@@ -29,3 +29,35 @@ $understrap_includes = array(
 foreach ( $understrap_includes as $file ) {
 	require_once get_template_directory() . '/inc' . $file;
 }
+
+/*-- ADD ACF OPTIONS --*/
+
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page();
+	acf_add_options_sub_page("Header");
+	acf_add_options_sub_page("Company Info");
+	acf_add_options_sub_page("Global");
+}
+
+// Enqueue javascript
+function my_theme_scripts() {
+    wp_enqueue_script( 'login-button', get_template_directory_uri() . '/js/login-button.js', array( 'jquery' ), '1.0.0', true );
+}
+add_action( 'wp_enqueue_scripts', 'my_theme_scripts' );
+
+// Register Menus
+function register_my_menu() {
+	register_nav_menu('secondary-menu',__( 'Secondary Menu' ));
+	register_nav_menu('footer-menu',__( 'Footer Menu' ));
+	register_nav_menu('products-menu',__( 'Products Menu' ));
+}
+add_action( 'init', 'register_my_menu' );
+
+//Add categories to pages
+function add_taxonomies_to_pages() {
+ register_taxonomy_for_object_type( 'post_tag', 'page' );
+ register_taxonomy_for_object_type( 'category', 'page' );
+ }
+add_action( 'init', 'add_taxonomies_to_pages' );
+

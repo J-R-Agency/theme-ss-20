@@ -1,0 +1,76 @@
+.page-intro {
+	text-align: center;
+	padding-bottom: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+	.video-wrapper {
+		margin-bottom: 2rem;
+	}
+	
+	@include respond-to('md') {
+		&.homepage {
+			background-image:
+				url('../assets/bg-graphics/arc-cyan-1.png'),
+				url('../assets/bg-graphics/pill-teal-1.png');
+			background-position:
+				left top,
+				bottom right;
+			background-repeat: no-repeat;
+		}
+		
+		&.about {
+			background-image:
+				url('../assets/bg-graphics/pill-teal-2.png');
+			background-position:
+				left;
+			background-repeat: no-repeat;
+		}
+		
+		&.covid-19 {
+			background-image:
+				url('../assets/bg-graphics/arc-white-1.png'),
+				url('../assets/bg-graphics/pill-white-3.png');
+			background-position:
+				bottom right,
+				top left;
+			background-repeat: no-repeat;
+		}
+		
+	}
+	
+}
+
+.pi-subtitle {
+	font-weight: bold;
+}
+
+.pi-image {
+	&.no-margin {
+		padding: 1rem 1rem 0 1rem;
+		min-width: auto;
+		max-width: auto;
+		@include respond-to('lg') {
+			min-width: 700px;
+			max-width: 800px;
+		}
+	}
+	&.margin {
+		padding: 1rem;
+		@include respond-to('lg') {
+			padding: 1rem 3rem 3rem 3rem;
+		}
+	}
+}
+
+.covid-19 {
+	.pi-subtitle {
+		margin: 0.5rem 0;
+		font-weight: normal;
+		width: 70%;
+	}
+	.pi-intro {
+		font-weight: bold;
+	}
+}

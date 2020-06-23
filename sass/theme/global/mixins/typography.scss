@@ -1,0 +1,31 @@
+@mixin _fira-sans-thin {
+	font-family: 'fira-sans-thin';
+}
+
+@mixin _fira-sans-regular {
+	font-family: 'fira-sans-regular';
+}
+
+@mixin _fira-sans-medium {
+	font-family: 'fira-sans-medium';	
+}
+
+@mixin _fira-sans-semibold {
+	font-family: 'fira-sans-semibold';	
+}
+
+@mixin _fira-sans-bold {
+	font-family: 'fira-sans-bold';	
+}
+
+p, a, span, cite {
+	@include _fira-sans-regular;
+}
+
+h1 {
+	@include _fira-sans-bold;
+}
+
+h2, h3 {
+	@include _fira-sans-semibold;
+}

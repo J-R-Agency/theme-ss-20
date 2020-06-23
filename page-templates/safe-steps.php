@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Empty Page Template
+ * Template Name: Safe Steps Template
  *
  * Template for displaying a page just with the header and footer area and a "naked" content area in between.
  * Good for landingpages and other types of pages where you want to add a lot of custom markup.
@@ -11,11 +11,10 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-get_header();
+get_header(); ?>
 
-while ( have_posts() ) :
-	the_post();
-	get_template_part( 'loop-templates/content', 'empty' );
-endwhile;
+<?php include_once (get_template_directory() . '/global-templates/template-parts/page-intro.php'); ?>
 
-get_footer();
+<?php get_template_part( 'loop-templates/content', 'flexible' ); ?>
+
+<?php get_footer(); ?>

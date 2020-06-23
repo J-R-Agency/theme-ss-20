@@ -1,0 +1,81 @@
+.team-block {
+	text-align: center;
+	h2 {
+		width: 100%;
+	}
+	@include respond-to('md') {
+		background-image:
+			url('../assets/bg-graphics/pill-purple-2.png');
+		background-position:
+			bottom left;
+		background-repeat: no-repeat;		
+	}	
+}
+
+.team-banner {
+	text-align: center;
+	@include respond-to('md') {
+		background-image:
+			url('../assets/bg-graphics/pill-white-2.png'),
+			url('../assets/bg-graphics/arrow-white-1.png');
+		background-position:
+			bottom left,
+			top right;
+		background-repeat: no-repeat;		
+	}
+	p {
+		margin: 0;
+	}
+}
+
+.team-container {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: flex-start;
+	margin: 2rem 0;
+	flex-wrap: wrap;
+}
+
+.team-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	max-width: 200px;
+	margin: 1rem 0;
+	
+	@include respond-to('lg'){
+		
+	}
+	
+	.portrait {
+		border-radius: 50%;
+		width: 120px;
+		height: 120px;
+		object-fit: cover;
+		border: 1px solid gray;
+	}
+	strong {
+		margin: 0.5rem 0;
+	}
+	p {
+		padding: 0 2rem;
+	}
+}
+
+.team-sm-icons {
+	display: flex;
+	align-items: flex-end;
+	color: $light-blue;
+	span {
+		margin-right: 0.5rem;
+	}
+	a {
+		margin-right: 0.5rem;
+		img {
+			width: 20px;
+			height: 20px;
+			object-fit: contain;
+		}
+	}
+}

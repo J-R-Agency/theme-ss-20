@@ -1,0 +1,85 @@
+#main-nav {
+	padding: 1rem;
+	display: flex;
+	justify-content: space-between;
+
+	@include respond-to('md'){
+		padding: 1rem 4rem;
+	}
+	@include respond-to('lg'){
+		padding: 1rem 10rem;
+	}	
+	
+	.navbar-brand {
+		flex-basis: 70%;
+		padding: 0;
+		@include respond-to('lg'){
+			flex-basis: 30%;
+		}
+	}
+}
+
+// Logo
+.navbar-brand > img {
+	width: 300px;
+}
+
+// Menu
+.menu-container {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	
+	@include respond-to ('lg') {
+		align-items: flex-end;
+	}
+	
+	#main-menu {
+		padding: 0.5rem 0;
+	}
+	
+	#secondary-menu > li {
+		padding: 0 0 0 2.5rem;
+		a {
+			color: $dark-grey;
+		}
+	}
+}
+
+.navbar-dark .navbar-nav .nav-link {
+	@include _fira-sans-medium;
+	font-size: 1.2rem;
+	color: $teal;
+	padding: 0 0 0 2.5rem;
+	&:hover {
+		color: $light-blue;
+	}
+}
+
+.navbar-dark .navbar-nav .active > .nav-link {
+	color: $light-blue;
+}
+
+// Login
+.login-container {
+	padding: 1rem;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	@include respond-to('md'){
+		padding: 1rem 4rem;
+	}
+	@include respond-to('lg'){
+		padding: 1rem 10rem;
+	}
+	
+	p {
+		margin: 0;
+	}
+}
+
+// Mobile
+.navbar-dark .navbar-toggler-icon {
+	background-image: url("../assets/icons/hamburger-menu.png");
+	width: 40px;
+}

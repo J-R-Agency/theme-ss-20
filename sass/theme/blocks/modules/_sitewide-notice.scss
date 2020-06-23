@@ -1,0 +1,13 @@
+.sitewide-notice-link {
+	&:hover {
+		text-decoration: none;
+	}	
+}
+
+.sitewide-notice {
+	padding: 1rem;
+	text-align: center;
+	p {
+		margin: 0;
+	}
+}

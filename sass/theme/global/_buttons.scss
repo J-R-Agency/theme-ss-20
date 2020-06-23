@@ -1,0 +1,52 @@
+@mixin btn-arrow {
+	background-image: url('../assets/icons/btn-arrow.png');
+	background-repeat: no-repeat;
+	background-size: 20px;
+	background-position: center;
+    display: inline-block;
+    width: 20px; 
+    height: 20px;
+    content:"";
+    margin-left: 7px;
+}
+
+@mixin btn {
+	padding: 0.3rem 1rem;
+	border-radius: 5px;
+	margin: 0 1rem;
+	align-self: center;
+	a {
+		color: white;
+		display: inline-flex;
+		align-items: center;
+		
+		&:after {
+			@include btn-arrow;
+		}
+	}
+	
+	&.login {
+		a {
+			&:after {
+				@include btn-arrow;
+				
+				@include respond-to('md') {
+					@include btn-arrow;
+					background-image: url('../assets/icons/login-icon.png');
+				}
+			}			
+		}
+		
+	}
+}
+
+.blue-btn {
+	@include btn;
+	background-color: $light-blue;
+	display: inline;
+}
+
+.red-btn {
+	@include btn;
+	background-color: $red;
+}

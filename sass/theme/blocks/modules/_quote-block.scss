@@ -1,0 +1,71 @@
+.quote-block {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	@include respond-to('lg') {
+		flex-direction: row;
+	}
+	@include respond-to('md') {
+		&.bg-purple {
+			background-image:
+				url('../assets/bg-graphics/pill-white-1.png');
+				
+			background-position:
+				bottom right;
+			
+			background-repeat: no-repeat;
+		}
+	}
+}
+
+.fcqb-image {
+	flex-basis: 40%;
+	height: 300px;
+	padding: 2rem;
+	@include respond-to('lg') {
+		height: auto;
+		padding: 0;	
+	}
+	img {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
+}
+
+.fcqb-quote {
+	flex-basis: 60%;
+	display: flex;
+	padding: 1rem;
+	flex-direction: column;
+	@include respond-to('lg') {
+		padding: 5rem;
+	}
+	p {
+		@include _fira-sans-thin;
+		font-size: 1.7rem;
+		text-align: center;
+		@include respond-to('lg') {
+			text-align: left;
+		}
+	}
+}
+
+.fcqb-citation {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	@include respond-to('lg') {
+		justify-content: start;	
+	}
+	img {
+		width: 50px;
+		height: 50px;
+		object-fit: cover;
+		border-radius: 50%;
+	}
+	cite {
+		padding: 0 1rem;
+		font-style: normal;
+	}
+}

@@ -1,0 +1,57 @@
+@mixin global-padding {
+	padding: 2rem 1rem;
+	@include respond-to('md'){
+		padding: 2rem 4rem;
+	}
+	@include respond-to('lg'){
+		padding: 2rem 10rem;
+	}		
+}
+
+.generic {
+	@include global-padding;
+}
+
+
+// COLORS ----
+.bg-white {
+	background-color: white;
+	color: $dark-teal;
+	a {
+		color: $dark-teal;
+	}
+}
+
+.bg-light-grey {
+	background-color: $light-grey;
+	color: $dark-teal;
+}
+
+.bg-purple {
+	background-color: $purple;
+	color: white;
+}
+
+.bg-teal {
+	background-color: $teal;
+	color: white;
+	a {
+		color: white;
+	}
+}
+
+.bg-dark-teal {
+	background-color: $dark-teal;
+	color: white;
+	a {
+		color: white;
+	}
+}
+
+.bg-yellow {
+	background-color: $yellow;
+	color: $dark-teal;
+	a {
+		color: $dark-teal;
+	}
+}

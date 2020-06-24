@@ -20,12 +20,15 @@
 
 p, a, span, cite {
 	@include _fira-sans-regular;
+	line-height: 2em;
 }
 
 h1 {
 	@include _fira-sans-bold;
+	margin-bottom: 2rem;
 }
 
 h2, h3 {
 	@include _fira-sans-semibold;
+	margin-bottom: 2rem;
 }

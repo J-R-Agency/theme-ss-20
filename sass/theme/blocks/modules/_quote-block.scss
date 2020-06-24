@@ -1,3 +1,24 @@
+@mixin quote ($sm-padding, $lg-padding)
+{
+	display: flex;
+	padding: $sm-padding;
+	flex-direction: column;
+	
+	@include respond-to('lg') {
+		padding: $lg-padding;
+	}
+	
+	p {
+		@include _fira-sans-thin;
+		font-size: 1.7rem;
+		text-align: center;
+		line-height: 1.5em;
+		@include respond-to('lg') {
+			text-align: left;
+		}
+	}
+}
+
 .quote-block {
 	display: flex;
 	flex-direction: column;
@@ -35,20 +56,7 @@
 
 .fcqb-quote {
 	flex-basis: 60%;
-	display: flex;
-	padding: 1rem;
-	flex-direction: column;
-	@include respond-to('lg') {
-		padding: 5rem;
-	}
-	p {
-		@include _fira-sans-thin;
-		font-size: 1.7rem;
-		text-align: center;
-		@include respond-to('lg') {
-			text-align: left;
-		}
-	}
+	@include quote(1rem, 5rem);
 }
 
 .fcqb-citation {
@@ -67,5 +75,50 @@
 	cite {
 		padding: 0 1rem;
 		font-style: normal;
+	}
+}
+
+/*-- CASE STUDY QUOTE --*/
+
+.cs-citation {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	@include respond-to('lg') {
+		justify-content: end;	
+	}
+	img {
+		width: 50px;
+		height: 50px;
+		object-fit: cover;
+		border-radius: 50%;
+	}
+	cite {
+		padding: 0 1rem;
+		font-style: normal;
+	}
+}
+
+.cs-quote-block ~ .bg-purple {
+	.cs-quote {
+		flex-basis: 100%;
+		@include quote(1rem, 5rem);
+		p {
+			text-align: center;
+		}
+	}
+	.cs-citation {
+		@include respond-to('lg') {
+			justify-content: center;	
+		}		
+	}
+}
+
+.cs-quote-block {
+	&.bg-white {
+		.cs-quote {
+			flex-basis: 100%;
+			@include quote(1rem, 1rem);
+		}
 	}
 }

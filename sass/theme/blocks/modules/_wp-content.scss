@@ -1,0 +1,19 @@
+.blocks-gallery-grid {
+	padding: 2rem 0;
+	.blocks-gallery-item {
+		max-height: 200px;
+	}
+}
+
+.cs-wp-content {
+	margin-top: 1rem;
+	
+	@include respond-to('lg') {
+		background-image:
+			url('../assets/bg-graphics/arc-cyan-2.png');				
+		background-position:
+			top left;	
+		background-position-y: 50px;
+		background-repeat: no-repeat;			
+	}
+}

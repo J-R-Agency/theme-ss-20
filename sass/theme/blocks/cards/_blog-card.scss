@@ -1,0 +1,34 @@
+.blog-cards-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 1rem 0;
+}
+
+.blog-card {
+	display: flex;
+	flex-direction: column;
+	flex-basis: 100%;
+	margin: 0 1rem;
+	
+	.post-thumbnail {
+		width: 100%;
+		height: 200px;
+		background-size: cover;
+	}
+	
+	@include respond-to('lg') {
+		flex-basis: 29%;
+	}
+}
+
+.blog-card-title {
+	@include _fira-sans-bold;
+	margin: 1rem 1rem 2rem 1rem;
+	color: $dark-teal !important;
+}
+
+.blog-card-author {
+	@include _fira-sans-regular;
+}

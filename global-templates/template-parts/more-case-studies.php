@@ -11,7 +11,7 @@ global $post;
 $theme_path = get_template_directory_uri();
 ?>
 
-<section class='generic bg-white'>
+<section class='generic bg-white more-case-studies'>
 	<h2>More case studies</h2>
 	
 	<div class='case-study-card-container'>

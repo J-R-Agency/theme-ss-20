@@ -18,6 +18,10 @@
 	font-family: 'fira-sans-bold';	
 }
 
+@mixin _poppins-semibold {
+	font-family: 'poppins-semibold';	
+}
+
 p, a, span, cite {
 	@include _fira-sans-regular;
 	line-height: 2em;

@@ -111,4 +111,16 @@
 			column-count: 2;
 		}
 	}
+	ul {
+		column-count: 1;
+		color: $purple;
+		list-style-image: url('../assets/icons/checkmark-purple.png');
+		@include _poppins-semibold;
+		li {
+			padding: 0.5rem 0;
+		}
+		@include respond-to('lg') {
+			column-count: 2;
+		}
+	}
 }

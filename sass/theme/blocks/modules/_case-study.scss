@@ -1,10 +1,13 @@
 .cs-header {
 	padding-bottom: 3rem;
-	background-image:
-		url('../assets/bg-graphics/pill-red-1.png');				
-	background-position:
-		bottom right;		
-	background-repeat: no-repeat;
+	
+	@include respond-to('lg') {
+		background-image:
+			url('../assets/bg-graphics/pill-red-1.png');				
+		background-position:
+			bottom right;		
+		background-repeat: no-repeat;
+	}
 		
 	.cs-hero {
 		width: 100%;

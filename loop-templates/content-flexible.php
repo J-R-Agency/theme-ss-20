@@ -277,6 +277,45 @@ if( have_rows('flexible_content_block') ):
        			</div>
        		</section>";
 					      		
+
+  	   	  // -------------------------- //
+         // ----- CASE: NEWS BLOCK ----//
+        // -------------------------- //
+       elseif( get_row_layout() == 'fc_news_block' ):
+			$fcnb_title = get_sub_field('fcnb_title');
+			
+       		echo "
+       		<!-- News Block -->
+			<section class='generic bg-light-teal more-news'>
+				<h2>".$fcnb_title."</h2>
+			
+				<div class='blog-cards-container'>
+			";
+												
+					$args = array(
+					    'post_type'      => 'post', //write slug of post type
+					    'posts_per_page' => 3,
+					    'order'          => 'DESC',
+					 );
+					 
+					 $query = new WP_Query($args);
+					 
+					 
+					if ( $query->have_posts() ) :
+					 
+					    while ( $query->have_posts() ) : $query->the_post();
+							
+							include (get_template_directory().'/global-templates/template-parts/blog-card.php');	
+						
+						endwhile;
+					endif; 
+					wp_reset_query();	
+								
+						
+			echo "
+				</div>
+			</section>
+			";	     
 			
 			
 		endif; // Final endif        

@@ -25,15 +25,17 @@ if( have_rows('flexible_content_block') ):
         // -------------------------- //
        if( get_row_layout() == 'fc_sitewide_notice' ):
 	   		$sitewide_notice = get_field('sitewide_notice', 'option');
-		
-       		echo "
-       		<!-- Sitewide Notice -->
-   			<a class='sitewide-notice-link' href='".$sitewide_notice['sn_link']['url']."' target='".$sitewide_notice['sn_link']['target']."'>
-				<section class='sitewide-notice bg-".$sitewide_notice['sn_color']."'>
-					".$sitewide_notice['sn_text']."
-				</section>
-			</a>
-       		"; 
+	   		
+	   		if ($sitewide_notice['sn_text']):
+	       		echo "
+	       		<!-- Sitewide Notice -->
+	   			<a class='sitewide-notice-link' href='".$sitewide_notice['sn_link']['url']."' target='".$sitewide_notice['sn_link']['target']."'>
+					<section class='sitewide-notice bg-".$sitewide_notice['sn_color']."'>
+						".$sitewide_notice['sn_text']."
+					</section>
+				</a>
+	       		"; 
+       		endif;
        		
        		
  	   	  // -------------------------- //

@@ -118,6 +118,10 @@ $theme_path = get_template_directory_uri();
 					<a href="<?php echo $nb_link['url']; ?>"><?php echo $nb_link['title']; ?>
 					</a>
 				</div>
+			<?php elseif (!$nb_link): ?>
+				<div class='blue-btn login'>
+					<a href="#">Login!</a>
+				</div>
 			<?php endif; ?>
 	    <?php endwhile; ?>
 	    </div>

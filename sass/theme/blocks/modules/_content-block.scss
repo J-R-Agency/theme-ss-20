@@ -85,23 +85,26 @@
 	}
 	
 	&.bg-teal {
-		background-image:
-			url('../assets/bg-graphics/arrow-white-2.png');				
-		background-position:
-			top right;		
-		background-repeat: no-repeat;		
+		@include respond-to('lg') {
+			background-image:
+				url('../assets/bg-graphics/arrow-white-2.png');				
+			background-position:
+				top right;		
+			background-repeat: no-repeat;		
+		}
 	}
 	
 	&.bg-light-grey {
-		background-image:
-			url('../assets/bg-graphics/arrow-red-2.png'),
-			url('../assets/bg-graphics/arc-cyan-3.png');				
-		background-position:
-			top right,
-			bottom left;	
-		background-repeat: no-repeat;			
-	}
-	
+		@include respond-to('lg') {
+			background-image:
+				url('../assets/bg-graphics/arrow-red-2.png'),
+				url('../assets/bg-graphics/arc-cyan-3.png');				
+			background-position:
+				top right,
+				bottom left;	
+			background-repeat: no-repeat;				
+		}
+	}	
 }
 
 .csc-content {

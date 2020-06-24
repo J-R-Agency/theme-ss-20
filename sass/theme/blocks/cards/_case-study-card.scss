@@ -1,0 +1,44 @@
+.case-study-card-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+/*-- CASE STUDY CARD (SMALL) --*/
+
+$sm-height: 100%;
+$sm-width: 100%;
+
+.case-study-card-small {
+	height: 200px;
+	flex-basis: 100%; 
+	position: relative;
+	margin: 1rem 0;
+	@include respond-to('lg') {
+		flex-basis: 30%; 
+		margin: 0;
+	}
+}
+
+.csc-small-filter {
+	height: $sm-height;
+	width: $sm-width;
+	position: absolute;
+	background-color: rgba(0,0,0,0.5);
+	color: white;	
+	padding: 2rem 1rem;
+	font-size: 1.2rem;
+} 
+
+.csc-small-img {
+	height: $sm-height;
+	width: $sm-width;
+	background-size: cover;
+}
+
+.cs-small-title {
+	@include _poppins-semibold;
+}
+
+/*-- CASE STUDY CARD (LARGE) --*/

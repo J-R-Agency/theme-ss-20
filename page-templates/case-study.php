@@ -37,4 +37,6 @@ get_header(); ?>
 
 <?php get_template_part( 'loop-templates/casestudy', 'flexible' ); ?>
 
+<?php include_once (get_template_directory() . '/global-templates/template-parts/more-case-studies.php'); ?>
+
 <?php get_footer(); ?>

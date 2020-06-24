@@ -22,7 +22,10 @@
 		margin: 2rem 0;
 	}
 	.cs-intro {
-		column-count: 2;
+		column-count: 1;
+		@include respond-to('md') {
+			column-count: 2;
+		}
 	}
 }
 

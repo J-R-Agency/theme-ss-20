@@ -4,7 +4,7 @@
 	flex-wrap: wrap;
 	justify-content: space-between;
 	@include respond-to('lg') {
-		justify-content: center;
+		justify-content: flex-start;
 	}
 }
 
@@ -27,7 +27,7 @@ $sm-width: 100%;
 	margin: 1rem 0;
 	@include respond-to('lg') {
 		flex-basis: 30%; 
-		margin: 0 1rem;
+		margin: 0 1rem 2rem 1rem;
 	}
 }
 

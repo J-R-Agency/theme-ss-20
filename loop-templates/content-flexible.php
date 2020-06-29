@@ -49,7 +49,7 @@ if( have_rows('flexible_content_block') ):
 	   		$fcb_margins = get_sub_field('fcb_margins');
 	   		
 	   		echo "
-       		<!-- FC Content Block Style 1 -->
+       		<!-- FC Content Block -->
 			<section class='content-block ".$fcb_margins." ".$fcb_style." ".sanitize_title($fcb_title)." generic bg-".$fcb_background_color."'>";
 			
 			if( have_rows('fcb_media') ):

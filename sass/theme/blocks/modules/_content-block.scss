@@ -47,6 +47,13 @@
 		@include respond-to('lg') {
 			flex-direction: row-reverse;
 		}
+		
+		&.no-margin {
+			padding-right: 0;
+			.fcb-media {
+				padding-right: 0;
+			}
+		}	
 	}
 	
 	&.style3 {
@@ -58,8 +65,14 @@
 		@include respond-to('lg') {
 			flex-direction: row;
 		}
+		
+		&.no-margin {
+			padding-left: 0;
+			.fcb-media {
+				padding-left: 0;
+			}
+		}		
 	}
-	
 	
 	
 	@include respond-to('md') {

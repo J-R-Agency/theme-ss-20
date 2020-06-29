@@ -11,11 +11,12 @@ global $post;
 $theme_path = get_template_directory_uri();
 ?>
 
+
 <div class='case-study-card-large'>
 	<div class='csc-large-filter'>
 		<div class='cs-large-info'>
 			<h2 class='cs-large-title'>
-				<?php the_title(); ?>
+				<a href='<?php the_permalink(); ?>'><?php the_title(); ?></a>
 			</h2>
 			<p class='cs-large-excerpt'>
 				<?php $summary = get_field('cs_intro'); echo strip_tags(first_sentence($summary)); ?>

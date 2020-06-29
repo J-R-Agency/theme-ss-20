@@ -15,13 +15,14 @@ get_header(); ?>
 
 <?php include_once (get_template_directory() . '/global-templates/template-parts/page-intro.php'); ?>
 
-<section class='generic bg-light-grey case-studies-container'>
+<!-- FEATURED CASE STUDIES -->
 <?php
 					
 	$args = array(
 	    'post_type'      => 'page', //write slug of post type
-	    'posts_per_page' => 3,
+	    'posts_per_page' => -1,
 	    'post_parent'    => $post->ID, //place here id of your parent page
+	    'orderby'		 => 'menu_order',
 	    'order'          => 'ASC'
 	 );
 	 
@@ -29,17 +30,21 @@ get_header(); ?>
 	 
 	 
 	if ( $children->have_posts() ) :
-	 
+	 	echo "<section class='generic bg-light-grey case-studies-container'>";
 	    while ( $children->have_posts() ) : $children->the_post();
+			$featured = get_field('featured');
 			
-			include (get_template_directory().'/global-templates/template-parts/case-study-card-large.php');	
+			if($featured == true):
+				include (get_template_directory().'/global-templates/template-parts/case-study-card-large.php');
+			endif;
 		
 		endwhile;
+		echo "</section>";
 	endif; 
 	wp_reset_query();	
 			
 ?>
-</section>
+
 
 <?php
 	$sitewide_notice = get_field('sitewide_notice', 'option');
@@ -55,5 +60,41 @@ get_header(); ?>
 		";
 	endif;
 ?>
+
+<!-- NON-FEATURED CASE STUDIES -->
+<?php
+					
+	$args = array(
+	    'post_type'      => 'page', //write slug of post type
+	    'posts_per_page' => -1,
+	    'post_parent'    => $post->ID, //place here id of your parent page
+	    'orderby'		 => 'menu_order',
+	    'order'          => 'ASC'
+	 );
+	 
+	$children = new WP_Query( $args );
+	 
+	 
+	if ( $children->have_posts() ) :
+	 	echo "<section class='generic bg-white'>
+	 			<h2 style='text-align:center'>More case studies</h2>
+	 			<div class='case-study-card-container'>
+	 	";
+	    while ( $children->have_posts() ) : $children->the_post();
+			$featured = get_field('featured');
+			
+			if($featured == false):
+				include (get_template_directory().'/global-templates/template-parts/case-study-card-small.php');
+			endif;
+		
+		endwhile;
+		echo "</div>
+		</section>";
+	endif; 
+	wp_reset_query();	
+			
+?>
+
+
 
 <?php get_footer(); ?>

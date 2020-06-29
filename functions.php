@@ -66,3 +66,9 @@ function theme_slug_jetpack_setup() {
   add_theme_support( 'jetpack-social-menu' );
 }
 add_action( 'after_setup_theme', 'theme_slug_jetpack_setup' );
+
+// Get first sentence
+function first_sentence($content) {
+    $pos = strpos($content, '.');
+    return substr($content, 0, $pos+1);
+}

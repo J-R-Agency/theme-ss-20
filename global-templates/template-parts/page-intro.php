@@ -20,6 +20,7 @@ global $post;
         $pi_button = get_sub_field('pi_button');
         $pi_media = get_sub_field('pi_media');
     ?>
+    
 
 	<section class="page-intro <?php echo $post_slug = $post->post_name; ?> generic bg-<?php echo $pi_background_color; ?>">
 		
@@ -99,6 +100,7 @@ global $post;
 		
 		
 	</section>
-
+	
+	
     <?php endwhile; ?>
 <?php endif; ?>

@@ -37,6 +37,17 @@
 				top left;
 			background-repeat: no-repeat;
 		}
+		&.contact {
+			background-image:
+				url('../assets/bg-graphics/arrow-red-3.png'),
+				url('../assets/bg-graphics/pill-purple-3.png');
+			background-position:
+				top right,
+				bottom left;
+			background-repeat: no-repeat;
+			padding-top: 3rem;
+			padding-bottom: 1rem;			
+		}
 		
 	}
 	

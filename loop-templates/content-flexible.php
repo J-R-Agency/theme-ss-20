@@ -50,16 +50,15 @@ if( have_rows('flexible_content_block') ):
 	   		
 	   		echo "
        		<!-- FC Content Block Style 1 -->
-			<section class='content-block ".$fcb_style." ".sanitize_title($fcb_title)." generic bg-".$fcb_background_color."'>";
+			<section class='content-block ".$fcb_margins." ".$fcb_style." ".sanitize_title($fcb_title)." generic bg-".$fcb_background_color."'>";
 			
 			if( have_rows('fcb_media') ):
 				echo "<div class='fcb-media'>";
 				while ( have_rows('fcb_media') ) : the_row();
 					if( get_row_layout() == 'fcb_image' ):
 						$fcb_image_file = get_sub_field('fcb_image_file');
-						$fcb_image_style = get_sub_field('fcb_image_style');
 						
-						echo "<img class='fcb-image ".$fcb_image_style."' src='".$fcb_image_file['url']."' alt='".$fcb_image_file['alt']."'>";
+						echo "<img class='fcb-image' src='".$fcb_image_file['url']."' alt='".$fcb_image_file['alt']."'>";
 						
 					elseif( get_row_layout() == 'fcb_video' ): 
 						$fcb_video = get_sub_field('fcb_video');

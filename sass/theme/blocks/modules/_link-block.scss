@@ -1,0 +1,23 @@
+.link-block {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0.5rem;
+	
+	@include respond-to('lg') {
+		justify-content: flex-end;
+		padding: 0.5rem 10rem;
+	}
+	
+	&:after {
+		background-image: url(../assets/icons/btn-arrow-teal.png);
+		background-repeat: no-repeat;
+		background-size: 20px;
+		background-position: center;
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		content: "";
+		margin-left: 10px;		
+	}
+}

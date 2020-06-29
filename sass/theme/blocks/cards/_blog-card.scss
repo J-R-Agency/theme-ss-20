@@ -10,7 +10,11 @@
 	display: flex;
 	flex-direction: column;
 	flex-basis: 100%;
-	margin: 0 1rem;
+	margin: 1rem;
+	
+	@include respond-to('lg') {
+		flex-basis: 29%;
+	}
 	
 	.post-thumbnail {
 		width: 100%;
@@ -18,9 +22,7 @@
 		background-size: cover;
 	}
 	
-	@include respond-to('lg') {
-		flex-basis: 29%;
-	}
+	
 }
 
 .blog-card-title {

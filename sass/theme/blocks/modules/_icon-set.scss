@@ -28,6 +28,9 @@
 	flex-wrap: wrap;
 }
 
+.fcis-wrapper {
+	@include icon-image(100px, 100px);
+}
 
 .fcis-intro {
 	padding: 0;
@@ -41,8 +44,6 @@
 	@include respond-to('md') {
 		flex-basis: 50%;
 	}
-	
-	@include icon-image(100px, 100px);
 }
 
 .column-three {
@@ -50,33 +51,25 @@
 	@include respond-to('md') {
 		flex-basis: 33%;
 	}
-	
-	@include icon-image(100px, 100px);
-}
+	}
 
 .column-four {
 	flex-basis: 100%;
 	@include respond-to('md') {
 		flex-basis: 25%;
 	}
-	
-	@include icon-image(150px, 150px);
-}
+	}
 
 .column-five {
 	flex-basis: 100%;
 	@include respond-to('md') {
 		flex-basis: 20%;
 	}
-	
-	@include icon-image(100px, 100px);
-}
+	}
 
 .column-six {
 	flex-basis: 50%;
 	@include respond-to('md') {
 		flex-basis: 16%;
 	}
-	
-	@include icon-image(100px, 100px);
 }

@@ -26,7 +26,7 @@
 	@include respond-to('lg') {
 		flex-direction: row;
 	}
-	@include respond-to('md') {
+	@include respond-to('lg') {
 		&.bg-purple {
 			background-image:
 				url('../assets/bg-graphics/pill-white-1.png');
@@ -36,6 +36,16 @@
 			
 			background-repeat: no-repeat;
 		}
+		&.bg-yellow {
+			background-image:
+				url('../assets/bg-graphics/pill-teal-3.png');
+				
+			background-position:
+				center right;
+			
+			background-repeat: no-repeat;			
+		}
+			
 	}
 }
 

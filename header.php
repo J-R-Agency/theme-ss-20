@@ -120,7 +120,7 @@ $theme_path = get_template_directory_uri();
 				</div>
 			<?php elseif (!$nb_link): ?>
 				<div class='blue-btn login'>
-					<a href="#">Login!</a>
+					<a href="#">Login</a>
 				</div>
 			<?php endif; ?>
 	    <?php endwhile; ?>

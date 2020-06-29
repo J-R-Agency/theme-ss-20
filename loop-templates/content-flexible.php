@@ -46,7 +46,7 @@ if( have_rows('flexible_content_block') ):
 	   		$fcb_style = get_sub_field('fcb_style');
 	   		$fcb_title = get_sub_field('fcb_title');
 	   		$fcb_content = get_sub_field('fcb_content');
-	   		
+	   		$fcb_margins = get_sub_field('fcb_margins');
 	   		
 	   		echo "
        		<!-- FC Content Block Style 1 -->

@@ -1,3 +1,12 @@
+@mixin icon-image($icon-height, $icon-width) {
+	img {
+		margin: 1rem;
+		height: $icon-height;
+		width: $icon-width;
+		object-fit: contain;
+	}	
+}
+
 .fc-icon-set {
 	text-align: center;
 	
@@ -19,14 +28,6 @@
 	flex-wrap: wrap;
 }
 
-.fcis-wrapper {
-	img {
-		margin: 1rem;
-		height: 100px;
-		width: 100px;
-		object-fit: contain;
-	}
-}
 
 .fcis-intro {
 	padding: 0;
@@ -40,6 +41,8 @@
 	@include respond-to('md') {
 		flex-basis: 50%;
 	}
+	
+	@include icon-image(100px, 100px);
 }
 
 .column-three {
@@ -47,6 +50,8 @@
 	@include respond-to('md') {
 		flex-basis: 33%;
 	}
+	
+	@include icon-image(150px, 150px);
 }
 
 .column-four {
@@ -54,6 +59,8 @@
 	@include respond-to('md') {
 		flex-basis: 25%;
 	}
+	
+	@include icon-image(150px, 150px);
 }
 
 .column-five {
@@ -61,6 +68,8 @@
 	@include respond-to('md') {
 		flex-basis: 20%;
 	}
+	
+	@include icon-image(100px, 100px);
 }
 
 .column-six {
@@ -68,4 +77,6 @@
 	@include respond-to('md') {
 		flex-basis: 16%;
 	}
+	
+	@include icon-image(100px, 100px);
 }

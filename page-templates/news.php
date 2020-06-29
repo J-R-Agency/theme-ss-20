@@ -50,6 +50,7 @@ get_header(); ?>
 	
 		</div>
 	</section>  
+	
 	<section class='bg-light-grey link-block'>
 		<a href='<?php site_url(); ?>/category-<?php echo $category->slug; ?>'>View More <?php echo $category->name; ?></a>
 	</section>

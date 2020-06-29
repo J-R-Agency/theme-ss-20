@@ -1,5 +1,15 @@
 .fc-icon-set {
 	text-align: center;
+	
+	&.bg-light-teal {
+		@include respond-to('lg') {
+			background-image:
+				url('../assets/bg-graphics/arrow-teal-1.png');				
+			background-position:
+				center right;		
+			background-repeat: no-repeat;
+		}		
+	}
 }
 
 .fcis-container {
@@ -27,6 +37,9 @@
 
 .column-two {
 	flex-basis: 100%;
+	@include respond-to('md') {
+		flex-basis: 50%;
+	}
 }
 
 .column-three {

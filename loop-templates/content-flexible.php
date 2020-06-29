@@ -316,7 +316,61 @@ if( have_rows('flexible_content_block') ):
 				</div>
 			</section>
 			";	     
-			
+
+ 	   	  // -------------------------- //
+         // ----- CASE: LINK BLOCK ----//
+        // -------------------------- //
+       elseif( get_row_layout() == 'fc_link_block' ):
+	   		$fclb_link = get_sub_field('fclb_link');
+	   		
+       		echo "
+       		<!-- Link Block -->
+   			<section class='bg-light-grey link-block'>
+   				<a href='".$fclb_link['url']."' target='".$fclb_link['target']."'>".$fclb_link['title']."</a>
+			</section>
+       		";
+
+
+ 	   	  // --------------------------- //
+         // - CASE: ORDERED LIST BLOCK -//
+        // --------------------------- //
+       elseif( get_row_layout() == 'fc_ordered_list' ):
+	   		$fcol_background_color = get_sub_field('fcol_background_color');
+	   		$fcol_title = get_sub_field('fcol_title');
+	   		$fcol_style = get_sub_field('fcol_style');
+	   		$fcol_list_item = get_sub_field('fcol_list_item');
+	   		$fcol_image_right = get_sub_field('fcol_image_right');
+	   		$fcol_image_left = get_sub_field('fcol_image_left');
+	   		
+       		echo "
+       		<!-- Ordered List Block -->
+   			<section class='generic bg-".$fcol_background_color." ordered-list-block'>
+   				<h2>".$fcol_title."</h2>";
+   				
+   				// Unordered list
+   				if ($fcol_style == 'unordered') {
+					if( have_rows('fcol_list_item') ):
+						echo "
+						<div class='unordered-list'>
+							<ul>";
+						while ( have_rows('fcol_list_item') ) : the_row();
+							$fcol_description = get_sub_field('fcol_description');
+							
+							echo "
+								<li>".$fcol_description."</li>
+							";
+								
+						endwhile;
+						echo "</ul>
+						</div>";
+					endif;	   				
+   				}
+   				
+   			echo "
+			</section>
+       		";
+
+
 			
 		endif; // Final endif        
     // End loop.

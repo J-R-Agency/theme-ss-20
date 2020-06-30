@@ -105,13 +105,13 @@ if( have_rows('flexible_content_block') ):
 			<section class='fc-icon-set ".sanitize_title($fcis_title)." generic bg-".$fcis_background_color."'>";
 			
 			if ($fcis_title) {
-				echo "<h2 class='fcis_title'>".$fcis_title."</h2>";
+				echo "<h2 class='fcis-title'>".$fcis_title."</h2>";
 			} else {
 				echo "";
 			}
 			
 			if ($fcis_subtitle) {
-				echo "<p class='fcis_subtitle'>".$fcis_subtitle."</p>";
+				echo "<p class='fcis-subtitle'>".$fcis_subtitle."</p>";
 			} else {
 				echo "";
 			}

@@ -1,10 +1,28 @@
+@mixin list {
+	flex-basis: 100%;
+	padding: 0;
+	@include respond-to('lg') {
+		flex-basis: 60%;
+		padding: 0 3rem;
+	}
+	@include respond-to('xxl') {
+		padding: 0 10rem;
+	}	
+}
+
 .ordered-list-block {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	padding-left: 0;
+	padding-right: 0;
 	
 	h2 {
 		text-align: center;
+		padding: 1rem;
+		@include respond-to('lg') {
+			padding: 0;
+		}
 	}
 	
 	&.bg-teal {
@@ -18,7 +36,47 @@
 	}
 }
 
+.ordered-list-block-container {
+	display: grid;
+	flex-wrap: wrap;
+	width: 100%;
+	
+	@include respond-to('lg') {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+ }
+
+.fcol-image {
+	flex-basis: 100%;
+	object-fit: contain;
+	max-height: 300px;
+	@include respond-to('lg') {
+		flex-basis: 20%;
+		max-height: 500px;
+	}
+	
+	&.left {
+		justify-self: flex-start;
+		object-position: left;
+	}
+	
+	&.right {
+		justify-self: flex-end;
+		object-position: right;
+	}
+}
+
+.mobile-hidden {
+	display: none;
+	@include respond-to ('lg') {
+		display: block;
+	}
+}
+
 .unordered-list {
+	@include list;
 	ul {
 		padding: 0;
 		li {
@@ -36,6 +94,27 @@
 				content: "";
 				margin-right: 20px;					
 			}
+		}
+	}
+}
+
+.icon-list {
+	@include list;
+	.icon-list-item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 2rem 0;
+		@include respond-to('lg') {
+			flex-direction: row;
+		}
+		p {
+			padding: 0 2rem;
+		}
+		img {
+			width: 100px;
+			height: 100px;
+			object-fit: contain;
 		}
 	}
 }

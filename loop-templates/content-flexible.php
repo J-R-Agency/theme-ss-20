@@ -50,7 +50,7 @@ if( have_rows('flexible_content_block') ):
 	   		
 	   		echo "
        		<!-- FC Content Block -->
-			<section class='content-block ".$fcb_margins." ".$fcb_style." ".sanitize_title($fcb_title)." generic bg-".$fcb_background_color."'>";
+			<section class='content-block ".$fcb_margins." ".$fcb_style." ".sanitize_title($fcb_title)." bg-".$fcb_background_color."'>";
 			
 			if( have_rows('fcb_media') ):
 				echo "<div class='fcb-media'>";
@@ -73,7 +73,7 @@ if( have_rows('flexible_content_block') ):
 				echo "</div>";
 			endif;
 			
-			echo "<div class='fcb-content'>";
+			echo "<div class='generic fcb-content'>";
 			if ($fcb_title){
 				echo "<h2>".$fcb_title."</h2>";
 			}
@@ -345,7 +345,23 @@ if( have_rows('flexible_content_block') ):
        		echo "
        		<!-- Ordered List Block -->
    			<section class='generic bg-".$fcol_background_color." ordered-list-block'>
-   				<h2>".$fcol_title."</h2>";
+   				<h2 class='fcol_title'>".$fcol_title."</h2>
+   				<div class='ordered-list-block-container'>
+   			";
+   				
+   				if ($fcol_image_left) {
+	   				
+	   				if ($fcol_image_left['hide_on_mobile'] == 'true') {
+		   				$fcol_visibility = 'mobile-hidden';
+	   				} else {
+		   				$fcol_visibility = 'mobile-visible';
+	   				}
+	   				
+	   				echo "<img class='fcol-image left ".$fcol_visibility."'
+	   						   src='".$fcol_image_left['image_left_file']['url']."'
+	   						   alt='".$fcol_image_left['image_left_file']['alt']."'
+	   					  >";
+   				}
    				
    				// Unordered list
    				if ($fcol_style == 'unordered') {
@@ -366,7 +382,42 @@ if( have_rows('flexible_content_block') ):
 					endif;	   				
    				}
    				
-   			echo "
+   				// Icon list
+   				if ($fcol_style == 'icons') {
+					if( have_rows('fcol_list_item') ):
+						echo "
+						<div class='icon-list'>";
+						while ( have_rows('fcol_list_item') ) : the_row();
+							$fcol_icon = get_sub_field('fcol_icon');
+							$fcol_description = get_sub_field('fcol_description');
+							
+							echo "
+								<div class='icon-list-item'>
+									<img src='".$fcol_icon['url']."' alt='".$fcol_icon['alt']."'>
+									<p>".$fcol_description."</p>
+								</div>
+							";
+								
+						endwhile;
+						echo "</div>";
+					endif;	   				
+   				}   				
+   				
+   				if ($fcol_image_right) {
+	   				
+	   				if ($fcol_image_right['hide_on_mobile'] == 'true') {
+		   				$fcol_visibility = 'mobile-hidden';
+	   				} else {
+		   				$fcol_visibility = 'mobile-visible';
+	   				}
+	   				
+	   				echo "<img class='fcol-image right ".$fcol_visibility."'
+	   						   src='".$fcol_image_right['image_right_file']['url']."'
+	   						   alt='".$fcol_image_right['image_right_file']['alt']."'
+	   					  >";
+   				}
+   				
+   			echo "</div>
 			</section>
        		";
 

@@ -50,14 +50,16 @@
 
 /*-- CONTENT --*/
 .entry-content {
-	background-image:
-		url('../assets/bg-graphics/arrow-red-1.png');
-	background-position:
-		top right;
-	background-repeat: no-repeat;	
-	
 	p, h1, h2, h3, h4 {
 		margin-bottom: 2rem;
+	}	
+	
+	@include respond-to('lg') {
+		background-image:
+			url('../assets/bg-graphics/arrow-red-1.png');
+		background-position:
+			top right;
+		background-repeat: no-repeat;	
 	}
 }
 

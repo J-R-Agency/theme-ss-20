@@ -15,6 +15,7 @@
 	border-radius: 5px;
 	margin: 0 1rem;
 	align-self: center;
+	height: 40px;
 	a {
 		color: white;
 		display: inline-flex;
@@ -43,7 +44,7 @@
 .blue-btn {
 	@include btn;
 	background-color: $light-blue;
-	display: inline;
+	display: inline-block;
 }
 
 .red-btn {

@@ -10,6 +10,16 @@
 .fc-icon-set {
 	text-align: center;
 	
+	.fcis-title {
+		@include respond-to('lg') {
+			padding: 1rem 10rem;
+		}
+	}
+	
+	.fcis-subtitle {
+		padding: 0 3rem 2rem 3rem;
+	}
+		
 	&.bg-light-teal {
 		@include respond-to('lg') {
 			background-image:
@@ -19,6 +29,17 @@
 			background-repeat: no-repeat;
 		}		
 	}
+	
+	&.bg-teal {
+		@include respond-to('lg') {
+			background-image:
+				url('../assets/bg-graphics/pill-white-4.png');				
+			background-position:
+				center right;		
+			background-repeat: no-repeat;
+		}		
+	}	
+	
 }
 
 .fcis-container {

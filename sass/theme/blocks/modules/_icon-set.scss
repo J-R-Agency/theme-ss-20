@@ -88,21 +88,24 @@
 	@include respond-to('md') {
 		flex-basis: 33%;
 	}
-	}
+}
 
 .column-four {
 	flex-basis: 100%;
 	@include respond-to('md') {
+		flex-basis: 50%;
+	}
+	@include respond-to('lg') {
 		flex-basis: 25%;
 	}
-	}
+}
 
 .column-five {
 	flex-basis: 100%;
 	@include respond-to('md') {
 		flex-basis: 20%;
 	}
-	}
+}
 
 .column-six {
 	flex-basis: 100%;

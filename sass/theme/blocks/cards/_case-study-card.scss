@@ -29,6 +29,9 @@ $sm-width: 100%;
 		flex-basis: 30%; 
 		margin: 0 1rem 2rem 1rem;
 	}
+	@include respond-to('xxl') {
+		height: 300px;
+	}
 }
 
 .csc-small-filter {
@@ -71,6 +74,9 @@ $lg-width: 100%;
 	height: 300px;
 	position: relative;
 	margin: 0 0 1rem 0;
+	@include respond-to('xxl') {
+		height: 400px;
+	}
 }
 
 .csc-large-filter {

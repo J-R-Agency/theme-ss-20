@@ -29,13 +29,26 @@
 }
 
 .fcis-wrapper {
-	@include icon-image(100px, 100px);
+	&.icon {
+		@include icon-image(100px, 100px);
+	}
+	&.logo {
+		@include icon-image(150px, 250px);
+	}
+	
 }
 
 .fcis-intro {
+	display: flex;
+	justify-content: center;
 	padding: 0;
 	@include respond-to('md') {
 		padding: 0 2rem;
+	}
+	p {
+		@include respond-to('xxl') {
+			width: 50%;
+		}		
 	}
 }
 
@@ -68,7 +81,7 @@
 	}
 
 .column-six {
-	flex-basis: 50%;
+	flex-basis: 100%;
 	@include respond-to('md') {
 		flex-basis: 16%;
 	}

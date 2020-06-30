@@ -258,7 +258,7 @@ if( have_rows('flexible_content_block') ):
 			
        		echo "
        		<!-- Image CTA Block -->
-       		<section class='generic bg-light-grey'>     
+       		<section class='generic bg-light-grey'>
        			<div class='image-cta-filter'>
        			
        				<div>
@@ -272,7 +272,7 @@ if( have_rows('flexible_content_block') ):
 	       				</a> 
        				</div>  			       			
       			</div>  			
-       			<div class='image-cta' style='background:url(".$fcicta_image['url'].");'>
+       			<div class='image-cta' style='background-image:url(".$fcicta_image['url'].");'>
        			</div>
        		</section>";
 					      		

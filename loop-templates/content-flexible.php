@@ -350,18 +350,31 @@ if( have_rows('flexible_content_block') ):
    			";
    				
    				if ($fcol_image_left) {
-	   				
-	   				if ($fcol_image_left['hide_on_mobile'] == 'true') {
-		   				$fcol_visibility = 'mobile-hidden';
-	   				} else {
-		   				$fcol_visibility = 'mobile-visible';
-	   				}
-	   				
-	   				echo "<img class='fcol-image left ".$fcol_visibility."'
-	   						   src='".$fcol_image_left['image_left_file']['url']."'
-	   						   alt='".$fcol_image_left['image_left_file']['alt']."'
+	   				echo "<img class='fcol-image left'
+	   						   src='".$fcol_image_left['url']."'
+	   						   alt='".$fcol_image_left['alt']."'
 	   					  >";
    				}
+ 
+ 
+   				// Numbered list
+   				if ($fcol_style == 'numbered') {
+					if( have_rows('fcol_list_item') ):
+						echo "
+						<div class='numbered-list'>
+							<ol>";
+						while ( have_rows('fcol_list_item') ) : the_row();
+							$fcol_description = get_sub_field('fcol_description');
+							
+							echo "
+								<li><span>".$fcol_description."</span></li>
+							";
+								
+						endwhile;
+						echo "</ol>
+						</div>";
+					endif;	   				
+   				} 
    				
    				// Unordered list
    				if ($fcol_style == 'unordered') {
@@ -405,15 +418,9 @@ if( have_rows('flexible_content_block') ):
    				
    				if ($fcol_image_right) {
 	   				
-	   				if ($fcol_image_right['hide_on_mobile'] == 'true') {
-		   				$fcol_visibility = 'mobile-hidden';
-	   				} else {
-		   				$fcol_visibility = 'mobile-visible';
-	   				}
-	   				
-	   				echo "<img class='fcol-image right ".$fcol_visibility."'
-	   						   src='".$fcol_image_right['image_right_file']['url']."'
-	   						   alt='".$fcol_image_right['image_right_file']['alt']."'
+	   				echo "<img class='fcol-image right'
+	   						   src='".$fcol_image_right['url']."'
+	   						   alt='".$fcol_image_right['alt']."'
 	   					  >";
    				}
    				

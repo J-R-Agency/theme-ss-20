@@ -52,12 +52,15 @@
 	flex-basis: 100%;
 	object-fit: contain;
 	max-height: 300px;
+	display: none;
 	@include respond-to('lg') {
+		display: block;
 		flex-basis: 20%;
 		max-height: 500px;
 	}
 	
 	&.left {
+
 		justify-self: flex-start;
 		object-position: left;
 	}
@@ -65,13 +68,6 @@
 	&.right {
 		justify-self: flex-end;
 		object-position: right;
-	}
-}
-
-.mobile-hidden {
-	display: none;
-	@include respond-to ('lg') {
-		display: block;
 	}
 }
 
@@ -94,6 +90,25 @@
 				content: "";
 				margin-right: 20px;					
 			}
+		}
+	}
+}
+
+.numbered-list {
+	@include list;
+	
+	ol {
+		padding: 0 3rem;
+		@include respond-to('lg') {
+			padding: 0 10rem;
+		}
+		li {
+			font-size: 2rem;
+			line-height: 1.5rem;
+			margin: 2rem 0;
+			span {
+				font-size: 1rem;
+			}			
 		}
 	}
 }

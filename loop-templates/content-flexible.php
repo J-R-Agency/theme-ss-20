@@ -456,17 +456,19 @@ if( have_rows('flexible_content_block') ):
 	   		
        		echo "
        		<!-- PEOPLE HIGHLIGHT BLOCK -->
-   			<section class='generic bg-".$fcphb_background_color." people-highlight-block'>";
+   			<section class='generic bg-".$fcphb_background_color."'>";
    				
    			if ($people_count <= 1) {
    				echo "
-   				<div class='people-highlight-container'>
-   					<h2>".$fcphb_title."</h2>
+   				<div class='people-highlight-block'>
+	   				<div class='people-highlight-container'>
+	   					<h2>".$fcphb_title."</h2>
    				";
    			} else {
 	   			echo "
-	   			<h2>".$fcphb_title."</h2>
-	   			<div class='people-highlight-container'>
+	   			<div class='people-highlight-block'>
+		   			<h2>".$fcphb_title."</h2>
+		   			<div class='people-highlight-container'>
 	   			";
    			}
    				
@@ -509,7 +511,8 @@ if( have_rows('flexible_content_block') ):
    					endwhile;
    				endif;
    			
-   			echo "</div>";   			
+   			echo "</div>
+   			</div>";   			
    				
 			echo "</section>
        		";

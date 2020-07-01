@@ -70,6 +70,10 @@
 			flex-direction: row-reverse;		
 		}
 		
+		&.margin {
+			padding: 1rem;
+		}
+		
 		&.no-margin {
 			padding: 0;
 			@include respond-to('lg') {
@@ -97,6 +101,10 @@
 		@include respond-to('lg') {
 			flex-direction: row;		
 		}
+		
+		&.margin {
+			padding: 1rem;
+		}		
 		
 		&.no-margin {
 			padding: 0;

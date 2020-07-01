@@ -429,6 +429,21 @@ if( have_rows('flexible_content_block') ):
        		";
 
 
+ 	   	  // --------------------------- //
+         // - CASE: CONTACT FORM BLOCK -//
+        // --------------------------- //
+       elseif( get_row_layout() == 'fc_contact_form_block' ):
+	   		$fccf_title = get_sub_field('fccf_title');
+	   		
+       		echo "
+       		<!-- Contact Form Block -->
+   			<section class='generic bg-light-grey contact-form-block'>
+   				<h2>".$fccf_title."</h2>";
+   				
+   				echo do_shortcode('[contact-form-7 id="5" title="Contact form 1"]');
+   				
+			echo "</section>
+       		";
 			
 		endif; // Final endif        
     // End loop.

@@ -51,3 +51,15 @@
 	@include btn;
 	background-color: $red;
 }
+
+input.wpcf7-form-control.wpcf7-submit {
+	width: max-content;
+	display: flex;
+	border: none;
+	color: white;
+	background-color: $light-blue;	
+}
+
+.wpcf7 input:hover[type="submit"] {
+	background-color: $light-blue;
+}

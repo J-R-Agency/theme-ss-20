@@ -1,0 +1,51 @@
+.contact-form-block {
+	h2 {
+		text-align: center;
+	}
+}
+
+.wpcf7 {
+	display: flex;
+	justify-content: center;
+	p {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		
+		@include respond-to('lg') {
+			flex-direction: row;
+			align-items: center;
+		}
+		
+		.your-name, .your-contact, .your-message {
+			display: flex;
+			flex-grow: 1;
+		}		
+	}	
+
+}
+
+.text {
+	padding-right: 1rem;
+	@include _fira-sans-thin;
+	font-size: 1.25rem;
+}
+
+.wpcf7-list-item-label {
+	padding-left: 0.5rem;
+}
+
+.wpcf7-list-item {
+	width: 80px;
+}
+
+#contact-choice {
+	.text {
+		flex-basis: 47%;
+	}
+}
+
+.submit-btn {
+	display: flex;
+	justify-content: center;
+}

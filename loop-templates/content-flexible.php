@@ -73,7 +73,7 @@ if( have_rows('flexible_content_block') ):
 				echo "</div>";
 			endif;
 			
-			echo "<div class='generic fcb-content'>";
+			echo "<div class='fcb-content'>";
 			if ($fcb_title){
 				echo "<h2>".$fcb_title."</h2>";
 			}

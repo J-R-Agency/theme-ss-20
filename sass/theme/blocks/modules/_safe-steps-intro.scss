@@ -1,0 +1,95 @@
+.safe-steps-intro {
+	padding-right: 0;
+	padding-left: 0;
+	@include respond-to('lg') {
+		background-image:
+			url('../assets/bg-graphics/arc-purple-2.png');				
+		background-position:
+			top left;		
+		background-repeat: no-repeat;
+	}		
+}
+
+.ss-container-top {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	
+	.ss-container-right, .ss-container-left {
+		display: none;
+		@include respond-to('lg') {
+			display: block;
+		}
+	}
+}
+
+.ss-image {
+	&.left, &.right {
+		max-height: 500px;
+	}
+	
+	&.primary {
+		max-height: 400px;
+	}
+	
+}
+
+.ss-container-center {
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	align-items: center;
+	width: 100%;
+	
+	@include respond-to('lg') {
+		width: auto;
+	}
+	
+	ul {
+		padding: 0;
+		margin: 2rem 0;
+		li {
+			list-style-type: none;
+			display: flex;
+			align-items: center;
+			padding: 0.5rem 0;
+			&:before {
+				background-image: url(../assets/icons/checkmark-teal.png);
+				background-repeat: no-repeat;
+				background-size: 20px;
+				background-position: center;
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				content: "";
+				margin-right: 20px;					
+			}
+		}
+	}	
+	
+}
+
+.ss-container-bottom {
+	text-align: center;
+	.secondary-list {
+		display: flex;
+		justify-content: space-evenly;
+		flex-wrap: wrap;
+		.secondary-list-item {
+			flex-basis: 100%;
+			padding: 1rem;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			@include respond-to('lg') {
+				flex-basis: 20%;
+			}
+			img {
+				width: 35px;
+				height: 35px;
+				object-fit: contain;
+				margin: 1rem;
+			}
+		}
+	}
+}

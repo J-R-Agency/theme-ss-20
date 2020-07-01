@@ -71,7 +71,9 @@
 		}
 		
 		&.margin {
-			padding: 1rem;
+			.fcb-media {
+				padding: 1rem;
+			}
 		}
 		
 		&.no-margin {
@@ -103,7 +105,9 @@
 		}
 		
 		&.margin {
-			padding: 1rem;
+			.fcb-media {
+				padding: 1rem;
+			}
 		}		
 		
 		&.no-margin {

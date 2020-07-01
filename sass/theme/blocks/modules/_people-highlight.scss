@@ -1,0 +1,71 @@
+.people-highlight-block {
+	h2 {
+		flex-basis: 100%;
+		padding-right: 0;
+		display: flex;
+		align-items: center;
+		text-align: center;	
+		@include respond-to('lg') {
+			flex-basis: 50%;
+			padding-right: 15rem;
+			text-align: left;
+		}	
+	}
+}
+
+.people-highlight-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+.people-wrapper {
+	flex-basis: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+	@include respond-to('lg') {
+		flex-basis: 50%;
+		flex-direction: row;
+	}
+	
+	.portrait {
+		border-radius: 50%;
+		width: 150px;
+		height: 150px;
+		object-fit: cover;
+		border: 1px solid gray;		
+	}
+	.people-info {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 1rem;
+		
+		@include respond-to('lg') {
+			text-align: left;
+			align-items: flex-start;
+		}
+		
+		.fcphb-name {
+			margin: 0;
+			font-size: 1.2rem;
+		}
+		.people-social-media {
+			color: $light-blue;
+			text-transform: uppercase;
+			display: flex;
+			a {
+				display: flex;
+				margin-left: 0.5rem;
+				img {
+					width: 25px;
+					height: 25px;
+					object-fit: contain;
+				}
+			}
+		}
+	}
+}

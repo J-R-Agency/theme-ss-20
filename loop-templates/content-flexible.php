@@ -444,6 +444,115 @@ if( have_rows('flexible_content_block') ):
    				
 			echo "</section>
        		";
+
+
+ 	   	  // ------------------------------- //
+         // - CASE: PEOPLE HIGHLIGHT BLOCK -//
+        // ------------------------------- //
+       elseif( get_row_layout() == 'fc_people_highlight_block' ):
+	   		$fcphb_background_color = get_sub_field('fcphb_background_color');
+	   		$fcphb_title = get_sub_field('fcphb_title');
+	   		$people_count = count(get_sub_field('fcphb_people'));
+	   		
+       		echo "
+       		<!-- PEOPLE HIGHLIGHT BLOCK -->
+   			<section class='generic bg-".$fcphb_background_color." people-highlight-block'>";
+   				
+   			if ($people_count <= 1) {
+   				echo "
+   				<div class='people-highlight-container'>
+   					<h2>".$fcphb_title."</h2>
+   				";
+   			} else {
+	   			echo "
+	   			<h2>".$fcphb_title."</h2>
+	   			<div class='people-highlight-container'>
+	   			";
+   			}
+   				
+   				if( have_rows('fcphb_people') ):
+   					while ( have_rows('fcphb_people') ) : the_row();
+   						$fcphb_portrait = get_sub_field('fcphb_portrait');
+   						$fcphb_name = get_sub_field('fcphb_name');
+   						$fcphb_position = get_sub_field('fcphb_position');
+   						
+   						echo "
+   						<div class='people-wrapper'>
+   							<img class='portrait' src='".$fcphb_portrait['url']."' alt='".$fcphb_portrait['alt']."'>
+   							<div class='people-info'>
+   								<p class='fcphb-name'><strong>".$fcphb_name."</strong></p>
+   								<p class='fcphb-position'>".$fcphb_position."</p>";
+   								
+   									if( have_rows('fcphb_social_media') ):
+   										echo "
+   										<div class='people-social-media'>
+   											<span>Connect</span>
+   										";
+   										while ( have_rows('fcphb_social_media') ) : the_row();
+   											$social_media_type = get_sub_field('social_media_type');
+   											$social_media_link = get_sub_field('social_media_link');
+   											
+   											echo "
+   											<a href='".$social_media_link['url']."' target='_blank'>
+   												<img src='".$theme_path."/assets/social-media/".$social_media_type."-logo-blue.png' alt='".$social_media_type."'>
+   											</a>
+   											";
+   										
+   										endwhile;
+   										echo "</div>";
+   									endif;
+   									
+   						echo	"
+   							</div>
+   						</div>
+   						";
+   					endwhile;
+   				endif;
+   			
+   			echo "</div>";   			
+   				
+			echo "</section>
+       		";
+
+ 	   	  // --------------------------- //
+         // - CASE: COMPANY INFO BLOCK -//
+        // --------------------------- //
+       elseif( get_row_layout() == 'fc_company_info_block' ):
+       		if( have_rows('information', 'option') ):
+       			while( have_rows('information', 'option') ): the_row();
+	   				$phone_number = get_sub_field('phone_number', 'option');
+	   				$address = get_sub_field('address', 'option');
+	   			endwhile;
+	   		endif;
+	   		
+       		echo "
+       		<!-- Company Info Block -->
+   			<section class='generic bg-teal company-info-block'>
+   			
+   				<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2378.61412282572!2d-2.9719168841593877!3d53.403842279991245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487b211897cfef0b%3A0x325828a436916911!2sLiverpool%20Science%20Park!5e0!3m2!1sen!2suk!4v1593614268471!5m2!1sen!2suk' width='600' height='450' frameborder='0' style='border:0;' allowfullscreen='' aria-hidden='false' tabindex='0'></iframe>   
+   							
+   				<div class='company-info-wrapper'>
+   					<p class='company-phone'>".$phone_number."</p>";
+   					
+				if( have_rows('social_media', 'option') ):
+					echo "<div class='sm-icons'>";
+				    while( have_rows('social_media', 'option') ): the_row();
+				        $social_media_type = get_sub_field('social_media_type', 'option');
+						$social_media_link = get_sub_field('social_media_link', 'option');
+				    
+				     echo "
+				     	<a href='".$social_media_link['url']."'>
+				     		<img src=".$theme_path."'/assets/social-media/".$social_media_type."-logo-yellow.png'>
+				     	</a>";
+				    endwhile;
+					echo "</div>";					
+				endif;
+							
+   			echo   "<p class='company-address'>".$address."</p>
+   				</div>
+			</section>
+       		";
+
 			
 		endif; // Final endif        
     // End loop.

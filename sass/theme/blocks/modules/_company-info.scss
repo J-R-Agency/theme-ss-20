@@ -1,6 +1,8 @@
 .company-info-block {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	
 	@include respond-to ('lg') {
 		flex-direction: row;
 	}

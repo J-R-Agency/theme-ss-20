@@ -34,6 +34,16 @@
 			background-repeat: no-repeat;
 		}		
 	}
+	&.bg-light-teal {
+		@include respond-to('lg') {
+			background-image:
+				url('../assets/bg-graphics/arrow-teal-2.png');				
+			background-position:
+				top left;		
+			background-repeat: no-repeat;
+		}		
+	}	
+	
 }
 
 .ordered-list-block-container {

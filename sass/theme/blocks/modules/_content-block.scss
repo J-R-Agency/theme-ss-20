@@ -11,7 +11,7 @@
 	}
 	.fcb-media {
 		flex-basis: 100%;
-		padding: 0;
+		
 		display: flex;
 		justify-content: center;
 		
@@ -27,21 +27,37 @@
 			height: 100%;
 			width: 100%;
 		}
+		
+		&.margin {
+			@include global-padding;
+		}
+		
+		&.no-margin {
+			padding: 0;
+		}
+		
 	}
 
 }
 
 .content-block {
+	
+	// Stacked on top of each other
 	&.style1 {
 		text-align: center;
+		
+		@include fcb;
+		
 		.fcb-content {
 			padding: 1rem;
 			@include respond-to('lg') {
-				padding: 2rem 8rem 0 8rem;
+				padding: 2rem 8rem 2rem 8rem;
 			}
 		}
 	}
 	
+	
+	// Media on right
 	&.style2 {
 		text-align: left;
 		display: flex;
@@ -71,6 +87,7 @@
 			
 	}
 	
+	// Media on left
 	&.style3 {
 		display: flex;
 		flex-direction: column;
@@ -87,7 +104,6 @@
 				padding-left: 0;
 			}
 			.fcb-media {
-				padding: 0;
 				display: flex;
 				justify-content: flex-start;
 				@include respond-to('lg') {
@@ -98,6 +114,7 @@
 	}
 	
 	
+	// Background images
 	@include respond-to('md') {
 		&.what-is-safe-steps {
 			background-image:

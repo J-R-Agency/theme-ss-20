@@ -53,7 +53,7 @@ if( have_rows('flexible_content_block') ):
 			<section class='content-block ".$fcb_margins." ".$fcb_style." ".sanitize_title($fcb_title)." bg-".$fcb_background_color."'>";
 			
 			if( have_rows('fcb_media') ):
-				echo "<div class='fcb-media'>";
+				echo "<div class='fcb-media ".$fcb_margins."'>";
 				while ( have_rows('fcb_media') ) : the_row();
 					if( get_row_layout() == 'fcb_image' ):
 						$fcb_image_file = get_sub_field('fcb_image_file');

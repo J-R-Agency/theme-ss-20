@@ -98,7 +98,14 @@
 	}
 	
 	.share-btns {
-		
+		.sd-content {
+			ul {
+				margin: 0;
+				li {
+					margin: 0;
+				}
+			}
+		}
 		// Twitter
 		.sd-social-icon .sd-content ul li[class*="share-"].share-twitter a.sd-button {
 			background-color: transparent;

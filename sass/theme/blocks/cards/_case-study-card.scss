@@ -65,6 +65,14 @@ $sm-width: 100%;
 	@include _poppins-semibold;
 }
 
+.cs-small-excerpt {
+	max-height: 50px;
+    overflow: hidden;
+    @include respond-to('xxl') {
+	    max-height: 121px;
+    }
+}
+
 /*-- CASE STUDY CARD (LARGE) --*/
 
 $lg-height: 100%;

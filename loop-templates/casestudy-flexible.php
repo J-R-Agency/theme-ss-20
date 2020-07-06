@@ -50,13 +50,24 @@ if( have_rows('flexible_case_study_blocks') ):
 			<section class='cs-quote-block generic bg-".$csq_background_color."'>
 				
 				<div class='cs-quote'>
-					<p>".$csq_quote."</p>
+					<p>".$csq_quote."</p>";
+			
+			if ($csq_citation) {
+			echo	"<div class='cs-citation'>";
+			}
+			
+			if ($csq_portrait) {
+				echo "<img src='".$csq_portrait['url']."' alt='".$csq_portrait['alt']."'>";
+			}
+			
+			if ($csq_citation) {	
+			echo		"<cite> - ".$csq_citation."</cite>
+					</div>";				
+			}
+
 					
-					<div class='cs-citation'>
-						<img src='".$csq_portrait['url']."' alt='".$csq_portrait['alt']."'>
-						<cite> - ".$csq_citation."</cite>
-					</div>
-				</div>
+					
+			echo    "</div>
 			</section>
        		";       		
 

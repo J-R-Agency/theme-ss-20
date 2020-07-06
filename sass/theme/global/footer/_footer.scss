@@ -28,17 +28,16 @@
 
 .footer-right {
 	display: flex;
-	flex-direction: column;
-	
-	@include respond-to('lg') {
-		flex-direction: row;
-	}
+	flex-direction: row;
+	flex-wrap: wrap;
 	
 	.footer-products, .footer-company, .footer-contact {
 		padding: 1rem 0;
 		width: 80%;
+		flex-basis: 50%;
 		@include respond-to('lg') {
 			padding: 1rem;
+			flex-basis: content;
 		}
 		#menu-footer-menu, ul {
 			list-style: none;

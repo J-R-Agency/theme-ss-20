@@ -67,6 +67,15 @@ function theme_slug_jetpack_setup() {
 }
 add_action( 'after_setup_theme', 'theme_slug_jetpack_setup' );
 
+// Remove social sharing
+function sv_remove_jp_sharing() {
+    if (function_exists( 'sharing_display' ) ) {
+        remove_filter( 'the_content', 'sharing_display', 19 );
+        remove_filter( 'the_excerpt', 'sharing_display', 19 );
+    }
+}
+add_action( 'loop_start', 'sv_remove_jp_sharing' );
+
 // Get first sentence
 function first_sentence($content) {
     $pos = strpos($content, '.');

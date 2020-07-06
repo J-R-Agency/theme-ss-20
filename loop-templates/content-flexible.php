@@ -360,7 +360,7 @@ if( have_rows('flexible_content_block') ):
        		echo "
        		<!-- Ordered List Block -->
    			<section class='generic bg-".$fcol_background_color." ordered-list-block'>
-   				<h2 class='fcol_title'>".$fcol_title."</h2>
+   				<h2 class='fcol-title'>".$fcol_title."</h2>
    				<div class='ordered-list-block-container'>
    			";
    				

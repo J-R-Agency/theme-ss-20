@@ -71,6 +71,7 @@
 	display: flex;
 	justify-content: space-between;
 	color: $teal;
+	align-items: center;
 	@include _fira-sans-semibold;
 	
 	@include respond-to('lg') {
@@ -87,15 +88,29 @@
 		}
 	}
 	
-	.share-btns {
-		li.share-twitter a.sd-button > span{
-		background-image: url('../assets/social-media/twitter-logo-teal.png');
+	@mixin share-btn {
+		width: 25px;
+		height: 25px;
+		display: inline-flex;
+		background-size: contain;
+		background-repeat: no-repeat;
+		&:before {
+			content: none;
 		}
-		li.share-facebook a.sd-button > span{
-		background-image: url('../assets/social-media/facebook-logo-teal.png');
+	}
+	
+	.share-btns {
+		li.share-twitter a.sd-button > span {
+			@include share-btn;
+			background-image: url('../assets/social-media/twitter-logo-teal.png');
+		}
+		li.share-facebook a.sd-button > span {
+			@include share-btn;
+			background-image: url('../assets/social-media/facebook-logo-teal.png');
 		}		
-		li.share-linkedin a.sd-button > span{
-		background-image: url('../assets/social-media/linkedin-logo-teal.png');
+		li.share-linkedin a.sd-button > span {
+			@include share-btn;
+			background-image: url('../assets/social-media/linkedin-logo-teal.png');
 		}		
 	}
 }

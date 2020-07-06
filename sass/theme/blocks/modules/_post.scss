@@ -94,14 +94,17 @@
 		display: inline-flex;
 		background-size: contain;
 		background-repeat: no-repeat;
+		background-position: bottom;
 	}
 	
 	.share-btns {
 		
 		// Twitter
+		.sd-social-icon .sd-content ul li[class*="share-"].share-twitter a.sd-button {
+			background-color: none;
+		}
+		
 		li.share-twitter a.sd-button {
-			background: none;
-			color: none;
 			&:before {
 				content: none;
 			}			
@@ -112,9 +115,11 @@
 		}
 		
 		// Facebook
+		.sd-social-icon .sd-content ul li[class*="share-"].share-facebook a.sd-button {
+			background-color: none;
+		}
+				
 		li.share-facebook a.sd-button {
-			background: none;
-			color: none;	
 			&:before {
 				content: none;
 			}				
@@ -124,10 +129,12 @@
 			}
 		}
 		
-		//Linkedin	
+		//Linkedin
+		.sd-social-icon .sd-content ul li[class*="share-"].share-linkedin a.sd-button {
+			background-color: none;
+		}
+				
 		li.share-linkedin a.sd-button {
-			background: none;
-			color: none;
 			&:before {
 				content: none;
 			}						

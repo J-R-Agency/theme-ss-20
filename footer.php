@@ -55,12 +55,13 @@ $theme_path = get_template_directory_uri();
 		
 		<div class='footer-products'>
 			<h3>Products</h3>
-			<ul>
-				<li><a href="#">Falls App</a></li>
-				<li><a href="#">Falls App Login</a></li>
-				<li><a href="#">Covid-19 Core Data Tracker</a></li>
-				<li><a href="#">Covid-19 Core Data Tracker Login</a></li>
-			</ul>
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location'  => 'products-menu'
+				)
+			);
+			?>	
 		</div>
 		
 		<div class='footer-company'>

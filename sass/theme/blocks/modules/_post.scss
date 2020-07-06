@@ -100,17 +100,35 @@
 	}
 	
 	.share-btns {
-		li.share-twitter a.sd-button > span {
-			@include share-btn;
-			background-image: url('../assets/social-media/twitter-logo-teal.png');
+		
+		// Twitter
+		li.share-twitter a.sd-button {
+			background: none;
+			color: none;
+			span {
+				@include share-btn;
+				background-image: url('../assets/social-media/twitter-logo-teal.png');
+			}
 		}
-		li.share-facebook a.sd-button > span {
-			@include share-btn;
-			background-image: url('../assets/social-media/facebook-logo-teal.png');
-		}		
-		li.share-linkedin a.sd-button > span {
-			@include share-btn;
-			background-image: url('../assets/social-media/linkedin-logo-teal.png');
+		
+		// Facebook
+		li.share-facebook a.sd-button {
+			background: none;
+			color: none;		
+			span {
+				@include share-btn;
+				background-image: url('../assets/social-media/facebook-logo-teal.png');				
+			}
+		}
+		
+		//Linkedin	
+		li.share-linkedin a.sd-button {
+			background: none;
+			color: none;			
+			span {
+				@include share-btn;
+				background-image: url('../assets/social-media/linkedin-logo-teal.png');				
+			}
 		}		
 	}
 }

@@ -174,19 +174,34 @@ if( have_rows('flexible_content_block') ):
 			
        		echo "
        		<!-- Quote Block -->
-			<section class='quote-block generic bg-".$fcqb_background_color."'>
-				<div class='fcqb-image'>
-					<img src='".$fcqb_image['url']."' alt='".$fcqb_image['alt']."'>
-				</div>
+			<section class='quote-block generic bg-".$fcqb_background_color."'>";
 				
-				<div class='fcqb-quote'>
-					<p>".$fcqb_quote."</p>
-					
-					<div class='fcqb-citation'>
-						<img src='".$fcqb_citation['fcqb_portrait']['url']."' alt='".$fcqb_citation['fcqb_portrait']['alt']."'>
-						<cite> - ".$fcqb_citation['fcqb_name']."</cite>
-					</div>
-				</div>
+			if ($fcqb_image) {
+				$fb_class = 'half-width';
+			echo "<div class='fcqb-image'>
+					<img src='".$fcqb_image['url']."' alt='".$fcqb_image['alt']."'>
+				</div>";				
+			} else {
+				$fb_class = 'full-width';
+			}
+				
+			echo "<div class='fcqb-quote ".$fb_class."'>
+					<p>".$fcqb_quote."</p>";
+			
+			if ($fcqb_citation['fcqb_name']) {
+			echo "<div class='fcqb-citation'>";
+			}
+			
+			if ($fcqb_citation['fcqb_portrait']) {
+			echo	"<img src='".$fcqb_citation['fcqb_portrait']['url']."' alt='".$fcqb_citation['fcqb_portrait']['alt']."'>";
+			}
+						
+			if ($fcqb_citation['fcqb_name']) {
+			echo	"<cite> - ".$fcqb_citation['fcqb_name']."</cite>
+				</div>";
+			}
+			
+			echo "</div>
 			</section>
        		"; 
        		

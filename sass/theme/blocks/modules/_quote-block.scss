@@ -78,7 +78,12 @@
 
 .fcqb-quote {
 	flex-basis: 60%;
-	@include quote(1rem, 5rem, 50%);
+	&.full-width {
+		@include quote(1rem, 5rem, 100%);
+	}
+	&.half-width {
+		@include quote(1rem, 5rem, 50%);
+	}
 }
 
 .fcqb-citation {

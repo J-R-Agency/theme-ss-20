@@ -34,11 +34,14 @@ $theme_path = get_template_directory_uri();
 			background-image:url('<?php echo $thumb; ?>');
 			background-position: <?php echo $hero_image_position; ?>">
 		</div>
-	<?php else: ?>	
+	<?php else:
+		$default_case_study_image = get_field('default_case_study_image', 'option');
+		$default_case_study_image_image = $default_case_study_image['dcsi_image']['url'];		
+	?>	
 		<div class='csc-small-img'
 			style="
-			background-image:url('<?php echo $theme_path; ?>/assets/images/case-study-card-placeholder.jpg');
-			background-position: center; ">
+			background-image: url('<?php echo $default_case_study_image_image; ?>');
+			background-position: <?php echo $default_case_study_image['position']; ?>; ">
 		</div>
 	<?php endif; ?>
 </div>

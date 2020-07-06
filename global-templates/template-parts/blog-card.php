@@ -30,12 +30,15 @@ $theme_path = get_template_directory_uri();
 				 background-position: <?php echo $hero_image_position; ?>">	
 			</div>
 		</a>
-	<?php else: ?>
+	<?php else:
+		$default_blog_image = get_field('default_blog_image', 'option');
+		$default_blog_image_image = $default_blog_image['dbi_image']['url'];
+	?>
 		<a href='<?php the_permalink(); ?>'>
 			<div class="post-thumbnail"
 				 style="
-				 background-image: url('<?php echo $theme_path; ?>/assets/images/blog-card-placeholder.jpg');
-				 background-position: center;">	
+				 background-image: url('<?php echo $default_blog_image_image; ?>');
+				 background-position: <?php echo $default_blog_image['position']; ?>;">	
 			</div>
 		</a>				
 	<?php endif; ?>

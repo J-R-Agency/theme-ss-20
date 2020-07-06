@@ -74,7 +74,7 @@
 	align-items: center;
 	@include _fira-sans-semibold;
 	
-	@include respond-to('lg') {
+	@include respond-to('md') {
 		padding: 1rem 4rem;	
 	}
 	

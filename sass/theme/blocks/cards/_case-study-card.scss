@@ -143,7 +143,6 @@ $lg-width: 100%;
 	margin-bottom: 1rem;
 	font-size: 1.5rem;
 	@include respond-to('lg') {
-		margin-bottom: 0;
 		font-size: inherit;
 	}
 }

@@ -63,14 +63,13 @@
  }
 
 .fcol-image {
-	flex-basis: 100%;
 	object-fit: contain;
-	max-height: 300px;
 	display: none;
+	max-width: 200px;
+	
 	@include respond-to('lg') {
 		display: block;
 		flex-basis: 20%;
-		max-height: 500px;
 	}
 	
 	&.left {

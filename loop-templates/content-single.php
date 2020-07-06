@@ -39,7 +39,9 @@ $theme_path = get_template_directory_uri();
 		</div>
 	</div>
 	
-	<!--<div class='social-share'>
+	<div class='social-share'>
+		<?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
+		<!--
 		<div class='share'>
 			Share <img src='<?php echo $theme_path; ?>/assets/icons/share-icon.png' alt="Share icon">
 		</div>
@@ -54,8 +56,10 @@ $theme_path = get_template_directory_uri();
 				<img src='<?php echo $theme_path; ?>/assets/social-media/linkedin-logo-teal.png' alt="Share on LinkedIn">
 			</a>
 		</div>
-	</div>-->
-	<?php if ( function_exists( 'sharing_display' ) ) { echo sharing_display(); } ?>
+		-->
+		
+	</div>
+	
 
 	<div class="generic bg-white entry-content">
 

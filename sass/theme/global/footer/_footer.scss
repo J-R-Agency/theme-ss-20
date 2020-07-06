@@ -37,7 +37,7 @@
 		flex-basis: 50%;
 		@include respond-to('lg') {
 			padding: 1rem;
-			flex-basis: content;
+			flex-basis: 33%;
 		}
 		#menu-footer-menu, ul {
 			list-style: none;

@@ -141,4 +141,8 @@ $lg-width: 100%;
 .cs-large-title {
 	@include _poppins-semibold;
 	margin-bottom: 0;
+	font-size: 1.5rem;
+	@include respond-to('lg') {
+		font-size: inherit;
+	}
 }

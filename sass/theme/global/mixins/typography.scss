@@ -22,9 +22,8 @@
 	font-family: 'poppins-semibold';	
 }
 
-p, a, span, cite, li {
+p, p > a, span, cite, li {
 	@include _fira-sans-regular;
-	line-height: 2em;
 }
 
 h1 {

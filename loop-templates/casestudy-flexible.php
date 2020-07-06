@@ -41,7 +41,7 @@ if( have_rows('flexible_case_study_blocks') ):
         // -------------------------- //
        elseif( get_row_layout() == 'cs_quote' ):
 			$csq_background_color = get_sub_field('csq_background_color');
-			$csq_quote = get_sub_field('csq_quote');
+			$csq_quote = get_sub_field('csq_quote', false, false);
 			$csq_citation = get_sub_field('csq_citation');
 			$csq_portrait = get_sub_field('csq_portrait');
 			
@@ -61,8 +61,8 @@ if( have_rows('flexible_case_study_blocks') ):
 			}
 			
 			if ($csq_citation) {	
-			echo		"<cite> - ".$csq_citation."</cite>
-					</div>";				
+				echo "<cite> - ".$csq_citation."</cite>
+				</div>";				
 			}
 
 					

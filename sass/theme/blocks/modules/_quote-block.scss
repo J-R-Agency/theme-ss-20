@@ -1,24 +1,22 @@
-@mixin quote ($sm-padding, $lg-padding)
+@mixin quote ($sm-padding, $lg-padding, $fb)
 {
-	.cs-quote {
-		flex-basis: 100%;
-		display: flex;
-		padding: $sm-padding;
-		flex-direction: column;
-		
+	flex-basis: $fb;
+	display: flex;
+	padding: $sm-padding;
+	flex-direction: column;
+	
+	@include respond-to('lg') {
+		padding: $lg-padding;
+	}
+	
+	p {
+		@include _fira-sans-thin;
+		font-size: 1.7rem;
+		text-align: center;
+		line-height: 1.5em;
 		@include respond-to('lg') {
-			padding: $lg-padding;
+			text-align: left;
 		}
-		
-		p {
-			@include _fira-sans-thin;
-			font-size: 1.7rem;
-			text-align: center;
-			line-height: 1.5em;
-			@include respond-to('lg') {
-				text-align: left;
-			}
-		}		
 	}
 
 }
@@ -80,7 +78,7 @@
 
 .fcqb-quote {
 	flex-basis: 60%;
-	@include quote(1rem, 5rem);
+	@include quote(1rem, 5rem, 50%);
 }
 
 .fcqb-citation {
@@ -130,17 +128,23 @@
 
 .cs-quote-block {
 	&.bg-white {
-		@include quote(1rem, 1rem);
+		.cs-quote {
+			@include quote(1rem, 1rem, 100%);
+		}
 	}
 	&.bg-purple {
-		@include quote(1rem, 5rem);
-		.cs-citation {
-			@include respond-to('lg') {
-				justify-content: center;	
-			}		
-		}		
+		.cs-quote {
+			@include quote(1rem, 5rem, 100%);
+			.cs-citation {
+				@include respond-to('lg') {
+					justify-content: center;	
+				}		
+			}	
+		}	
 	}
 	&.bg-yellow {
-		@include quote(1rem, 5rem);
+		.cs-quote {
+			@include quote(1rem, 5rem, 100%);
+		}
 	}
 }

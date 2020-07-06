@@ -63,7 +63,7 @@ add_action( 'init', 'add_taxonomies_to_pages' );
 
 // Add support for Social Menu.
 function theme_slug_jetpack_setup() {
-  add_theme_support( 'jetpack-social-menu' );
+  add_theme_support( 'jetpack-social-menu', 'genericons' );
 }
 add_action( 'after_setup_theme', 'theme_slug_jetpack_setup' );
 

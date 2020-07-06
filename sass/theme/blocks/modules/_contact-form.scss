@@ -4,6 +4,11 @@
 	}
 }
 
+.wpcf7-form {
+	width: 100%;
+}
+
+
 .wpcf7 {
 	display: flex;
 	justify-content: center;
@@ -48,4 +53,22 @@
 .submit-btn {
 	display: flex;
 	justify-content: center;
+}
+
+// Error
+.wpcf7-form-control-wrap {
+	width: 100%;
+	@include respond-to('lg') {
+		width: auto;
+	}
+}
+
+.wpcf7 .wpcf7-not-valid-tip {
+	color: white !important;
+	position: absolute;
+	background-color: #FC515E;
+	padding: 0.25rem;
+	border-radius: 5px;
+	top: -20px;
+	right: 0px;	
 }

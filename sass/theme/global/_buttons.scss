@@ -44,7 +44,7 @@
 .blue-btn {
 	@include btn;
 	background-color: $light-blue;
-	display: inline-block;
+	display: inline-flex;
 }
 
 .red-btn {

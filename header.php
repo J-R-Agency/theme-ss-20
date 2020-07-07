@@ -118,7 +118,7 @@ $theme_path = get_template_directory_uri();
 					<?php echo $nb_link['title']; ?>
 				</a>
 			<?php elseif (!$nb_link): ?>
-				<a class='btn login' href="#">Login</a>
+				<a class='btn login' href="https://app.safesteps.tech/login">Login</a>
 			<?php endif; ?>
 	    <?php endwhile; ?>
 	    </div>

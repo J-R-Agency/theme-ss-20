@@ -42,15 +42,10 @@
 	}
 }
 
-.blue-btn {
+.btn {
 	@include btn;
 	background-color: $dark-teal;
 	display: inline-flex;
-}
-
-.red-btn {
-	@include btn;
-	background-color: $red;
 }
 
 input.wpcf7-form-control.wpcf7-submit {

@@ -114,11 +114,11 @@ $theme_path = get_template_directory_uri();
 	        <p><?php echo $nb_text; ?></p>
 	        
 	        <?php if ($nb_link): ?>
-	        	<a class='<?php echo $nb_button_color; ?>-btn <?php echo sanitize_title($nb_link['title']); ?>' href="<?php echo $nb_link['url']; ?>">
+	        	<a class='btn <?php echo sanitize_title($nb_link['title']); ?>' href="<?php echo $nb_link['url']; ?>">
 					<?php echo $nb_link['title']; ?>
 				</a>
 			<?php elseif (!$nb_link): ?>
-				<a class='blue-btn login' href="#">Login</a>
+				<a class='btn login' href="#">Login</a>
 			<?php endif; ?>
 	    <?php endwhile; ?>
 	    </div>

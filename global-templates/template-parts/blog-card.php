@@ -48,7 +48,7 @@ $theme_path = get_template_directory_uri();
 	</a>
 	<p class='blog-card-author'>By <?php the_author(); ?></p>
 	
-	<a class='blue-btn' href='<?php the_permalink(); ?>'>
+	<a class='btn' href='<?php the_permalink(); ?>'>
 		Read More
 	</a>
 </div>

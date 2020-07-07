@@ -63,7 +63,7 @@ global $post;
 		<?php
 			if ($pi_button) {
 				echo "
-				<a class='blue-btn' href='".$pi_button['url']."' target='".$pi_button['target']."'>
+				<a class='btn' href='".$pi_button['url']."' target='".$pi_button['target']."'>
 					".$pi_button['title']."
 				</a>
 				";

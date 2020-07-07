@@ -150,7 +150,7 @@ if( have_rows('flexible_content_block') ):
 	
 			if ($fcis_button) {
 				echo "
-					<a class='blue-btn' href='".$fcis_button['url']."' target='".$fcis_button['target']."'>
+					<a class='btn' href='".$fcis_button['url']."' target='".$fcis_button['target']."'>
 					".$fcis_button['title']."
 					</a>
 					";
@@ -250,7 +250,7 @@ if( have_rows('flexible_content_block') ):
 			
 			if($fctb_link) {
 				echo "
-   				<a class='blue-btn' href='".$fctb_link['url']."' target='".$fctb_link['target']."'>
+   				<a class='btn' href='".$fctb_link['url']."' target='".$fctb_link['target']."'>
    					".$fctb_link['title']."
    				</a> 
 				";
@@ -279,7 +279,7 @@ if( have_rows('flexible_content_block') ):
 	   					<p>".$fcicta_subtitle."</p>
 	   				</div>
 	   				
-       				<a class='blue-btn' href='".$fcicta_link['url']."' target='".$fcicta_link['target']."'>
+       				<a class='btn' href='".$fcicta_link['url']."' target='".$fcicta_link['target']."'>
        					".$fcicta_link['title']."
        				</a> 
        				

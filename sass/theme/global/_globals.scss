@@ -44,7 +44,7 @@ body {
 .bg-white {
 	background-color: white;
 	color: $dark-teal;
-	a:not(.blue-btn) {
+	a:not(.btn) {
 		color: $dark-teal;
 	}
 }
@@ -62,7 +62,7 @@ body {
 .bg-light-teal {
 	background-color: $light-teal;
 	color: $dark-teal;
-	a:not(.blue-btn) {
+	a:not(.btn) {
 		color: $light-blue;
 	}
 }
@@ -70,7 +70,7 @@ body {
 .bg-teal {
 	background-color: $teal;
 	color: white;
-	a:not(.blue-btn) {
+	a:not(.btn) {
 		color: white;
 	}
 }
@@ -78,7 +78,7 @@ body {
 .bg-dark-teal {
 	background-color: $dark-teal;
 	color: white;
-	a:not(.blue-btn) {
+	a:not(.btn) {
 		color: white;
 	}
 }
@@ -86,7 +86,7 @@ body {
 .bg-yellow {
 	background-color: $yellow;
 	color: $dark-teal;
-	a:not(.blue-btn) {
+	a:not(.btn) {
 		color: $dark-teal;
 	}
 }

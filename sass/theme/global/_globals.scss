@@ -3,10 +3,21 @@
 	@include respond-to('md'){
 		padding: 2rem 4rem;
 	}
-	@include respond-to('lg'){
+	@include respond-to('xxl'){
 		padding: 4rem 10rem;
 	}		
 }
+
+@mixin sm-padding {
+	padding: 1rem 1rem;
+	@include respond-to('md'){
+		padding: 1rem 4rem;
+	}
+	@include respond-to('xxl'){
+		padding: 1rem 10rem;
+	}		
+}
+
 
 html {
 	display: flex;
@@ -23,6 +34,10 @@ body {
 
 .generic-lg {
 	@include lg-padding;
+}
+
+.generic-sm {
+	@include sm-padding;
 }
 
 // COLORS ----

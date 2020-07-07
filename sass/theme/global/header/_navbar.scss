@@ -3,12 +3,7 @@
 	display: flex;
 	justify-content: space-between;
 
-	@include respond-to('md'){
-		padding: 1rem 4rem;
-	}
-	@include respond-to('xl'){ 
-		padding: 1rem 10rem;
-	}
+	@include sm-padding;
 	
 	.navbar-brand {
 		flex-basis: 70%;
@@ -66,12 +61,8 @@
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
-	@include respond-to('md'){
-		padding: 1rem 4rem;
-	}
-	@include respond-to('lg'){
-		padding: 1rem 10rem;
-	}
+
+	@include sm-padding;
 	
 	p {
 		margin: 0;

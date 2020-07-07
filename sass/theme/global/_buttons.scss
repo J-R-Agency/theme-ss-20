@@ -31,6 +31,7 @@
 	&.login {
 		background-color: white;
 		color: $dark-teal;
+		margin-right: 0;
 		&:after {
 			@include btn-arrow;
 			background-image: url('../assets/icons/btn-arrow-dark-teal.png');

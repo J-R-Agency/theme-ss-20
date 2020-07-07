@@ -27,6 +27,10 @@ p, p > a, span, cite, li {
 	font-size: 18px;
 }
 
+a {
+	@include _fira-sans-regular;
+}
+
 h1 {
 	@include _fira-sans-bold;
 	margin-bottom: 1.5rem;

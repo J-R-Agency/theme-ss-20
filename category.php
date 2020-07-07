@@ -28,7 +28,7 @@ $container = get_theme_mod( 'understrap_container_type' );
     	
 		$args = array(
 		    'post_type'      => 'post', //write slug of post type
-		    'posts_per_page' => 1,
+		    'posts_per_page' => 6,
 		    'order'          => 'DESC',
 		    'post_status'	 => 'publish',
 		    'category__in'   => $selected_category,

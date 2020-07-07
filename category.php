@@ -12,7 +12,6 @@ defined( 'ABSPATH' ) || exit;
 
 $categories = get_the_category();
 
-
 get_header();
 
 $container = get_theme_mod( 'understrap_container_type' );

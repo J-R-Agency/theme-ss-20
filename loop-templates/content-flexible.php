@@ -357,15 +357,15 @@ if( have_rows('flexible_content_block') ):
        		<!-- Ordered List Block -->
    			<section class='generic-lg bg-".$fcol_background_color." ordered-list-block'>
    				<h2 class='fcol-title'>".$fcol_title."</h2>
-   				<div class='ordered-list-block-container'>
+   				<div class='ordered-list-block-container'
+   					 style =
+   					 'background-image:url(".$fcol_image_left['url']."),
+   					 				   url(".$fcol_image_right['url'].");
+   					 background-position: center left, center right;
+   					 background-repeat: no-repeat;
+   					 '
+   				>
    			";
-   				
-   				if ($fcol_image_left) {
-	   				echo "<img class='fcol-image left'
-	   						   src='".$fcol_image_left['url']."'
-	   						   alt='".$fcol_image_left['alt']."'
-	   					  >";
-   				}
  
  
    				// Numbered list
@@ -425,14 +425,6 @@ if( have_rows('flexible_content_block') ):
 						endwhile;
 						echo "</div>";
 					endif;	   				
-   				}   				
-   				
-   				if ($fcol_image_right) {
-	   				
-	   				echo "<img class='fcol-image right'
-	   						   src='".$fcol_image_right['url']."'
-	   						   alt='".$fcol_image_right['alt']."'
-	   					  >";
    				}
    				
    			echo "</div>

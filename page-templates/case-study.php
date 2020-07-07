@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
 
 get_header(); ?>
 
-<section class='generic bg-white cs-header'>
+<section class='generic-lg bg-white cs-header'>
 	<!-- Hero image -->
 	<?php if ( has_post_thumbnail() ): ?>
 		<?php

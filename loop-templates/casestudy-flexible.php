@@ -26,7 +26,7 @@ if( have_rows('flexible_case_study_blocks') ):
        if( get_row_layout() == 'cs_wp_content' ):
        		
        		echo "<!-- Content Module -->
-				<section class='generic bg-white cs-wp-content'>";
+				<section class='generic-lg bg-white cs-wp-content'>";
 				
 			if (have_posts()) : while (have_posts()) : the_post();
 					the_content();
@@ -47,7 +47,7 @@ if( have_rows('flexible_case_study_blocks') ):
 			
        		echo "
        		<!-- Quote Block -->
-			<section class='cs-quote-block generic bg-".$csq_background_color."'>
+			<section class='cs-quote-block generic-lg bg-".$csq_background_color."'>
 				
 				<div class='cs-quote'>
 					<p>".$csq_quote."</p>";
@@ -80,7 +80,7 @@ if( have_rows('flexible_case_study_blocks') ):
 			
        		echo "
        		<!-- Video Block -->
-			<section class='cs-video-block generic bg-light-grey'>
+			<section class='cs-video-block generic-lg bg-light-grey'>
 				
 				<h3>".$csv_title."</h3>
 				
@@ -104,7 +104,7 @@ if( have_rows('flexible_case_study_blocks') ):
 						
        		echo "
        		<!-- Content Block -->
-			<section class='csc-container generic bg-".$csc_background_color."'>
+			<section class='csc-container generic-lg bg-".$csc_background_color."'>
 				
 				<h3>".$csc_title."</h3>
 				

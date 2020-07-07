@@ -11,6 +11,7 @@
 	flex-direction: column;
 	flex-basis: 100%;
 	margin: 1rem;
+	text-align: center;
 	
 	@include respond-to('lg') {
 		flex-basis: 29%;

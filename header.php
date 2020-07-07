@@ -103,7 +103,7 @@ $theme_path = get_template_directory_uri();
 	
 	<!-- Notice bar -->		
 	<?php if( have_rows('notice_bar') ): ?>
-		<div class='login-container bg-teal'>
+		<section class='login-container bg-teal'>
 	    <?php while( have_rows('notice_bar') ): the_row(); 
 	
 	        // Get sub field values.
@@ -114,14 +114,11 @@ $theme_path = get_template_directory_uri();
 	        <p><?php echo $nb_text; ?></p>
 	        
 	        <?php if ($nb_link): ?>
-		        <div class='<?php echo $nb_button_color; ?>-btn <?php echo sanitize_title($nb_link['title']); ?>'>
-					<a href="<?php echo $nb_link['url']; ?>"><?php echo $nb_link['title']; ?>
-					</a>
-				</div>
+	        	<a class='<?php echo $nb_button_color; ?>-btn <?php echo sanitize_title($nb_link['title']); ?>' href="<?php echo $nb_link['url']; ?>">
+					<?php echo $nb_link['title']; ?>
+				</a>
 			<?php elseif (!$nb_link): ?>
-				<div class='blue-btn login'>
-					<a href="#">Login</a>
-				</div>
+				<a class='blue-btn login' href="#">Login</a>
 			<?php endif; ?>
 	    <?php endwhile; ?>
 	    </div>

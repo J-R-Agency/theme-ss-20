@@ -28,7 +28,7 @@
 		}
 		
 		&.margin {
-			@include global-padding;
+			@include lg-padding;
 		}
 		
 		&.no-margin {
@@ -42,13 +42,13 @@
 .content-block {
 	
 	&.margin {
-		@include global-padding;
+		@include lg-padding;
 	}
 	
 	&.no-margin {
 		padding: 0;
 		.fcb-content {
-			@include global-padding;
+			@include lg-padding;
 		}
 	}
 	

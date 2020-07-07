@@ -30,7 +30,7 @@ get_header(); ?>
 	 
 	 
 	if ( $children->have_posts() ) :
-	 	echo "<section class='generic bg-light-grey case-studies-container'>";
+	 	echo "<section class='generic-lg bg-light-grey case-studies-container'>";
 	    while ( $children->have_posts() ) : $children->the_post();
 			$featured = get_field('featured');
 			
@@ -76,7 +76,7 @@ get_header(); ?>
 	 
 	 
 	if ( $children->have_posts() ) :
-	 	echo "<section class='generic bg-white'>
+	 	echo "<section class='generic-lg bg-white'>
 	 			<h2 style='text-align:center'>More case studies</h2>
 	 			<div class='case-study-card-container'>
 	 	";

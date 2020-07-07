@@ -25,7 +25,7 @@ get_header(); ?>
 ?>
 
 <?php if ($ss_title):?>
-	<section class='generic bg-white safe-steps-intro'>
+	<section class='generic-lg bg-white safe-steps-intro'>
 		
 		<div class='ss-container-top'>
 			<div class='ss-container-left'>
@@ -62,7 +62,7 @@ get_header(); ?>
 			</div>
 		</div>
 		
-		<div class='generic ss-container-bottom'>
+		<div class='generic-lg ss-container-bottom'>
 			<h2><?php echo $ss_secondary_list_title; ?></h2>
 			
 			<?php if( have_rows('ss_secondary_list') ): ?>

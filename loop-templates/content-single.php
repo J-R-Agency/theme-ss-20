@@ -30,7 +30,7 @@ $theme_path = get_template_directory_uri();
 
 	</header><!-- .entry-header -->
 	
-	<div class='generic bg-white entry-meta'>
+	<div class='generic-lg bg-white entry-meta'>
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		
 		<div class='entry-meta-bottom'>
@@ -66,7 +66,7 @@ $theme_path = get_template_directory_uri();
 	</div>
 	
 
-	<div class="generic bg-white entry-content">
+	<div class="generic-lg bg-white entry-content">
 
 		<?php the_content(); ?>
 

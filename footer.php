@@ -16,7 +16,7 @@ $theme_path = get_template_directory_uri();
 
 <?php get_template_part( 'sidebar-templates/sidebar', 'footerfull' ); ?>
 
-<section class="footer-container generic bg-dark-teal">
+<section class="footer-container generic-lg bg-dark-teal">
 
 	<!-- FOOTER LEFT -->
 	<div class='footer-left'>

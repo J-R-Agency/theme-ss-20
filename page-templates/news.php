@@ -21,7 +21,7 @@ get_header(); ?>
 		
 ?>
 	<!-- News Block -->
-	<section class='generic bg-white more-news'>
+	<section class='generic-lg bg-white more-news'>
 		<h2><?php echo $category->name; ?></h2>
 	
 		<div class='blog-cards-container'>

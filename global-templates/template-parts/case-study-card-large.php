@@ -23,9 +23,7 @@ $theme_path = get_template_directory_uri();
 			</p>
 		</div>
 		
-		<div class='blue-btn'>
-			<a href='<?php the_permalink(); ?>'>Find out more</a>
-		</div>			
+		<a class='blue-btn' href='<?php the_permalink(); ?>'>Find out more</a>
 	</div>
 
 	<?php if ( has_post_thumbnail() ): ?>

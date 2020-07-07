@@ -102,7 +102,7 @@ if( have_rows('flexible_content_block') ):
 			
 			echo "
 			<!-- Icon Set -->
-			<section class='fc-icon-set ".sanitize_title($fcis_title)." generic bg-".$fcis_background_color."'>";
+			<section class='fc-icon-set ".sanitize_title($fcis_title)." generic-lg bg-".$fcis_background_color."'>";
 			
 			if ($fcis_title) {
 				echo "<h2 class='fcis-title'>".$fcis_title."</h2>";
@@ -150,11 +150,10 @@ if( have_rows('flexible_content_block') ):
 	
 			if ($fcis_button) {
 				echo "
-					<div class='blue-btn'>
-						<a href='".$fcis_button['url']."' target='".$fcis_button['target']."'>
-						".$fcis_button['title']."
-						</a>
-					</div>";
+					<a class='blue-btn' href='".$fcis_button['url']."' target='".$fcis_button['target']."'>
+					".$fcis_button['title']."
+					</a>
+					";
 			} else {
 				echo "";
 			}			
@@ -174,7 +173,7 @@ if( have_rows('flexible_content_block') ):
 			
        		echo "
        		<!-- Quote Block -->
-			<section class='quote-block generic bg-".$fcqb_background_color."'>";
+			<section class='quote-block generic-lg bg-".$fcqb_background_color."'>";
 				
 			if ($fcqb_image) {
 				$fb_class = 'half-width';
@@ -216,11 +215,11 @@ if( have_rows('flexible_content_block') ):
 			
        		echo "
        		<!-- Team Block -->
-       		<section class='team-banner generic bg-yellow'>
+       		<section class='team-banner generic-lg bg-yellow'>
        			<h2>".$fctb_title."</h2>
        			<p>".$fctb_subtitle."</p>
        		</section>
-			<section class='team-block generic bg-white'>";
+			<section class='team-block generic-lg bg-white'>";
 			
 			
 			// BOARD
@@ -251,11 +250,9 @@ if( have_rows('flexible_content_block') ):
 			
 			if($fctb_link) {
 				echo "
-			    <div class='blue-btn'>
-       				<a href='".$fctb_link['url']."' target='".$fctb_link['target']."'>
-       					".$fctb_link['title']."
-       				</a> 
-   				</div>
+   				<a class='blue-btn' href='".$fctb_link['url']."' target='".$fctb_link['target']."'>
+   					".$fctb_link['title']."
+   				</a> 
 				";
 			}
 				
@@ -274,7 +271,7 @@ if( have_rows('flexible_content_block') ):
 			
        		echo "
        		<!-- Image CTA Block -->
-       		<section class='generic bg-light-grey'>
+       		<section class='generic-lg bg-light-grey'>
        			<div class='image-cta-filter'>
        			
        				<div>
@@ -282,11 +279,10 @@ if( have_rows('flexible_content_block') ):
 	   					<p>".$fcicta_subtitle."</p>
 	   				</div>
 	   				
-       				<div class='blue-btn'>
-	       				<a href='".$fcicta_link['url']."' target='".$fcicta_link['target']."'>
-	       					".$fcicta_link['title']."
-	       				</a> 
-       				</div>  			       			
+       				<a class='blue-btn' href='".$fcicta_link['url']."' target='".$fcicta_link['target']."'>
+       					".$fcicta_link['title']."
+       				</a> 
+       				
       			</div>  			
        			<div class='image-cta' style='background-image:url(".$fcicta_image['url'].");'>
        			</div>
@@ -301,7 +297,7 @@ if( have_rows('flexible_content_block') ):
 			
        		echo "
        		<!-- News Block -->
-			<section class='generic bg-light-teal more-news'>
+			<section class='generic-lg bg-light-teal more-news'>
 				<h2>".$fcnb_title."</h2>
 			
 				<div class='blog-cards-container'>
@@ -359,7 +355,7 @@ if( have_rows('flexible_content_block') ):
 	   		
        		echo "
        		<!-- Ordered List Block -->
-   			<section class='generic bg-".$fcol_background_color." ordered-list-block'>
+   			<section class='generic-lg bg-".$fcol_background_color." ordered-list-block'>
    				<h2 class='fcol-title'>".$fcol_title."</h2>
    				<div class='ordered-list-block-container'>
    			";
@@ -452,7 +448,7 @@ if( have_rows('flexible_content_block') ):
 	   		
        		echo "
        		<!-- Contact Form Block -->
-   			<section class='generic bg-light-grey contact-form-block'>
+   			<section class='generic-lg bg-light-grey contact-form-block'>
    				<h2>".$fccf_title."</h2>";
    				
    				echo do_shortcode('[contact-form-7 id="5" title="Contact form"]');
@@ -471,7 +467,7 @@ if( have_rows('flexible_content_block') ):
 	   		
        		echo "
        		<!-- PEOPLE HIGHLIGHT BLOCK -->
-   			<section class='generic bg-".$fcphb_background_color."'>";
+   			<section class='generic-lg bg-".$fcphb_background_color."'>";
    				
    			if ($people_count <= 1) {
    				echo "
@@ -545,7 +541,7 @@ if( have_rows('flexible_content_block') ):
 	   		
        		echo "
        		<!-- Company Info Block -->
-   			<section class='generic bg-teal company-info-block'>
+   			<section class='generic-lg bg-teal company-info-block'>
    			
    				<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2378.61412282572!2d-2.9719168841593877!3d53.403842279991245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487b211897cfef0b%3A0x325828a436916911!2sLiverpool%20Science%20Park!5e0!3m2!1sen!2suk!4v1593614268471!5m2!1sen!2suk' width='600' height='450' frameborder='0' style='border:0;' allowfullscreen='' aria-hidden='false' tabindex='0'></iframe>   
    							

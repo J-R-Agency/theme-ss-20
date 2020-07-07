@@ -22,7 +22,7 @@ global $post;
     ?>
     
 
-	<section class="page-intro <?php echo $post_slug = $post->post_name; ?> generic bg-<?php echo $pi_background_color; ?>">
+	<section class="page-intro <?php echo $post_slug = $post->post_name; ?> generic-lg bg-<?php echo $pi_background_color; ?>">
 		
 		<!-- Title -->
 		<?php
@@ -63,11 +63,9 @@ global $post;
 		<?php
 			if ($pi_button) {
 				echo "
-				<div class='blue-btn'>
-					<a href='".$pi_button['url']."' target='".$pi_button['target']."'>
-						".$pi_button['title']."
-					</a>
-				</div>
+				<a class='blue-btn' href='".$pi_button['url']."' target='".$pi_button['target']."'>
+					".$pi_button['title']."
+				</a>
 				";
 			} else {
 				echo "";

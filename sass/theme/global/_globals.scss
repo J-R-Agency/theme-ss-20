@@ -1,4 +1,4 @@
-@mixin global-padding {
+@mixin lg-padding {
 	padding: 2rem 1rem;
 	@include respond-to('md'){
 		padding: 2rem 4rem;
@@ -8,16 +8,26 @@
 	}		
 }
 
-.generic {
-	@include global-padding;
+html {
+	display: flex;
+	justify-content: center;	
 }
 
+body {
+	background-color: $light-grey;
+	box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);
+	max-width: 1440px;
+}
+
+.generic-lg {
+	@include lg-padding;
+}
 
 // COLORS ----
 .bg-white {
 	background-color: white;
 	color: $dark-teal;
-	a {
+	a:not(.blue-btn) {
 		color: $dark-teal;
 	}
 }
@@ -35,7 +45,7 @@
 .bg-light-teal {
 	background-color: $light-teal;
 	color: $dark-teal;
-	a {
+	a:not(.blue-btn) {
 		color: $light-blue;
 	}
 }
@@ -43,7 +53,7 @@
 .bg-teal {
 	background-color: $teal;
 	color: white;
-	a {
+	a:not(.blue-btn) {
 		color: white;
 	}
 }
@@ -51,7 +61,7 @@
 .bg-dark-teal {
 	background-color: $dark-teal;
 	color: white;
-	a {
+	a:not(.blue-btn) {
 		color: white;
 	}
 }
@@ -59,7 +69,7 @@
 .bg-yellow {
 	background-color: $yellow;
 	color: $dark-teal;
-	a {
+	a:not(.blue-btn) {
 		color: $dark-teal;
 	}
 }

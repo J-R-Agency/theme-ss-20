@@ -581,7 +581,7 @@ if( have_rows('flexible_content_block') ):
 	   						echo "<a href='".$fcitb_image_link['url']."' target='".$fcitb_image_link['target']."'>";
    						}
    						
-   						echo "<img class='image-triptych' src='".$fcitb_image['url']."' alt='".$fcitb_image_link['title']."'>";
+   						echo "<img class='image-triptych' src='".$fcitb_image['url']."' alt='".$fcitb_image['alt']."'>";
    						
    						if ($fcitb_image_link) {
    							echo "</a>";

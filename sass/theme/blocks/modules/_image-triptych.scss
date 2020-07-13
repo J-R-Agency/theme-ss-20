@@ -1,0 +1,20 @@
+.image-triptych-block {
+	text-align: center;
+	
+	.image-triptych-container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;		
+	}
+	
+	.image-triptych {
+		flex-basis: 100%;
+		height: 200px;
+		margin: 1rem 0;
+		@include respond-to('lg') {
+			flex-basis: 33%;
+			margin: 0;
+		}
+	}
+
+}

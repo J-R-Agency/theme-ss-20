@@ -559,6 +559,36 @@ if( have_rows('flexible_content_block') ):
 			</section>
        		";
 
+
+ 	   	  // --------------------------- //
+         // - CASE: IMAGE TRIPTYCH BLOCK -//
+        // --------------------------- //
+       elseif( get_row_layout() == 'fc_image_triptych_block' ):
+			$fcitb_title = get_sub_field('fcitb_title');
+						
+   			echo "
+   			<section class='generic-lg bg-white image-triptych-block'>
+   			
+   				<h2>".$fcitb_title."</h2>";
+   				
+   				if( have_rows('fcitb_images') ):
+   					echo "<div class='image-triptych-container'>";
+   					while( have_rows('fcitb_images') ): the_row();
+   						$fcitb_image = get_sub_field('fcitb_image');
+   						$fcitb_image_link = get_sub_field('fcitb_image_link');
+   						
+   						echo "
+   						<a href='".$fcitb_image_link['url']."' target='".$fcitb_image_link['target']."'>
+   							<img class='image-triptych' src='".$fcitb_image['url']."' alt='".$fcitb_image_link['url']."'>
+   						</a>";
+   					
+   					endwhile;
+   					echo "</div>";
+   				endif;
+   			
+   			echo "</section>";
+   			
+
 			
 		endif; // Final endif        
     // End loop.

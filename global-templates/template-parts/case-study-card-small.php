@@ -14,9 +14,9 @@ $theme_path = get_template_directory_uri();
 <div class='case-study-card-small'>
 	<a href='<?php the_permalink(); ?>'>
 		<div class='csc-small-filter'>
-			<p class='cs-small-title'>
+			<h2 class='cs-small-title'>
 				<?php the_title(); ?>
-			</p>
+			</h2>
 			<p class='cs-small-excerpt'>
 				<?php $summary = get_field('cs_intro'); echo strip_tags(first_sentence($summary)); ?>
 			</p>

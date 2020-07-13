@@ -13,6 +13,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	padding-top: 2rem;
 }
 
 /*-- CASE STUDY CARD (SMALL) --*/
@@ -63,6 +64,7 @@ $sm-width: 100%;
 
 .cs-small-title {
 	@include _poppins-semibold;
+	font-size: 24px;
 }
 
 .cs-small-excerpt {
@@ -141,9 +143,5 @@ $lg-width: 100%;
 .cs-large-title {
 	@include _poppins-semibold;
 	margin-bottom: 1rem;
-	font-size: 1.5rem;
-	@include respond-to('lg') {
-		font-size: inherit;
-		font-size: 2rem;
-	}
+	font-size: 24px;
 }

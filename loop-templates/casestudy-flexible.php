@@ -115,23 +115,38 @@ if( have_rows('flexible_case_study_blocks') ):
 			</section>
        		"; 
 
- 	   	  // -------------------------- //
-         // ---- CASE: CONTENT BLOCK ----//
-        // -------------------------- //
-       elseif( get_row_layout() == 'cs_image' ):
-			$csi_image_file = get_sub_field('csi_image_file');
-			$csi_image_link = get_sub_field('csi_image_link');
+ 	   	  // --------------------------- //
+         // - CASE: IMAGE TRIPTYCH BLOCK -//
+        // --------------------------- //
+       elseif( get_row_layout() == 'cs_image_triptych_block' ):
+			$csitb_title = get_sub_field('csitb_title');
 						
-       		echo "
-       		<!-- Content Block -->
-			<section class='csi-container'>
-				
-				<a href='".$csi_image_link['url']."' target='".$csi_image_link['target']."'>
-					<img src='".$csi_image_file['url']."' alt='".$csi_image_file['alt']."'>
-				</a>
-				
-			</section>
-       		"; 
+   			echo "
+   			<section class='generic-lg bg-white image-triptych-block'>
+   			
+   				<h2>".$csitb_title."</h2>";
+   				
+   				if( have_rows('csitb_images') ):
+   					echo "<div class='image-triptych-container'>";
+   					while( have_rows('csitb_images') ): the_row();
+   						$csitb_image = get_sub_field('csitb_image');
+   						$csitb_image_link = get_sub_field('csitb_image_link');
+   						
+   						if ($csitb_image_link) {
+	   						echo "<a href='".$csitb_image_link['url']."' target='".$csitb_image_link['target']."'>";
+   						}
+   						
+   						echo "<img class='image-triptych' src='".$csitb_image['url']."' alt='".$csitb_image['alt']."'>";
+   						
+   						if ($csitb_image_link) {
+   							echo "</a>";
+   						}
+   					
+   					endwhile;
+   					echo "</div>";
+   				endif;
+   			
+   			echo "</section>";
 
 			
 		endif; // Final endif        

@@ -577,10 +577,15 @@ if( have_rows('flexible_content_block') ):
    						$fcitb_image = get_sub_field('fcitb_image');
    						$fcitb_image_link = get_sub_field('fcitb_image_link');
    						
-   						echo "
-   						<a href='".$fcitb_image_link['url']."' target='".$fcitb_image_link['target']."'>
-   							<img class='image-triptych' src='".$fcitb_image['url']."' alt='".$fcitb_image_link['url']."'>
-   						</a>";
+   						if ($fcitb_image_link) {
+	   						echo "<a href='".$fcitb_image_link['url']."' target='".$fcitb_image_link['target']."'>";
+   						}
+   						
+   						echo "<img class='image-triptych' src='".$fcitb_image['url']."' alt='".$fcitb_image_link['url']."'>";
+   						
+   						if ($fcitb_image_link) {
+   							echo "</a>";
+   						}
    					
    					endwhile;
    					echo "</div>";

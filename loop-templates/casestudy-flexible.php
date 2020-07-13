@@ -115,6 +115,22 @@ if( have_rows('flexible_case_study_blocks') ):
 			</section>
        		"; 
 
+ 	   	  // -------------------------- //
+         // ---- CASE: CONTENT BLOCK ----//
+        // -------------------------- //
+       elseif( get_row_layout() == 'cs_image' ):
+			$csc_style = get_sub_field('csc_style');
+			$csc_background_color = get_sub_field('csc_background_color');
+						
+       		echo "
+       		<!-- Content Block -->
+			<section class='csc-container generic-lg bg-".$csc_background_color."'>
+				
+				
+				
+			</section>
+       		"; 
+
 			
 		endif; // Final endif        
     // End loop.

@@ -20,7 +20,7 @@ $theme_path = get_template_directory_uri();
 			<p class='cs-small-excerpt'>
 				<?php $summary = get_field('cs_intro'); echo strip_tags(first_sentence($summary)); ?>
 			</p>
-			<img class='cs-card-arrow' src='<?php echo $theme_path; ?>/assets/icons/btn-arrow.png'>
+			<img class='cs-card-arrow' src='<?php echo $theme_path; ?>/assets/icons/btn-arrow-white.png'>
 		</div>
 	</a>
 	

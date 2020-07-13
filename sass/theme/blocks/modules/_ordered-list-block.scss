@@ -57,7 +57,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background-size: auto;
+		background-size: contain;
 	}
  }
 
@@ -93,9 +93,7 @@
 	
 	ol {
 		padding: 0 3rem;
-		@include respond-to('lg') {
-			padding: 0 10rem;
-		}
+		
 		li {
 			font-size: 2rem;
 			line-height: 1.5rem;

@@ -1,10 +1,10 @@
 @mixin lg-padding {
 	padding: 2rem 1rem;
 	@include respond-to('md'){
-		padding: 2rem 4rem;
+		padding: 4rem 4rem;
 	}
 	@include respond-to('xxl'){
-		padding: 4rem 10rem;
+		padding: 6rem 10rem;
 	}		
 }
 

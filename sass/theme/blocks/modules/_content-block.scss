@@ -10,13 +10,11 @@
 	}
 	.fcb-media {
 		flex-basis: 100%;
-		
 		display: flex;
 		justify-content: center;
 		
 		@include respond-to('lg') {
 			flex-basis: 50%;
-			padding: 2rem 0;
 		}
 		img {
 			object-fit: contain;
@@ -25,10 +23,6 @@
 		.fcb-video {
 			height: 100%;
 			width: 100%;
-		}
-		
-		&.margin {
-			@include lg-padding;
 		}
 		
 		&.no-margin {
@@ -47,9 +41,7 @@
 	
 	&.no-margin {
 		padding: 0;
-		.fcb-content {
-			@include lg-padding;
-		}
+		
 	}
 	
 	// Stacked on top of each other
@@ -92,6 +84,7 @@
 				padding-right: 0;
 			}
 			.fcb-content {
+				@include lg-padding;
 				@include respond-to('lg') {
 					flex-basis: 70%;
 				}
@@ -132,6 +125,7 @@
 				padding-left: 0;
 			}
 			.fcb-content {
+				@include lg-padding;
 				@include respond-to('lg') {
 					flex-basis: 70%;
 				}
@@ -163,13 +157,6 @@
 /*-- CASE STUDY CONTENT BLOCK --*/
 
 .csc-container {
-	padding: 2rem 1rem;
-	@include respond-to('md'){
-		padding: 3rem 4rem;
-	}
-	@include respond-to('lg'){
-		padding: 6rem 10rem;
-	}
 	
 	&.bg-teal {
 		@include respond-to('lg') {

@@ -119,14 +119,16 @@ if( have_rows('flexible_case_study_blocks') ):
          // ---- CASE: CONTENT BLOCK ----//
         // -------------------------- //
        elseif( get_row_layout() == 'cs_image' ):
-			$csc_style = get_sub_field('csc_style');
-			$csc_background_color = get_sub_field('csc_background_color');
+			$csi_image_file = get_sub_field('csi_image_file');
+			$csi_image_link = get_sub_field('csi_image_link');
 						
        		echo "
        		<!-- Content Block -->
-			<section class='csc-container generic-lg bg-".$csc_background_color."'>
+			<section class='csi-container'>
 				
-				
+				<a href='".$csi_image_link['url']."' target='".$csi_image_link['target']."'>
+					<img src='".$csi_image_file['url']."' alt='".$csi_image_file['alt']."'>
+				</a>
 				
 			</section>
        		"; 

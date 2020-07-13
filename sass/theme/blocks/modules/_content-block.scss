@@ -157,7 +157,12 @@
 /*-- CASE STUDY CONTENT BLOCK --*/
 
 .csc-container {
-	
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	@include respond-to('lg') {
+		padding-top: 8rem;
+		padding-bottom: 8rem;		
+	}
 	&.bg-teal {
 		@include respond-to('lg') {
 			background-image:

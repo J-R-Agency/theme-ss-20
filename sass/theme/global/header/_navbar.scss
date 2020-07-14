@@ -59,10 +59,14 @@
 
 // Login
 .login-container {
-	padding: 1rem 0;
+	padding: 1rem;
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
+	
+	@include respond-to ('xxl') {
+		padding: 1rem 0;
+	}
 	
 	p {
 		margin: 0;

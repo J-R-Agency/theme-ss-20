@@ -79,8 +79,12 @@
 		padding: 1rem 4rem;	
 	}
 	
-	@include respond-to('lg') {
-		padding: 1rem 10rem;
+	@include respond-to('xxl') {
+		padding: 1rem 0;
+	}
+	
+	.generic-wrapper {
+		width: 100%;
 	}
 	
 	.share {

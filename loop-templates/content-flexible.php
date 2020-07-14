@@ -372,11 +372,11 @@ if( have_rows('flexible_content_block') ):
        		<!-- Ordered List Block -->
    			<section class='generic-lg bg-".$fcol_background_color." ordered-list-block'
    			style =
-	   					 'background-image:url(".$fcol_image_left['url']."),
-	   					 				   url(".$fcol_image_right['url'].");
-	   					 background-position: center left, center right;
-	   					 background-repeat: no-repeat;
-	   					 '
+				 'background-image:url(".$fcol_image_left['url']."),
+				 				   url(".$fcol_image_right['url'].");
+				 background-position: center left, center right;
+				 background-repeat: no-repeat;
+				 '
    			
    			>
    				<div class='generic-wrapper'>

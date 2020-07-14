@@ -24,7 +24,8 @@
 	background-size: cover;
 	
 	@include respond-to('lg') {
-		width: 80%;
+		width: 100%;
+		max-width: 1440px;
 		height: 500px;
 	}
 }

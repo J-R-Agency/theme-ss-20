@@ -26,14 +26,17 @@ if( have_rows('flexible_case_study_blocks') ):
        if( get_row_layout() == 'cs_wp_content' ):
        		
        		echo "<!-- Content Module -->
-				<section class='generic-lg bg-white cs-wp-content'>";
+				<section class='generic-lg bg-white cs-wp-content'>
+					<div class='generic-wrapper'>
+				";
 				
-			if (have_posts()) : while (have_posts()) : the_post();
-					the_content();
-				endwhile;
-			endif;
+					if (have_posts()) : while (have_posts()) : the_post();
+							the_content();
+						endwhile;
+					endif;
 										
-			echo "</section>
+			echo "</div>
+			</section>
        		";
        		
  	   	  // -------------------------- //
@@ -48,26 +51,25 @@ if( have_rows('flexible_case_study_blocks') ):
        		echo "
        		<!-- Quote Block -->
 			<section class='cs-quote-block generic-lg bg-".$csq_background_color."'>
+				<div class='generic-wrapper'>
+					<div class='cs-quote'>
+						<p>".$csq_quote."</p>";
 				
-				<div class='cs-quote'>
-					<p>".$csq_quote."</p>";
-			
-			if ($csq_citation) {
-			echo	"<div class='cs-citation'>";
-			}
-			
-			if ($csq_portrait) {
-				echo "<img src='".$csq_portrait['url']."' alt='".$csq_portrait['alt']."'>";
-			}
-			
-			if ($csq_citation) {	
-				echo "<cite> - ".$csq_citation."</cite>
-				</div>";				
-			}
-
-					
+						if ($csq_citation) {
+						echo	"<div class='cs-citation'>";
+						}
+						
+						if ($csq_portrait) {
+							echo "<img src='".$csq_portrait['url']."' alt='".$csq_portrait['alt']."'>";
+						}
+						
+						if ($csq_citation) {	
+							echo "<cite> - ".$csq_citation."</cite>
+							</div>";				
+						}
 					
 			echo    "</div>
+				</div>
 			</section>
        		";       		
 
@@ -81,15 +83,15 @@ if( have_rows('flexible_case_study_blocks') ):
        		echo "
        		<!-- Video Block -->
 			<section class='cs-video-block generic-lg bg-light-grey'>
-				
-				<h3>".$csv_title."</h3>
-				
-				<div class='container'>
-					<div class='embed-responsive embed-responsive-16by9'>
-						".$csv_video_embed."
+				<div class='generic-wrapper'>
+					<h3>".$csv_title."</h3>
+					
+					<div class='container'>
+						<div class='embed-responsive embed-responsive-16by9'>
+							".$csv_video_embed."
+						</div>
 					</div>
 				</div>
-				
 			</section>
        		";       		
 
@@ -105,13 +107,13 @@ if( have_rows('flexible_case_study_blocks') ):
        		echo "
        		<!-- Content Block -->
 			<section class='csc-container generic-lg bg-".$csc_background_color."'>
-				
-				<h3>".$csc_title."</h3>
-				
-				<div class='csc-content ".$csc_style."'>
-					".$csc_content."
+				<div class='generic-wrapper'>
+					<h3>".$csc_title."</h3>
+					
+					<div class='csc-content ".$csc_style."'>
+						".$csc_content."
+					</div>
 				</div>
-				
 			</section>
        		"; 
 
@@ -123,30 +125,31 @@ if( have_rows('flexible_case_study_blocks') ):
 						
    			echo "
    			<section class='generic-lg bg-white image-triptych-block'>
+   				<div class='generic-wrapper'>
+	   				<h2>".$csitb_title."</h2>";
+	   				
+	   				if( have_rows('csitb_images') ):
+	   					echo "<div class='image-triptych-container'>";
+	   					while( have_rows('csitb_images') ): the_row();
+	   						$csitb_image = get_sub_field('csitb_image');
+	   						$csitb_image_link = get_sub_field('csitb_image_link');
+	   						
+	   						if ($csitb_image_link) {
+		   						echo "<a href='".$csitb_image_link['url']."' target='".$csitb_image_link['target']."'>";
+	   						}
+	   						
+	   						echo "<img class='image-triptych' src='".$csitb_image['url']."' alt='".$csitb_image['alt']."'>";
+	   						
+	   						if ($csitb_image_link) {
+	   							echo "</a>";
+	   						}
+	   					
+	   					endwhile;
+	   					echo "</div>";
+	   				endif;
    			
-   				<h2>".$csitb_title."</h2>";
-   				
-   				if( have_rows('csitb_images') ):
-   					echo "<div class='image-triptych-container'>";
-   					while( have_rows('csitb_images') ): the_row();
-   						$csitb_image = get_sub_field('csitb_image');
-   						$csitb_image_link = get_sub_field('csitb_image_link');
-   						
-   						if ($csitb_image_link) {
-	   						echo "<a href='".$csitb_image_link['url']."' target='".$csitb_image_link['target']."'>";
-   						}
-   						
-   						echo "<img class='image-triptych' src='".$csitb_image['url']."' alt='".$csitb_image['alt']."'>";
-   						
-   						if ($csitb_image_link) {
-   							echo "</a>";
-   						}
-   					
-   					endwhile;
-   					echo "</div>";
-   				endif;
-   			
-   			echo "</section>";
+   			echo "</div>
+   			</section>";
 
 			
 		endif; // Final endif        

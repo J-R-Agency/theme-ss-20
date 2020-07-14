@@ -111,6 +111,7 @@
 
 .icon-list {
 	@include list;
+	flex-basis: 50%;
 	.icon-list-item {
 		display: flex;
 		flex-direction: column;

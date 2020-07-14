@@ -57,7 +57,7 @@
 		@include icon-image(100px, 100px);
 	}
 	&.logo {
-		@include icon-image(150px, 200px);
+		@include icon-image(150px, 150px);
 		@include respond-to('xxl') {
 			@include icon-image(200px, 200px);
 		}

@@ -26,6 +26,9 @@ p, p > a, span, cite, li {
 	@include _fira-sans-regular;
 	font-size: 18px;
 	line-height: 2rem;
+	@include respond-to('xxl') {
+		font-size: 21px;
+	}
 }
 
 a {

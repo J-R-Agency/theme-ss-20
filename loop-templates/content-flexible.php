@@ -52,7 +52,8 @@ if( have_rows('flexible_content_block') ):
 	   		
 	   		echo "
        		<!-- FC Content Block -->
-			<section class='content-block ".$fcb_margins." ".$fcb_style." ".sanitize_title($fcb_title)." bg-".$fcb_background_color."'>
+			<section class='content-block ".sanitize_title($fcb_title)." bg-".$fcb_background_color."'>
+				<div class='generic-wrapper ".$fcb_style." ".$fcb_margins."'>
 			";
 			
 				if( have_rows('fcb_media') ):
@@ -86,7 +87,8 @@ if( have_rows('flexible_content_block') ):
 				} 
 				echo "</div>";
 			
-			echo"</div>
+			echo "</div>
+				</div>
 			</section>
        		";   
    		   		

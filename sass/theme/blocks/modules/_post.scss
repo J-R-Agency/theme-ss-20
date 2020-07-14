@@ -54,7 +54,11 @@
 .entry-content {
 	p, h1, h2, h3, h4 {
 		margin-bottom: 2rem;
-	}	
+	}
+	
+	a {
+		color: $light-blue !important;
+	}
 	
 	@include respond-to('lg') {
 		background-image:

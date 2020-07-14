@@ -9,6 +9,8 @@
 defined( 'ABSPATH' ) || exit;
 
 $theme_path = get_template_directory_uri();
+$author_name = get_the_author_meta('display_name');
+
 ?>
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
@@ -33,7 +35,7 @@ $theme_path = get_template_directory_uri();
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 			
 			<div class='entry-meta-bottom'>
-				<span class="entry-author"> By <?php the_author(); ?></span>
+				<span class="entry-author"> By <?php echo $author_name; ?></span>
 				<span class="entry-category"><?php the_category(' ',' '); ?></span>
 			</div>
 		</div>

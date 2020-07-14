@@ -23,7 +23,7 @@ global $post;
     
 
 	<section class="page-intro <?php echo $post_slug = $post->post_name; ?> generic-lg bg-<?php echo $pi_background_color; ?>">
-		
+		<div class='generic-wrapper page-intro'>
 		<!-- Title -->
 		<?php
 			if ($pi_title) {
@@ -96,7 +96,7 @@ global $post;
 			endif;
 		?>
 		
-		
+		</div>
 	</section>
 	
 	

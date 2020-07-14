@@ -1,7 +1,7 @@
 .company-info-block {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: space-between;
 	
 	@include respond-to ('lg') {
 		flex-direction: row;
@@ -13,6 +13,9 @@
 		@include respond-to ('lg') {
 			width: 600px;
 			height: auto;
+		}
+		@include respond-to ('xxl') {
+			width: 1000px;
 		}
 	}
 	

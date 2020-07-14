@@ -31,7 +31,9 @@ if( have_rows('flexible_content_block') ):
 	       		<!-- Sitewide Notice -->
 	   			<a class='sitewide-notice-link' href='".$sitewide_notice['sn_link']['url']."' target='".$sitewide_notice['sn_link']['target']."'>
 					<section class='sitewide-notice bg-".$sitewide_notice['sn_color']."'>
-						".$sitewide_notice['sn_text']."
+						<div class='generic-wrapper'>
+							".$sitewide_notice['sn_text']."
+						</div>
 					</section>
 				</a>
 	       		"; 
@@ -50,40 +52,41 @@ if( have_rows('flexible_content_block') ):
 	   		
 	   		echo "
        		<!-- FC Content Block -->
-			<section class='content-block ".$fcb_margins." ".$fcb_style." ".sanitize_title($fcb_title)." bg-".$fcb_background_color."'>";
+			<section class='content-block ".$fcb_margins." ".$fcb_style." ".sanitize_title($fcb_title)." bg-".$fcb_background_color."'>
+			";
 			
-			if( have_rows('fcb_media') ):
-				echo "<div class='fcb-media ".$fcb_margins."'>";
-				while ( have_rows('fcb_media') ) : the_row();
-					if( get_row_layout() == 'fcb_image' ):
-						$fcb_image_file = get_sub_field('fcb_image_file');
-						
-						echo "<img class='fcb-image' src='".$fcb_image_file['url']."' alt='".$fcb_image_file['alt']."'>";
-						
-					elseif( get_row_layout() == 'fcb_video' ): 
-						$fcb_video = get_sub_field('fcb_video');
-						
-						echo "<div class='fcb-video'>";
-						echo $fcb_video;
-						echo "</div>";
-						
-					endif;
+				if( have_rows('fcb_media') ):
+					echo "<div class='fcb-media ".$fcb_margins."'>";
+					while ( have_rows('fcb_media') ) : the_row();
+						if( get_row_layout() == 'fcb_image' ):
+							$fcb_image_file = get_sub_field('fcb_image_file');
+							
+							echo "<img class='fcb-image' src='".$fcb_image_file['url']."' alt='".$fcb_image_file['alt']."'>";
+							
+						elseif( get_row_layout() == 'fcb_video' ): 
+							$fcb_video = get_sub_field('fcb_video');
+							
+							echo "<div class='fcb-video'>";
+							echo $fcb_video;
+							echo "</div>";
+							
+						endif;
+					
+					endwhile;
+					echo "</div>";
+				endif;
 				
-				endwhile;
+				echo "<div class='fcb-content'>";
+				if ($fcb_title){
+					echo "<h2>".$fcb_title."</h2>";
+				}
+				
+				if ($fcb_content){
+					echo "<p>".$fcb_content."</p>";
+				} 
 				echo "</div>";
-			endif;
 			
-			echo "<div class='fcb-content'>";
-			if ($fcb_title){
-				echo "<h2>".$fcb_title."</h2>";
-			}
-			
-			if ($fcb_content){
-				echo "<p>".$fcb_content."</p>";
-			} 
-			echo "</div>";
-			
-			echo"
+			echo"</div>
 			</section>
        		";   
    		   		
@@ -102,63 +105,65 @@ if( have_rows('flexible_content_block') ):
 			
 			echo "
 			<!-- Icon Set -->
-			<section class='fc-icon-set ".sanitize_title($fcis_title)." generic-lg bg-".$fcis_background_color."'>";
-			
-			if ($fcis_title) {
-				echo "<h2 class='fcis-title'>".$fcis_title."</h2>";
-			} else {
-				echo "";
-			}
-			
-			if ($fcis_subtitle) {
-				echo "<p class='fcis-subtitle'>".$fcis_subtitle."</p>";
-			} else {
-				echo "";
-			}
-			
-			
-			if( have_rows('fcis_icons') ):
-				echo "<div class='fcis-container'>";
-				while ( have_rows('fcis_icons') ) : the_row();
-					$fcis_icon = get_sub_field('fcis_icon');
-					$fcis_icon_title = get_sub_field('fcis_icon_title');
-					$fcis_icon_description = get_sub_field('fcis_icon_description');
-					
-					echo "
-					<div class='fcis-wrapper column-".$fcis_columns." ".$fcis_icon_type."'>
-						<img src='".$fcis_icon['url']."' alt='".$fcis_icon['alt']."'>";
-						
-					if ($fcis_icon_title) {
-						echo "<p><strong>".$fcis_icon_title."</strong></p>";
-					} else {
-						echo "";
-					}
-					
-					if ($fcis_icon_description) {
-						echo "<div class='fcis-intro'>".$fcis_icon_description."</div>";
-					} else {
-						echo "";
-					}
-					
-					echo "
-					</div>
-					";
-					
-				endwhile;
-				echo "</div>";
-			endif;
-	
-			if ($fcis_button) {
-				echo "
-					<a class='btn' href='".$fcis_button['url']."' target='".$fcis_button['target']."'>
-					".$fcis_button['title']."
-					</a>
-					";
-			} else {
-				echo "";
-			}			
+			<section class='fc-icon-set ".sanitize_title($fcis_title)." generic-lg bg-".$fcis_background_color."'>
+				<div class='generic-wrapper'>
+			";
 				
-			echo "
+				if ($fcis_title) {
+					echo "<h2 class='fcis-title'>".$fcis_title."</h2>";
+				} else {
+					echo "";
+				}
+				
+				if ($fcis_subtitle) {
+					echo "<p class='fcis-subtitle'>".$fcis_subtitle."</p>";
+				} else {
+					echo "";
+				}
+				
+				
+				if( have_rows('fcis_icons') ):
+					echo "<div class='fcis-container'>";
+					while ( have_rows('fcis_icons') ) : the_row();
+						$fcis_icon = get_sub_field('fcis_icon');
+						$fcis_icon_title = get_sub_field('fcis_icon_title');
+						$fcis_icon_description = get_sub_field('fcis_icon_description');
+						
+						echo "
+						<div class='fcis-wrapper column-".$fcis_columns." ".$fcis_icon_type."'>
+							<img src='".$fcis_icon['url']."' alt='".$fcis_icon['alt']."'>";
+							
+						if ($fcis_icon_title) {
+							echo "<p><strong>".$fcis_icon_title."</strong></p>";
+						} else {
+							echo "";
+						}
+						
+						if ($fcis_icon_description) {
+							echo "<div class='fcis-intro'>".$fcis_icon_description."</div>";
+						} else {
+							echo "";
+						}
+						
+						echo "
+						</div>
+						";
+						
+					endwhile;
+					echo "</div>";
+				endif;
+		
+				if ($fcis_button) {
+					echo "
+						<a class='btn' href='".$fcis_button['url']."' target='".$fcis_button['target']."'>
+						".$fcis_button['title']."
+						</a>
+						";
+				} else {
+					echo "";
+				}			
+				
+			echo "</div>
 			</section>
 			";
 			
@@ -173,7 +178,9 @@ if( have_rows('flexible_content_block') ):
 			
        		echo "
        		<!-- Quote Block -->
-			<section class='quote-block generic-lg bg-".$fcqb_background_color."'>";
+			<section class='generic-lg bg-".$fcqb_background_color."'>
+				<div class='quote-block generic-wrapper'>
+			";
 				
 			if ($fcqb_image) {
 				$fb_class = 'half-width';
@@ -201,6 +208,7 @@ if( have_rows('flexible_content_block') ):
 			}
 			
 			echo "</div>
+				</div>
 			</section>
        		"; 
        		
@@ -216,47 +224,51 @@ if( have_rows('flexible_content_block') ):
        		echo "
        		<!-- Team Block -->
        		<section class='team-banner generic-lg bg-yellow'>
-       			<h2>".$fctb_title."</h2>
-       			<p>".$fctb_subtitle."</p>
+       			<div class='generic-wrapper'>
+       				<h2>".$fctb_title."</h2>
+	   				<p>".$fctb_subtitle."</p>
+	   			</div>
        		</section>
-			<section class='team-block generic-lg bg-white'>";
+			<section class='team-block generic-lg bg-white'>
+				<div class='generic-wrapper'>
+			";
 			
 			
-			// BOARD
-			if( have_rows('fctb_board') ):
-				echo "
-				<div class='team-container'>
-					<h2>Our Board</h2>";
-				while ( have_rows('fctb_board') ) : the_row();
-					
-					include (get_template_directory() . '/global-templates/template-parts/team-member.php');
+				// BOARD
+				if( have_rows('fctb_board') ):
+					echo "
+					<div class='team-container'>
+						<h2>Our Board</h2>";
+					while ( have_rows('fctb_board') ) : the_row();
 						
-				endwhile;
-				echo "</div>";
-			endif;
-			
-			// TEAM
-			if( have_rows('fctb_team') ):
-				echo "
-				<div class='team-container'>
-					<h2>Our Team</h2>";
-				while ( have_rows('fctb_team') ) : the_row();
-					
-					include (get_template_directory() . '/global-templates/template-parts/team-member.php');
-						
-				endwhile;
-				echo "</div>";
-			endif;
-			
-			if($fctb_link) {
-				echo "
-   				<a class='btn' href='".$fctb_link['url']."' target='".$fctb_link['target']."'>
-   					".$fctb_link['title']."
-   				</a> 
-				";
-			}
+						include (get_template_directory() . '/global-templates/template-parts/team-member.php');
+							
+					endwhile;
+					echo "</div>";
+				endif;
 				
-			echo "
+				// TEAM
+				if( have_rows('fctb_team') ):
+					echo "
+					<div class='team-container'>
+						<h2>Our Team</h2>";
+					while ( have_rows('fctb_team') ) : the_row();
+						
+						include (get_template_directory() . '/global-templates/template-parts/team-member.php');
+							
+					endwhile;
+					echo "</div>";
+				endif;
+				
+				if($fctb_link) {
+					echo "
+	   				<a class='btn' href='".$fctb_link['url']."' target='".$fctb_link['target']."'>
+	   					".$fctb_link['title']."
+	   				</a> 
+					";
+				}
+				
+			echo "</div>
 			</section>"; 
 	
 	
@@ -272,20 +284,22 @@ if( have_rows('flexible_content_block') ):
        		echo "
        		<!-- Image CTA Block -->
        		<section class='generic-lg bg-light-grey'>
-       			<div class='image-cta-filter'>
-       			
-       				<div>
-       					<h2>".$fcicta_title."</h2>
-	   					<p>".$fcicta_subtitle."</p>
-	   				</div>
-	   				
-       				<a class='btn' href='".$fcicta_link['url']."' target='".$fcicta_link['target']."'>
-       					".$fcicta_link['title']."
-       				</a> 
-       				
-      			</div>  			
-       			<div class='image-cta' style='background-image:url(".$fcicta_image['url'].");'>
-       			</div>
+       			<div class='generic-wrapper'>
+	       			<div class='image-cta-filter'>
+	       			
+	       				<div>
+	       					<h2>".$fcicta_title."</h2>
+		   					<p>".$fcicta_subtitle."</p>
+		   				</div>
+		   				
+	       				<a class='btn' href='".$fcicta_link['url']."' target='".$fcicta_link['target']."'>
+	       					".$fcicta_link['title']."
+	       				</a> 
+	       				
+	      			</div>  			
+	       			<div class='image-cta' style='background-image:url(".$fcicta_image['url'].");'>
+	       			</div>
+	       		</div>
        		</section>";
 					      		
 
@@ -298,9 +312,10 @@ if( have_rows('flexible_content_block') ):
        		echo "
        		<!-- News Block -->
 			<section class='generic-lg bg-light-teal more-news'>
-				<h2>".$fcnb_title."</h2>
-			
-				<div class='blog-cards-container'>
+				<div class='generic-wrapper'>
+					<h2>".$fcnb_title."</h2>
+				
+					<div class='blog-cards-container'>
 			";
 												
 					$args = array(
@@ -323,7 +338,7 @@ if( have_rows('flexible_content_block') ):
 					wp_reset_query();	
 								
 						
-			echo "
+			echo "</div>
 				</div>
 			</section>
 			";	     
@@ -355,16 +370,18 @@ if( have_rows('flexible_content_block') ):
 	   		
        		echo "
        		<!-- Ordered List Block -->
-   			<section class='generic-lg bg-".$fcol_background_color." ordered-list-block'>
-   				<h2 class='fcol-title'>".$fcol_title."</h2>
-   				<div class='ordered-list-block-container'
-   					 style =
-   					 'background-image:url(".$fcol_image_left['url']."),
-   					 				   url(".$fcol_image_right['url'].");
-   					 background-position: center left, center right;
-   					 background-repeat: no-repeat;
-   					 '
-   				>
+   			<section class='generic-lg bg-".$fcol_background_color." ordered-list-block'
+   			style =
+	   					 'background-image:url(".$fcol_image_left['url']."),
+	   					 				   url(".$fcol_image_right['url'].");
+	   					 background-position: center left, center right;
+	   					 background-repeat: no-repeat;
+	   					 '
+   			
+   			>
+   				<div class='generic-wrapper'>
+	   				<h2 class='fcol-title'>".$fcol_title."</h2>
+	   				<div class='ordered-list-block-container'>
    			";
  
  
@@ -428,6 +445,7 @@ if( have_rows('flexible_content_block') ):
    				}
    				
    			echo "</div>
+   				</div>
 			</section>
        		";
 
@@ -441,11 +459,13 @@ if( have_rows('flexible_content_block') ):
        		echo "
        		<!-- Contact Form Block -->
    			<section class='generic-lg bg-light-grey contact-form-block'>
-   				<h2>".$fccf_title."</h2>";
+   				<div class='generic-wrapper'>
+	   				<h2>".$fccf_title."</h2>";
+	   				
+	   				echo do_shortcode('[contact-form-7 id="5" title="Contact form"]');
    				
-   				echo do_shortcode('[contact-form-7 id="5" title="Contact form"]');
-   				
-			echo "</section>
+			echo "</div>
+			</section>
        		";
 
 
@@ -459,65 +479,67 @@ if( have_rows('flexible_content_block') ):
 	   		
        		echo "
        		<!-- PEOPLE HIGHLIGHT BLOCK -->
-   			<section class='generic-lg bg-".$fcphb_background_color."'>";
+   			<section class='generic-lg bg-".$fcphb_background_color."'>
+   				<div class='generic-wrapper'>
+   			";
    				
-   			if ($people_count <= 1) {
-   				echo "
-   				<div class='people-highlight-block'>
-	   				<div class='people-highlight-container'>
-	   					<h2>".$fcphb_title."</h2>
-   				";
-   			} else {
-	   			echo "
-	   			<div class='people-highlight-block'>
-		   			<h2>".$fcphb_title."</h2>
-		   			<div class='people-highlight-container'>
-	   			";
-   			}
-   				
-   				if( have_rows('fcphb_people') ):
-   					while ( have_rows('fcphb_people') ) : the_row();
-   						$fcphb_portrait = get_sub_field('fcphb_portrait');
-   						$fcphb_name = get_sub_field('fcphb_name');
-   						$fcphb_position = get_sub_field('fcphb_position');
-   						
-   						echo "
-   						<div class='people-wrapper'>
-   							<img class='portrait' src='".$fcphb_portrait['url']."' alt='".$fcphb_portrait['alt']."'>
-   							<div class='people-info'>
-   								<p class='fcphb-name'><strong>".$fcphb_name."</strong></p>
-   								<p class='fcphb-position'>".$fcphb_position."</p>";
-   								
-   									if( have_rows('fcphb_social_media') ):
-   										echo "
-   										<div class='people-social-media'>
-   											<span>Connect</span>
-   										";
-   										while ( have_rows('fcphb_social_media') ) : the_row();
-   											$social_media_type = get_sub_field('social_media_type');
-   											$social_media_link = get_sub_field('social_media_link');
-   											
-   											echo "
-   											<a href='".$social_media_link['url']."' target='_blank'>
-   												<img src='".$theme_path."/assets/social-media/".$social_media_type."-logo-blue.png' alt='".$social_media_type."'>
-   											</a>
-   											";
-   										
-   										endwhile;
-   										echo "</div>";
-   									endif;
-   									
-   						echo	"
-   							</div>
-   						</div>
-   						";
-   					endwhile;
-   				endif;
-   			
-   			echo "</div>
-   			</div>";   			
-   				
-			echo "</section>
+	   			if ($people_count <= 1) {
+	   				echo "
+	   				<div class='people-highlight-block'>
+		   				<div class='people-highlight-container'>
+		   					<h2>".$fcphb_title."</h2>
+	   				";
+	   			} else {
+		   			echo "
+		   			<div class='people-highlight-block'>
+			   			<h2>".$fcphb_title."</h2>
+			   			<div class='people-highlight-container'>
+		   			";
+	   			}
+	   				
+	   				if( have_rows('fcphb_people') ):
+	   					while ( have_rows('fcphb_people') ) : the_row();
+	   						$fcphb_portrait = get_sub_field('fcphb_portrait');
+	   						$fcphb_name = get_sub_field('fcphb_name');
+	   						$fcphb_position = get_sub_field('fcphb_position');
+	   						
+	   						echo "
+	   						<div class='people-wrapper'>
+	   							<img class='portrait' src='".$fcphb_portrait['url']."' alt='".$fcphb_portrait['alt']."'>
+	   							<div class='people-info'>
+	   								<p class='fcphb-name'><strong>".$fcphb_name."</strong></p>
+	   								<p class='fcphb-position'>".$fcphb_position."</p>";
+	   								
+	   									if( have_rows('fcphb_social_media') ):
+	   										echo "
+	   										<div class='people-social-media'>
+	   											<span>Connect</span>
+	   										";
+	   										while ( have_rows('fcphb_social_media') ) : the_row();
+	   											$social_media_type = get_sub_field('social_media_type');
+	   											$social_media_link = get_sub_field('social_media_link');
+	   											
+	   											echo "
+	   											<a href='".$social_media_link['url']."' target='_blank'>
+	   												<img src='".$theme_path."/assets/social-media/".$social_media_type."-logo-blue.png' alt='".$social_media_type."'>
+	   											</a>
+	   											";
+	   										
+	   										endwhile;
+	   										echo "</div>";
+	   									endif;
+	   									
+	   						echo	"
+	   							</div>
+	   						</div>
+	   						";
+	   					endwhile;
+	   				endif;
+	   			
+	   		echo "		</div>
+	   				</div>
+	   			</div>
+	   		</section>
        		";
 
  	   	  // --------------------------- //
@@ -533,28 +555,29 @@ if( have_rows('flexible_content_block') ):
 	   		
        		echo "
        		<!-- Company Info Block -->
-   			<section class='generic-lg bg-teal company-info-block'>
-   			
-   				<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2378.61412282572!2d-2.9719168841593877!3d53.403842279991245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487b211897cfef0b%3A0x325828a436916911!2sLiverpool%20Science%20Park!5e0!3m2!1sen!2suk!4v1593614268471!5m2!1sen!2suk' width='600' height='450' frameborder='0' style='border:0;' allowfullscreen='' aria-hidden='false' tabindex='0'></iframe>   
-   							
-   				<div class='company-info-wrapper'>
-   					<p class='company-phone'>".$phone_number."</p>";
-   					
-				if( have_rows('social_media', 'option') ):
-					echo "<div class='sm-icons'>";
-				    while( have_rows('social_media', 'option') ): the_row();
-				        $social_media_type = get_sub_field('social_media_type', 'option');
-						$social_media_link = get_sub_field('social_media_link', 'option');
-				    
-				     echo "
-				     	<a href='".$social_media_link['url']."'>
-				     		<img src=".$theme_path."'/assets/social-media/".$social_media_type."-logo-yellow.png'>
-				     	</a>";
-				    endwhile;
-					echo "</div>";					
-				endif;
-							
-   			echo   "<p class='company-address'>".$address."</p>
+   			<section class='generic-lg bg-teal'>
+   				<div class='company-info-block generic-wrapper'>
+	   				<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2378.61412282572!2d-2.9719168841593877!3d53.403842279991245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487b211897cfef0b%3A0x325828a436916911!2sLiverpool%20Science%20Park!5e0!3m2!1sen!2suk!4v1593614268471!5m2!1sen!2suk' width='600' height='450' frameborder='0' style='border:0;' allowfullscreen='' aria-hidden='false' tabindex='0'></iframe>   
+	   							
+	   				<div class='company-info-wrapper'>
+	   					<p class='company-phone'>".$phone_number."</p>";
+	   					
+					if( have_rows('social_media', 'option') ):
+						echo "<div class='sm-icons'>";
+					    while( have_rows('social_media', 'option') ): the_row();
+					        $social_media_type = get_sub_field('social_media_type', 'option');
+							$social_media_link = get_sub_field('social_media_link', 'option');
+					    
+					     echo "
+					     	<a href='".$social_media_link['url']."'>
+					     		<img src=".$theme_path."'/assets/social-media/".$social_media_type."-logo-yellow.png'>
+					     	</a>";
+					    endwhile;
+						echo "</div>";					
+					endif;
+								
+	   			echo   "<p class='company-address'>".$address."</p>
+	   				</div>
    				</div>
 			</section>
        		";
@@ -568,7 +591,7 @@ if( have_rows('flexible_content_block') ):
 						
    			echo "
    			<section class='generic-lg bg-white image-triptych-block'>
-   			
+   				<div class='generic-wrapper'>
    				<h2>".$fcitb_title."</h2>";
    				
    				if( have_rows('fcitb_images') ):
@@ -591,7 +614,8 @@ if( have_rows('flexible_content_block') ):
    					echo "</div>";
    				endif;
    			
-   			echo "</section>";
+   			echo "</div>
+   			</section>";
    			
 
 			

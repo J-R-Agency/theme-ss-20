@@ -30,16 +30,19 @@ get_header(); ?>
 	 
 	 
 	if ( $children->have_posts() ) :
-	 	echo "<section class='generic-lg bg-light-grey case-studies-container'>";
-	    while ( $children->have_posts() ) : $children->the_post();
+	 	echo "<section class='generic-lg bg-light-grey case-studies-block'>
+	 			<div class='case-studies-container generic-wrapper'>
+	 	";
+	    while ($children->have_posts() ) : $children->the_post();
 			$featured = get_field('featured');
 			
-			if($featured == true):
+			if ($featured == true):
 				include (get_template_directory().'/global-templates/template-parts/case-study-card-large.php');
 			endif;
 		
 		endwhile;
-		echo "</section>";
+		echo "</div>
+		</section>";
 	endif; 
 	wp_reset_query();	
 			
@@ -77,8 +80,9 @@ get_header(); ?>
 	 
 	if ( $children->have_posts() ) :
 	 	echo "<section class='generic-lg bg-white'>
-	 			<h2 style='text-align:center'>More case studies</h2>
-	 			<div class='case-study-card-container'>
+	 			<div class='generic-wrapper'>
+	 				<h2 style='text-align:center'>More case studies</h2>
+	 				<div class='case-study-card-container'>
 	 	";
 	    while ( $children->have_posts() ) : $children->the_post();
 			$featured = get_field('featured');
@@ -89,6 +93,7 @@ get_header(); ?>
 		
 		endwhile;
 		echo "</div>
+			</div>
 		</section>";
 	endif; 
 	wp_reset_query();	

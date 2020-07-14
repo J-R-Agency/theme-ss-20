@@ -9,6 +9,10 @@
 		padding: 0.5rem 10rem;
 	}
 	
+	@include respond-to('lg') {
+		padding: 0.5rem 20rem;
+	}
+	
 	&:after {
 		background-image: url(../assets/icons/btn-arrow-teal.png);
 		background-repeat: no-repeat;

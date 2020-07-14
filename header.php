@@ -24,22 +24,19 @@ $theme_path = get_template_directory_uri();
 
 <body <?php body_class(); ?> <?php understrap_body_attributes(); ?>>
 <?php do_action( 'wp_body_open' ); ?>
-<div class="site" id="page">
 
 	<!-- ******************* The Navbar Area ******************* -->
 	
 
 	<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
 
-	<nav id="main-nav" class="navbar navbar-expand-lg navbar-dark bg-white" aria-labelledby="main-nav-label">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-white" aria-labelledby="main-nav-label">
 
 		<h2 id="main-nav-label" class="sr-only">
 			<?php esc_html_e( 'Main Navigation', 'understrap' ); ?>
 		</h2>
 
-	<?php if ( 'container' === $container ) : ?>
-		<div class="container">
-	<?php endif; ?>
+		<div id="main-nav" class='generic-wrapper'>
 
 				<!-- Your site title as branding in the menu -->
 				<?php if ( ! has_custom_logo() ) { ?>
@@ -103,25 +100,28 @@ $theme_path = get_template_directory_uri();
 	
 	<!-- Notice bar -->		
 	<?php if( have_rows('notice_bar') ): ?>
-		<section class='login-container bg-teal'>
-	    <?php while( have_rows('notice_bar') ): the_row(); 
-	
-	        // Get sub field values.
-	        $nb_text = get_sub_field('nb_text');
-			$nb_button_color = get_sub_field('nb_button_color');
-			$nb_link = get_sub_field('nb_link');
-	    ?>
-	        <p><?php echo $nb_text; ?></p>
-	        
-	        <?php if ($nb_link): ?>
-	        	<a class='btn <?php echo sanitize_title($nb_link['title']); ?>' href="<?php echo $nb_link['url']; ?>">
-					<?php echo $nb_link['title']; ?>
-				</a>
-			<?php elseif (!$nb_link): ?>
-				<a class='btn login' href="https://app.safesteps.tech/login">Login</a>
-			<?php endif; ?>
-	    <?php endwhile; ?>
-	    </div>
+		<section class='bg-teal'>
+			<div class='login-container generic-wrapper'>
+			    <?php while( have_rows('notice_bar') ): the_row(); 
+			
+			        // Get sub field values.
+			        $nb_text = get_sub_field('nb_text');
+					$nb_button_color = get_sub_field('nb_button_color');
+					$nb_link = get_sub_field('nb_link');
+			    ?>
+			        <p><?php echo $nb_text; ?></p>
+			        
+			        <?php if ($nb_link): ?>
+			        	<a class='btn <?php echo sanitize_title($nb_link['title']); ?>' href="<?php echo $nb_link['url']; ?>">
+							<?php echo $nb_link['title']; ?>
+						</a>
+					<?php elseif (!$nb_link): ?>
+						<a class='btn login' href="https://app.safesteps.tech/login">Login</a>
+					<?php endif; ?>
+			    <?php endwhile; ?>
+			</div>
+	    </section>
+	    
 	<?php endif; ?>
 		
 	

@@ -15,20 +15,22 @@ $author_name = get_the_author_meta('display_name');
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
+	
+	<!-- Hero image -->
+	<?php if ( has_post_thumbnail() ): ?>
 	<header class="entry-header">
-		<!-- Hero image -->
-		<?php if ( has_post_thumbnail() ): ?>
-			<?php
-				$thumb = get_the_post_thumbnail_url();
-				$hero_image_position = get_field('hero_image_position');
-			?>				
-			<div class="blog-hero"
-				 style="
-				 background-image: url('<?php echo $thumb; ?>');
-				 background-position: <?php echo $hero_image_position; ?>">	
-			</div>				
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+		<?php
+			$thumb = get_the_post_thumbnail_url();
+			$hero_image_position = get_field('hero_image_position');
+		?>				
+		<div class="blog-hero"
+			 style="
+			 background-image: url('<?php echo $thumb; ?>');
+			 background-position: <?php echo $hero_image_position; ?>">	
+		</div>	
+	</header><!-- .entry-header -->				
+	<?php endif; ?>
+	
 	
 	<div class='generic-lg bg-white entry-meta'>
 		<div class='generic-wrapper'>

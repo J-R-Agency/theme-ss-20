@@ -50,11 +50,18 @@ if( have_rows('flexible_content_block') ):
 	   		$fcb_content = get_sub_field('fcb_content');
 	   		$fcb_margins = get_sub_field('fcb_margins');
 	   		
+	   		
+	   		if ($fcb_style == 'style1') {
+		   		$fcb_padding = 'generic-lg';	   		
+	   		} else {
+		   		$fcb_padding = '';		   		
+	   		}
+	   		
 	   		echo "
        		<!-- FC Content Block -->
-			<section class='content-block ".sanitize_title($fcb_title)." bg-".$fcb_background_color."'>
+			<section class='content-block ".sanitize_title($fcb_title)." bg-".$fcb_background_color." ".$fcb_padding."'>
 				<div class='generic-wrapper ".$fcb_style." ".$fcb_margins."'>
-			";
+			";	
 			
 				if( have_rows('fcb_media') ):
 					echo "<div class='fcb-media ".$fcb_margins."'>";

@@ -19,4 +19,13 @@ get_header(); ?>
 
 <?php get_template_part( 'loop-templates/content', 'flexible' ); ?>
 
+<section class='generic-lg bg-white'>
+	<?php
+		if (have_posts()) : while (have_posts()) : the_post();
+				the_content();
+			endwhile;
+		endif;	
+	?>
+</section>
+
 <?php get_footer(); ?>

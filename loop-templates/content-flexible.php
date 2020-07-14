@@ -368,18 +368,25 @@ if( have_rows('flexible_content_block') ):
 	   		$fcol_image_right = get_sub_field('fcol_image_right');
 	   		$fcol_image_left = get_sub_field('fcol_image_left');
 	   		
-       		echo "
-       		<!-- Ordered List Block -->
-   			<section class='generic-lg bg-".$fcol_background_color." ordered-list-block'
-   			style =
-				 'background-image:url(".$fcol_image_left['url']."),
-				 				   url(".$fcol_image_right['url'].");
-				 background-position: center left, center right;
-				 background-repeat: no-repeat;
-				 '
-   			
-   			>
-   				<div class='generic-wrapper'>
+	   		if ($fcol_image_left or $fcol_image_right) {
+	       		echo "
+	       		<!-- Ordered List Block -->
+	   			<section class='generic-lg bg-".$fcol_background_color." ordered-list-block'
+	   			style =
+					 'background-image:url(".$fcol_image_left['url']."),
+					 				   url(".$fcol_image_right['url'].");
+					 background-position: center left, center right;
+					 background-repeat: no-repeat;
+					 '
+	   			>";		   		
+	   		} else {
+		   		echo "
+		   		<!-- Ordered List Block -->
+		   		<section class='generic-lg bg-".$fcol_background_color." ordered-list-block'>
+		   		";
+	   		}
+
+   			echo "<div class='generic-wrapper'>
 	   				<h2 class='fcol-title'>".$fcol_title."</h2>
 	   				<div class='ordered-list-block-container'>
    			";

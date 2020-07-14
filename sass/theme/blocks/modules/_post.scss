@@ -70,7 +70,6 @@
 	background-color: $light-grey;
 	padding: 1rem;
 	color: $teal;
-	align-items: center;
 	@include _fira-sans-semibold;
 	
 	@include respond-to('md') {
@@ -85,6 +84,7 @@
 		width: 100%;
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 	}
 	
 	.share {

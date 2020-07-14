@@ -40,7 +40,7 @@ $theme_path = get_template_directory_uri();
 	</div>
 	
 	<div class='social-share'>
-		<div class='generic-wrapper'>
+		<div class='generic-wrapper social-share'>
 			
 			<div class='share'>
 				Share <img src='<?php echo $theme_path; ?>/assets/icons/share-icon.png' alt="Share icon">

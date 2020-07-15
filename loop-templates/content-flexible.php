@@ -143,7 +143,7 @@ if( have_rows('flexible_content_block') ):
 							<img src='".$fcis_icon['url']."' alt='".$fcis_icon['alt']."'>";
 							
 						if ($fcis_icon_title) {
-							echo "<p><strong>".$fcis_icon_title."</strong></p>";
+							echo "<h4>".$fcis_icon_title."</h4>";
 						} else {
 							echo "";
 						}

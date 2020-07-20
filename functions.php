@@ -51,6 +51,7 @@ function register_my_menu() {
 	register_nav_menu('secondary-menu',__( 'Secondary Menu' ));
 	register_nav_menu('footer-menu',__( 'Footer Menu' ));
 	register_nav_menu('products-menu',__( 'Products Menu' ));
+	register_nav_menu('contact-menu',__( 'Contact Menu' ));
 }
 add_action( 'init', 'register_my_menu' );
 

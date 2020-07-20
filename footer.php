@@ -16,7 +16,7 @@ $theme_path = get_template_directory_uri();
 
 <?php get_template_part( 'sidebar-templates/sidebar', 'footerfull' ); ?>
 
-<section class="generic-lg bg-dark-teal">
+<section class="bg-dark-teal">
 	<div class='footer-container generic-wrapper'>
 		<!-- FOOTER LEFT -->
 		<div class='footer-left'>
@@ -79,7 +79,13 @@ $theme_path = get_template_directory_uri();
 				<h3>Contact</h3>
 				
 				<div class='footer-social-media'>
-					<p>Get In Touch</p>
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location'  => 'contact-menu'
+						)
+					);
+					?>
 					<?php if( have_rows('social_media', 'option') ): ?>
 						<div class='sm-icons'>
 					    <?php while( have_rows('social_media', 'option') ): the_row(); 

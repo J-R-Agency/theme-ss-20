@@ -3,7 +3,7 @@
 		padding-right: 0;
 		text-align: center;	
 		@include respond-to('lg') {
-			flex-basis: 50%;
+			flex-basis: 40%;
 			padding-right: 15rem;
 			text-align: left;
 		}	
@@ -24,7 +24,7 @@
 	align-items: center;
 	
 	@include respond-to('lg') {
-		flex-basis: 50%;
+		flex-basis: 60%;
 		flex-direction: row;
 	}
 	

@@ -362,7 +362,7 @@ if( have_rows('flexible_content_block') ):
        		<!-- Link Block -->
    			<section class='bg-light-grey link-block'>
    				<div class='generic-wrapper'>
-   					<a class='fclb-link' href='".$fclb_link['url']."' target='".$fclb_link['target']."'>".$fclb_link['title']."</a>
+   					<a href='".$fclb_link['url']."' target='".$fclb_link['target']."'>".$fclb_link['title']."</a>
    				</div>
 			</section>
        		";

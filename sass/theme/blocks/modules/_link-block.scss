@@ -1,7 +1,12 @@
 .link-block {
 	padding: 0.75rem;
 	
-	.fclb-link {
+	.generic-wrapper {
+		
+	}
+	
+	a {
+		color: $dark-teal;
 		display: flex;
 		align-items: center;
 		&:after {
@@ -14,11 +19,7 @@
 			height: 20px;
 			content: "";
 			margin-left: 10px;
-		}		
-	}
-	
-	a {
-		color: $dark-teal;
+		}	
 	}
 	
 	.generic-wrapper {

@@ -81,3 +81,6 @@ function first_sentence($content) {
     $pos = strpos($content, '.');
     return substr($content, 0, $pos+1);
 }
+
+// Turn off contact form 7 auto styling
+add_filter('wpcf7_autop_or_not', '__return_false');

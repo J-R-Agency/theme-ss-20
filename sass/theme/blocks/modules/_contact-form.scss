@@ -7,6 +7,9 @@
 .wpcf7-form {
 	width: 100%;
 	margin: 2rem 0;
+	label {
+		margin: 0 0 2rem 0;
+	}
 }
 
 
@@ -21,12 +24,7 @@
 		@include respond-to('lg') {
 			flex-direction: row;
 			align-items: center;
-		}
-		
-		.your-name, .your-contact, .your-message {
-			display: flex;
-			flex-grow: 1;
-		}		
+		}	
 	}	
 
 }
@@ -37,17 +35,33 @@
 	font-size: 1.25rem;
 }
 
-.wpcf7-list-item-label {
-	padding-left: 0.5rem;
+span.wpcf7-list-item {
+	margin: 0 1em 0 0;
+	label {
+		display: flex;
+		margin-bottom: 0;
+		input{
+			margin-right: 0.5rem;
+		}
+	}
 }
 
-.wpcf7-list-item {
-	width: 80px;
+#your-contact-choice {
+	display: flex;
 }
 
 #contact-choice {
+	margin: 0;
 	.text {
 		flex-basis: 47%;
+	}
+}
+
+#your-name {
+	display: flex;
+	flex-direction: column;
+	@include respond-to('lg') {
+		flex-direction: row;
 	}
 }
 

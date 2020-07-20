@@ -87,8 +87,5 @@
 	}
 	.pi-intro {
 		font-weight: bold;
-		@include respond-to('lg') {
-			padding: 0 10rem;
-		}
 	}
 }

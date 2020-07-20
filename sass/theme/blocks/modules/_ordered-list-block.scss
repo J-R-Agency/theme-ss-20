@@ -59,6 +59,7 @@
 	width: 100%;
 	
 	@include respond-to('lg') {
+		width: 100%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -102,6 +103,7 @@
 			font-size: 2rem;
 			line-height: 1.5rem;
 			margin: 2rem 0;
+			max-width: 400px;
 			span {
 				font-size: 1rem;
 			}			

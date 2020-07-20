@@ -55,7 +55,7 @@
 .fcis-wrapper {
 	&.icon {
 		@include icon-image(75px, 75px);
-		@include respond-to('xl') {
+		@include respond-to('xxl') {
 			@include icon-image(100px, 100px);
 		}
 	}

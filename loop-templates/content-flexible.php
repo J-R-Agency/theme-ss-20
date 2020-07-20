@@ -503,7 +503,7 @@ if( have_rows('flexible_content_block') ):
    				
 	   			if ($people_count <= 1) {
 	   				echo "
-	   				<div class='people-highlight-block'>
+	   				<div class='people-highlight-block single'>
 		   				<div class='people-highlight-container'>
 		   					<h2>".$fcphb_title."</h2>
 	   				";

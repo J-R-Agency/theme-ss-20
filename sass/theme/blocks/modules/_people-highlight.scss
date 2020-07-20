@@ -8,6 +8,14 @@
 			text-align: left;
 		}	
 	}
+	
+	&.single {
+		.people-wrapper {
+			@include respond-to('lg') {
+				flex-basis: 60%;
+			}
+		}
+	}
 }
 
 .people-highlight-container {
@@ -24,7 +32,7 @@
 	align-items: center;
 	
 	@include respond-to('lg') {
-		flex-basis: 60%;
+		flex-basis: 50%;
 		flex-direction: row;
 	}
 	

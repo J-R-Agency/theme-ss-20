@@ -50,12 +50,12 @@
 	color: $teal;
 	padding: 0 0 0 2.5rem;
 	&:hover {
-		color: $light-blue;
+		color: $dark-teal;
 	}
 }
 
 .navbar-dark .navbar-nav .active > .nav-link {
-	color: $light-blue;
+	color: $dark-teal;
 }
 
 // Login

@@ -25,12 +25,13 @@
 	}
 	
 	&:hover {
-		color: white;
+		background-color: $dark-teal;
+		color: $light-grey;
 	}
 	
 	&.login {
 		background-color: white;
-		color: $dark-teal;
+		color: $teal;
 		margin-right: 0;
 		&:after {
 			@include btn-arrow;
@@ -45,7 +46,7 @@
 
 .btn {
 	@include btn;
-	background-color: $dark-teal;
+	background-color: $teal;
 	display: inline-flex;
 }
 
@@ -54,9 +55,9 @@ input.wpcf7-form-control.wpcf7-submit {
 	display: flex;
 	border: none;
 	color: white;
-	background-color: $dark-teal;	
+	background-color: $teal;	
 }
 
 .wpcf7 input:hover[type="submit"] {
-	background-color: $dark-teal;
+	background-color: $teal;
 }

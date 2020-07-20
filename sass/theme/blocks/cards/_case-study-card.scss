@@ -66,8 +66,10 @@ $sm-width: 100%;
 }
 
 .cs-small-title {
-	@include _poppins-semibold;
+	@include _fira-sans-bold;
 	font-size: 24px;
+	max-height: 30px;
+	overflow: hidden;
 }
 
 .cs-small-excerpt {
@@ -133,7 +135,10 @@ $lg-width: 100%;
 	max-height: 100px;
 	overflow: hidden;
 	@include respond-to('lg') {
-		width: 70%;
+		width: 50%;
+	}
+	@include respond-to('xxl') {
+		width: 40%;
 	}
 }
 
@@ -144,7 +149,7 @@ $lg-width: 100%;
 }
 
 .cs-large-title {
-	@include _poppins-semibold;
+	@include _fira-sans-bold;
 	margin-bottom: 1rem;
 	font-size: 24px;
 }

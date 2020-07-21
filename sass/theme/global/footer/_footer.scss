@@ -90,6 +90,7 @@
 	}
 	
 	#footer-address {
+		@include _fira-sans-regular;
 		margin: 1rem 0;
 		font-size: 14px;
 	}

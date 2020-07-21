@@ -68,11 +68,13 @@ span.wpcf7-list-item {
 .submit-btn {
 	display: flex;
 	justify-content: center;
+	@include _fira-sans-semibold;
 }
 
 // Error
 .wpcf7-form-control-wrap {
 	width: 100%;
+	flex-grow: 1;
 	@include respond-to('lg') {
 		width: auto;
 	}

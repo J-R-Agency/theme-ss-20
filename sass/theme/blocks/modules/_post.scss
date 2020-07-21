@@ -62,7 +62,7 @@
 		display: flex;
 		justify-content: space-between;
 		a {
-			color: $teal;
+			color: $purple;
 		}
 	}
 }
@@ -80,7 +80,10 @@
 	}
 	
 	a {
-		text-decoration: underline;
+		color: $purple !important;
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 	
 	@include respond-to('lg') {
@@ -94,6 +97,10 @@
 
 blockquote {
 	@include quote(1rem, 5rem, 100%);
+}
+
+.blocks-gallery-grid {
+	padding: 1rem 0 2rem 0;
 }
 
 figure {

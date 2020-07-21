@@ -41,6 +41,9 @@
 				background-image: url('../assets/icons/login-icon.png');
 			}
 		}
+		&:hover {
+			background-color: $light-grey;
+		}
 	}
 }
 
@@ -59,5 +62,5 @@ input.wpcf7-form-control.wpcf7-submit {
 }
 
 .wpcf7 input:hover[type="submit"] {
-	background-color: $teal;
+	background-color: $dark-teal;
 }

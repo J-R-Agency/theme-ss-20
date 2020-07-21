@@ -201,7 +201,7 @@ if( have_rows('flexible_content_block') ):
 			}
 				
 			echo "<div class='fcqb-quote ".$fb_class."'>
-					<p>".$fcqb_quote."</p>";
+					<blockquote>".$fcqb_quote."</blockquote>";
 			
 			if ($fcqb_citation['fcqb_name']) {
 			echo "<div class='fcqb-citation'>";

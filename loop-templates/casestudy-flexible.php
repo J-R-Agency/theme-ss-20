@@ -82,8 +82,7 @@ if( have_rows('flexible_case_study_blocks') ):
 			
        		echo "
        		<!-- Video Block -->
-			<section class='cs-video-block generic-lg bg-light-grey'>
-				<div class='generic-wrapper'>";
+			<section class='cs-video-block generic-lg bg-light-grey'>";
 			
 			if ($csv_title) {
 			echo	"<h3>".$csv_title."</h3>";
@@ -93,7 +92,6 @@ if( have_rows('flexible_case_study_blocks') ):
 					<div class='embed-responsive embed-responsive-16by9'>
 						".$csv_video_embed."
 					</div>
-				</div>
 			</section>
        		";       		
 

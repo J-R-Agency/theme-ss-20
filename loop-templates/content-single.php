@@ -32,7 +32,7 @@ $author_name = get_the_author_meta('display_name');
 	<?php endif; ?>
 	
 	
-	<div class='generic-lg bg-white entry-meta'>
+	<div class='generic-post bg-white entry-meta'>
 		<div class='generic-wrapper'>
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 			
@@ -58,7 +58,7 @@ $author_name = get_the_author_meta('display_name');
 	</div>
 	
 
-	<div class="generic-lg bg-white entry-content">
+	<div class="generic-post bg-white entry-content">
 		<div class='generic-wrapper'>
 			<?php the_content(); ?>
 		</div>

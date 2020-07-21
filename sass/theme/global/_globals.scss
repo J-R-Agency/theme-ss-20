@@ -19,6 +19,16 @@
 	}		
 }
 
+@mixin post-padding {
+	padding: 1rem 1rem;
+	@include respond-to('lg'){
+		padding: 1rem 10rem;
+	}
+	@include respond-to('xxl'){
+		padding: 1rem 15rem;
+	}		
+}
+
 html, body {
   overflow-x: hidden;
 }
@@ -34,6 +44,10 @@ html, body {
 
 .generic-sm {
 	@include sm-padding;
+}
+
+.generic-post {
+	@include post-padding;
 }
 
 // COLORS ----

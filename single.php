@@ -19,7 +19,7 @@ while ( have_posts() ) {
 }
 ?>
 
-<section class='generic-lg bg-light-teal more-news'>
+<section class='generic-post bg-light-teal more-news'>
 	<div class='generic-wrapper'>
 		<h2>More news</h2>
 	

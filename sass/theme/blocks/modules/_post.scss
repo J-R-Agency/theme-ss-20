@@ -46,7 +46,7 @@
 	background-size: cover;
 	
 	@include respond-to('lg') {
-		width: 90%;
+		width: 75%;
 		max-width: 1440px;
 		height: 500px;
 	}
@@ -128,7 +128,7 @@ figure {
 	@include _fira-sans-semibold;
 	
 	@include respond-to('md') {
-		padding: 1rem 4rem;	
+		padding: 1rem 10rem;	
 	}
 	
 	@include respond-to('xxl') {

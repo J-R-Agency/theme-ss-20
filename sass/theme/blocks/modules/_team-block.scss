@@ -50,30 +50,34 @@
 	
 	.portrait {
 		border-radius: 50%;
-		width: 120px;
-		height: 120px;
+		width: 140px;
+		height: 140px;
 		object-fit: cover;
 		border: 1px solid gray;
 	}
 	strong {
-		margin: 0.5rem 0;
+		margin: 1.5rem 0 0;
 	}
 }
 
 .team-sm-icons {
 	display: flex;
-	align-items: center;
+	align-items: baseline;
 	color: $light-blue;
 	span {
+		@include _poppins-regular;
 		margin-right: 0.5rem;
+		line-height: 0;
+		font-size: 16px;
 	}
 	a {
 		display: flex;
 		margin-right: 0.5rem;
 		img {
-			width: 20px;
-			height: 20px;
+			width: 16px;
+			height: 16px;
 			object-fit: contain;
+			object-position: bottom;
 		}
 	}
 }

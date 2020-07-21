@@ -606,11 +606,14 @@ if( have_rows('flexible_content_block') ):
         // --------------------------- //
        elseif( get_row_layout() == 'fc_image_triptych_block' ):
 			$fcitb_title = get_sub_field('fcitb_title');
+			$fcitb_intro = get_sub_field('fcitb_intro');
 						
    			echo "
-   			<section class='generic-lg bg-white image-triptych-block'>
-   				<div class='generic-wrapper'>
-   				<h2>".$fcitb_title."</h2>";
+   			<section class='generic-lg bg-white'>
+   				<div class='generic-wrapper image-triptych-block'>
+   				<h2>".$fcitb_title."</h2>
+   				<p>".$fcitb_intro."</p>
+   				";
    				
    				if( have_rows('fcitb_images') ):
    					echo "<div class='image-triptych-container'>";

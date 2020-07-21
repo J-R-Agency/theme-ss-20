@@ -122,11 +122,14 @@ if( have_rows('flexible_case_study_blocks') ):
         // --------------------------- //
        elseif( get_row_layout() == 'cs_image_triptych_block' ):
 			$csitb_title = get_sub_field('csitb_title');
-						
+			$csitb_intro = get_sub_field('csitb_intro');	
+				
    			echo "
-   			<section class='generic-lg bg-white image-triptych-block'>
-   				<div class='generic-wrapper'>
-	   				<h2>".$csitb_title."</h2>";
+   			<section class='generic-lg bg-white'>
+   				<div class='generic-wrapper image-triptych-block'>
+	   				<h2>".$csitb_title."</h2>
+	   				<p>".$csitb_intro."</p>
+	   				";
 	   				
 	   				if( have_rows('csitb_images') ):
 	   					echo "<div class='image-triptych-container'>";

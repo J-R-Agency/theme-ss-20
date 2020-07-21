@@ -50,7 +50,7 @@ if( have_rows('flexible_case_study_blocks') ):
 			
        		echo "
        		<!-- Quote Block -->
-			<section class='cs-quote-block generic-lg bg-".$csq_background_color."'>
+			<blockquote class='cs-quote-block generic-lg bg-".$csq_background_color."'>
 				<div class='generic-wrapper'>
 					<div class='cs-quote'>
 						<p>".$csq_quote."</p>";
@@ -70,7 +70,7 @@ if( have_rows('flexible_case_study_blocks') ):
 					
 			echo    "</div>
 				</div>
-			</section>
+			</blockquote>
        		";       		
 
  	   	  // -------------------------- //
@@ -83,13 +83,14 @@ if( have_rows('flexible_case_study_blocks') ):
        		echo "
        		<!-- Video Block -->
 			<section class='cs-video-block generic-lg bg-light-grey'>
-				<div class='generic-wrapper'>
-					<h3>".$csv_title."</h3>
+				<div class='generic-wrapper'>";
+			
+			if ($csv_title) {
+			echo	"<h3>".$csv_title."</h3>";
+			}
 					
-					<div class='container'>
-						<div class='embed-responsive embed-responsive-16by9'>
+			echo	"<div class='fcb-video'>
 							".$csv_video_embed."
-						</div>
 					</div>
 				</div>
 			</section>

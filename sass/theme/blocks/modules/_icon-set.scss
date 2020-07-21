@@ -75,6 +75,9 @@
 	@include respond-to('md') {
 		padding: 0 2rem;
 	}
+	@include respond-to('lg') {
+		padding: 0 4rem;
+	}
 	p {
 		@include respond-to('xxl') {
 			width: 80%;

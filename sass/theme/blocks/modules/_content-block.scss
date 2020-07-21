@@ -214,7 +214,7 @@
 		}
 		@include respond-to('lg') {
 			column-count: 2;
-			column-gap: 2rem;
+			column-gap: 4rem;
 		}
 	}
 }

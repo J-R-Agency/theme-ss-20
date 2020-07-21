@@ -85,6 +85,7 @@ blockquote {
 	}
 	&.half-width {
 		@include quote(50%);
+		margin-left: 2rem;
 	}
 }
 

@@ -22,6 +22,10 @@
 	font-family: 'poppins-semibold';	
 }
 
+* {
+	@include _fira-sans-regular;
+}
+
 p, p > a, span, cite, li {
 	@include _fira-sans-regular;
 	font-size: 18px;
@@ -29,6 +33,14 @@ p, p > a, span, cite, li {
 	@include respond-to('xxl') {
 		font-size: 21px;
 	}
+}
+
+strong {
+	@include _fira-sans-bold;
+	font-size: 18px;
+	@include respond-to('xxl') {
+		font-size: 21px;
+	}	
 }
 
 a {

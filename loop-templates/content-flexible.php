@@ -619,13 +619,17 @@ if( have_rows('flexible_content_block') ):
    						$fcitb_image_link = get_sub_field('fcitb_image_link');
    						
    						if ($fcitb_image_link) {
-	   						echo "<a href='".$fcitb_image_link['url']."' target='".$fcitb_image_link['target']."'>";
+	   						echo "<a class='image-triptych' href='".$csitb_image_link['url']."' target='".$csitb_image_link['target']."'>";
+   						} else {
+	   						echo "<div class='image-triptych'>";
    						}
    						
    						echo "<img class='image-triptych' src='".$fcitb_image['url']."' alt='".$fcitb_image['alt']."'>";
    						
    						if ($fcitb_image_link) {
    							echo "</a>";
+   						} else {
+	   						echo "</div>";
    						}
    					
    					endwhile;

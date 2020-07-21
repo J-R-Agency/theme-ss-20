@@ -89,10 +89,9 @@ if( have_rows('flexible_case_study_blocks') ):
 			echo	"<h3>".$csv_title."</h3>";
 			}
 					
-			echo	"<div class='fcb-media margin'>
-						<div class='fcb-video'>
-							".$csv_video_embed."
-						</div>
+			echo	"
+					<div class='embed-responsive embed-responsive-16by9'>
+						".$csv_video_embed."
 					</div>
 				</div>
 			</section>

@@ -25,6 +25,7 @@
 		column-count: 1;
 		@include respond-to('md') {
 			column-count: 2;
+			column-gap: 4rem;
 		}
 	}
 }

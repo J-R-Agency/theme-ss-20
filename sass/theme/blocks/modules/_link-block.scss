@@ -6,7 +6,8 @@
 	}
 	
 	a {
-		color: $dark-teal;
+		@include _fira-sans-semibold;
+		color: $teal;
 		display: flex;
 		align-items: center;
 		&:after {

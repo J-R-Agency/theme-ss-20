@@ -22,32 +22,34 @@ get_header(); ?>
 ?>
 	<!-- News Block -->
 	<section class='generic-lg bg-white more-news'>
-		<h2><?php echo $category->name; ?></h2>
-	
-		<div class='blog-cards-container'>
-	
-		<?php						
-			$args = array(
-			    'post_type'      => 'post', //write slug of post type
-			    'posts_per_page' => 3,
-			    'order'          => 'DESC',
-			    'category__in'	 => $category
-			 );
-			 
-			 $query = new WP_Query($args);
-			 
-			 
-			if ( $query->have_posts() ) :
-			 
-			    while ( $query->have_posts() ) : $query->the_post();
+		<div class='generic-wrapper'>
+			<h2><?php echo $category->name; ?></h2>
+		
+			<div class='blog-cards-container'>
+		
+			<?php						
+				$args = array(
+				    'post_type'      => 'post', //write slug of post type
+				    'posts_per_page' => 3,
+				    'order'          => 'DESC',
+				    'category__in'	 => $category
+				 );
+				 
+				 $query = new WP_Query($args);
+				 
+				 
+				if ( $query->have_posts() ) :
+				 
+				    while ( $query->have_posts() ) : $query->the_post();
+						
+						include (get_template_directory().'/global-templates/template-parts/blog-card.php');	
 					
-					include (get_template_directory().'/global-templates/template-parts/blog-card.php');	
-				
-				endwhile;
-			endif; 
-			wp_reset_query();	
-		?>
-	
+					endwhile;
+				endif; 
+				wp_reset_query();	
+			?>
+		
+			</div>
 		</div>
 	</section>  
 	

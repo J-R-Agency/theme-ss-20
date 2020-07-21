@@ -135,13 +135,17 @@ if( have_rows('flexible_case_study_blocks') ):
 	   						$csitb_image_link = get_sub_field('csitb_image_link');
 	   						
 	   						if ($csitb_image_link) {
-		   						echo "<a href='".$csitb_image_link['url']."' target='".$csitb_image_link['target']."'>";
+		   						echo "<a class='image-triptych' href='".$csitb_image_link['url']."' target='".$csitb_image_link['target']."'>";
+	   						} else {
+		   						echo "<div class='image-triptych'>";
 	   						}
 	   						
-	   						echo "<img class='image-triptych' src='".$csitb_image['url']."' alt='".$csitb_image['alt']."'>";
+	   						echo "<img src='".$csitb_image['url']."' alt='".$csitb_image['alt']."'>";
 	   						
 	   						if ($csitb_image_link) {
 	   							echo "</a>";
+	   						} else {
+		   						echo "</div>";
 	   						}
 	   					
 	   					endwhile;

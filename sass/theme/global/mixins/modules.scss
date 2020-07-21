@@ -1,14 +1,9 @@
 // Quote
-@mixin quote ($sm-padding, $lg-padding, $fb)
+@mixin quote ($fb)
 {
 	flex-basis: $fb;
 	display: flex;
-	padding: $sm-padding;
 	flex-direction: column;
-	
-	@include respond-to('lg') {
-		padding: $lg-padding;
-	}
 	
 	p {
 		@include _fira-sans-thin;

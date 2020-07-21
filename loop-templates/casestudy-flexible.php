@@ -134,8 +134,17 @@ if( have_rows('flexible_case_study_blocks') ):
 	   					echo "<div class='image-triptych-container'>";
 	   					while( have_rows('csitb_images') ): the_row();
 	   						$csitb_image = get_sub_field('csitb_image');
+	   						$csitb_image_link = get_sub_field('csitb_image_link');
+	   						
+	   						if ($csitb_image_link) {
+		   						echo "<a href='".$csitb_image_link['url']."' target='".$csitb_image_link['target']."'>";
+	   						}
 	   						
 	   						echo "<img class='image-triptych' src='".$csitb_image['url']."' alt='".$csitb_image['alt']."'>";
+	   						
+	   						if ($csitb_image_link) {
+	   							echo "</a>";
+	   						}
 	   					
 	   					endwhile;
 	   					echo "</div>";

@@ -14,9 +14,6 @@
 		object-fit: contain;
 		@include respond-to('lg') {
 			flex-basis: 30%;
-			height: auto;
-			margin: 0;
 		}
 	}
-
 }

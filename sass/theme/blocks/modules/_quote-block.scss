@@ -1,27 +1,25 @@
-@mixin quote ($sm-padding, $lg-padding, $fb)
-{
-	flex-basis: $fb;
-	display: flex;
-	padding: $sm-padding;
-	flex-direction: column;
-	
-	@include respond-to('lg') {
-		padding: $lg-padding;
-	}
-	
-	p {
-		@include _fira-sans-thin;
-		font-size: 1.7rem;
-		text-align: center;
-		line-height: 1.5em;
-		@include respond-to('lg') {
-			text-align: left;
-		}
-	}
-}
-
 blockquote {
 	margin: 0;
+}
+
+.wp-block-quote {
+	padding-left: 2rem;
+    border-left: 1px solid $teal;
+    margin-bottom: 5rem;
+    @include respond-to('lg') {
+	   padding-left: 5rem; 
+    }
+	p {
+		@include _fira-sans-thin;
+	}
+	
+	&.is-style-large {
+		@include quote(1rem, 5rem, 100%);
+		border: 0;
+		p, cite {
+			font-style: normal;
+		}
+	}
 }
 
 .quote-block {

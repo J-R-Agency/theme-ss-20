@@ -1,25 +1,3 @@
-@mixin quote ($sm-padding, $lg-padding, $fb)
-{
-	flex-basis: $fb;
-	display: flex;
-	padding: $sm-padding;
-	flex-direction: column;
-	
-	@include respond-to('lg') {
-		padding: $lg-padding;
-	}
-	
-	p {
-		@include _fira-sans-thin;
-		font-size: 1.7rem;
-		text-align: center;
-		line-height: 1.5em;
-		@include respond-to('lg') {
-			text-align: left;
-		}
-	}
-}
-
 .blog {
 	@include lg-padding;
 }
@@ -93,10 +71,6 @@
 			top right;
 		background-repeat: no-repeat;	
 	}
-}
-
-blockquote {
-	@include quote(1rem, 5rem, 100%);
 }
 
 .blocks-gallery-grid {

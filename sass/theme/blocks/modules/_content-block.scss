@@ -44,6 +44,10 @@
 		
 	}
 	
+	&.interested-in-becoming-a-partner-of-safe-steps {
+		padding-top: 0;
+	}
+	
 	// Background images
 	@include respond-to('lg') {
 		&.what-is-safe-steps {

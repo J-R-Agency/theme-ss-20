@@ -78,11 +78,11 @@ get_header(); ?>
 	 
 	$children = new WP_Query( $args );
 	
-	 
 	if ( $children->have_posts()):
 		
+		
 	 	echo "
-	 	<section class='generic-lg bg-white'>
+	 	<section class='generic-lg bg-white more-case-studies'>
 	 		<div class='generic-wrapper'>
 	 			<h2 style='text-align:center'>More case studies</h2>
 	 			<div class='case-study-card-container'>
@@ -92,9 +92,9 @@ get_header(); ?>
 	    	
 	    	$featured = get_field('featured');
 	    	
-			if($featured == false):
+			if($featured == false) {
 				include (get_template_directory().'/global-templates/template-parts/case-study-card-small.php');
-			endif;
+			}
 		
 		endwhile;
 		
@@ -107,6 +107,16 @@ get_header(); ?>
 			
 ?>
 
-
+<script>
+	( function( $ ) {
+		
+		if ( $('.case-study-card-container').children().length > 0 ) {
+			$('.more-case-studies').show();
+		} else {
+			$('.more-case-studies').hide();
+		}
+		
+	} )( jQuery );
+</script>
 
 <?php get_footer(); ?>

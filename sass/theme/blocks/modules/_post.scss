@@ -104,20 +104,10 @@ figure {
 /*-- SHARING --*/
 .social-share {
 	background-color: $light-grey;
-	padding: 1rem;
 	color: $teal;
 	@include _fira-sans-semibold;
 	
-	@include respond-to('lg') {
-		padding: 1rem 10rem;	
-	}
-	
-	@include respond-to('xxl') {
-		padding: 1rem 0;
-	}
-	
 	.generic-wrapper {
-		width: 100%;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;

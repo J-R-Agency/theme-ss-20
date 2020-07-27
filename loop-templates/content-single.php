@@ -43,7 +43,7 @@ $author_name = get_the_author_meta('display_name');
 		</div>
 	</div>
 	
-	<div class='social-share'>
+	<div class='generic-post social-share'>
 		<div class='generic-wrapper'>
 			
 			<div class='share'>

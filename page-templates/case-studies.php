@@ -79,7 +79,7 @@ get_header(); ?>
 	$children = new WP_Query( $args );
 	 
 	 
-	if ( $children->have_posts() ) :
+	if ( $children->have_posts() and $featured == false) :
 	 	echo "
 	 	<section class='generic-lg bg-white'>
 	 		<div class='generic-wrapper'>

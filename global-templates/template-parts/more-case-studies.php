@@ -31,7 +31,7 @@ $theme_path = get_template_directory_uri();
 			 $query = new WP_Query($args);
 			 
 			 
-			if ( $query->have_posts() ) :
+			if ( $query->have_posts()) :
 			
 			 	echo
 			 	"<section class='generic-lg bg-white more-case-studies'>

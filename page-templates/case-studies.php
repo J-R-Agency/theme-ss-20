@@ -71,6 +71,7 @@ get_header(); ?>
 	    'post_type'      => 'page', //write slug of post type
 	    'posts_per_page' => -1,
 	    'post_parent'    => $post->ID, //place here id of your parent page
+	    'post_status' 	 => 'publish',
 	    'orderby'		 => 'menu_order',
 	    'order'          => 'ASC'
 	 );
@@ -79,11 +80,13 @@ get_header(); ?>
 	 
 	 
 	if ( $children->have_posts() ) :
-	 	echo "<section class='generic-lg bg-white'>
-	 			<div class='generic-wrapper'>
-	 				<h2 style='text-align:center'>More case studies</h2>
-	 				<div class='case-study-card-container'>
+	 	echo "
+	 	<section class='generic-lg bg-white'>
+	 		<div class='generic-wrapper'>
+	 			<h2 style='text-align:center'>More case studies</h2>
+	 			<div class='case-study-card-container'>
 	 	";
+	 	
 	    while ( $children->have_posts() ) : $children->the_post();
 			$featured = get_field('featured');
 			
@@ -92,9 +95,11 @@ get_header(); ?>
 			endif;
 		
 		endwhile;
+		
 		echo "</div>
 			</div>
 		</section>";
+		
 	endif; 
 	wp_reset_query();	
 			

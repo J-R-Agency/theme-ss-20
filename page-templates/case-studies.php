@@ -77,9 +77,10 @@ get_header(); ?>
 	 );
 	 
 	$children = new WP_Query( $args );
+	
 	 
-	 
-	if ( $children->have_posts() and $featured == false) :
+	if ( $children->have_posts()):
+		
 	 	echo "
 	 	<section class='generic-lg bg-white'>
 	 		<div class='generic-wrapper'>
@@ -88,8 +89,9 @@ get_header(); ?>
 	 	";
 	 	
 	    while ( $children->have_posts() ) : $children->the_post();
-			$featured = get_field('featured');
-			
+	    	
+	    	$featured = get_field('featured');
+	    	
 			if($featured == false):
 				include (get_template_directory().'/global-templates/template-parts/case-study-card-small.php');
 			endif;

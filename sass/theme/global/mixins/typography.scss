@@ -54,9 +54,17 @@ a {
 h1 {
 	@include _fira-sans-bold;
 	margin-bottom: 1.5rem;
+	font-size: 38px;
 }
 
-h2, h3 {
+h2 {
 	@include _fira-sans-semibold;
 	margin-bottom: 1.5rem;
+	font-size: 24px;
+}
+
+h3 {
+	@include _fira-sans-semibold;
+	margin-bottom: 1.5rem;
+	font-size: 18px;
 }

@@ -10,12 +10,6 @@ defined( 'ABSPATH' ) || exit;
 global $post;
 $theme_path = get_template_directory_uri();
 ?>
-
-<section class='generic-lg bg-white more-case-studies'>
-	<div class='generic-wrapper'>
-		<h2>More case studies</h2>
-		
-		<div class='case-study-card-container'>
 		<?php
 			
 			$currentID = get_the_ID();
@@ -38,17 +32,28 @@ $theme_path = get_template_directory_uri();
 			 
 			 
 			if ( $query->have_posts() ) :
-			 
+			
+			 	echo
+			 	"<section class='generic-lg bg-white more-case-studies'>
+					<div class='generic-wrapper'>
+						<h2>More case studies</h2>
+						
+						<div class='case-study-card-container'>";
+						
 			    while ( $query->have_posts() ) : $query->the_post();
 					
 					include (get_template_directory().'/global-templates/template-parts/case-study-card-small.php');	
 				
 				endwhile;
+				
+				echo "
+						</div>
+					</div>
+				</section>
+				";
+				
 			endif; 
 			wp_reset_query();	
 					
 		?>		
-		</div>
-	
-	</div>
-</section>
+		

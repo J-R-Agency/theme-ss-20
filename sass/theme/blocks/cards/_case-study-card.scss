@@ -136,6 +136,7 @@ $lg-width: 100%;
 		max-height: 100px;
 	}
 	@include respond-to('xxl') {
+		width: 40%;
 		max-height: 120px;
 	}
 }

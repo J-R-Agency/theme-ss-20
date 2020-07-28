@@ -58,7 +58,7 @@
 }
 
 .pi-subtitle {
-	font-weight: bold;
+	@include _fira-sans-bold;
 }
 
 .pi-image {
@@ -76,16 +76,5 @@
 		@include respond-to('lg') {
 			padding: 1rem 3rem 3rem 3rem;
 		}
-	}
-}
-
-.covid-19 {
-	.pi-subtitle {
-		margin: 0.5rem 0;
-		font-weight: normal;
-		width: 70%;
-	}
-	.pi-intro {
-		font-weight: bold;
 	}
 }

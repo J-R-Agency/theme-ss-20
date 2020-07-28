@@ -61,23 +61,23 @@ get_header(); ?>
 						 alt='<?php echo $ss_images['ss_image_right']['alt']; ?>'>				
 				</div>
 			</div>
-			
+				
+			<?php if( have_rows('ss_secondary_list') ): ?>
 			<div class='generic-lg ss-container-bottom'>
 				<h2><?php echo $ss_secondary_list_title; ?></h2>
-				
-				<?php if( have_rows('ss_secondary_list') ): ?>
-					<div class='secondary-list'>
-					<?php while( have_rows('ss_secondary_list') ) : the_row();
-						$ss_primary_list_item = get_sub_field('ss_secondary_list_item');
-					?>
-						<div class='secondary-list-item'>
-							<img src='<?php echo $theme_path; ?>/assets/icons/checkmark-teal.png'>
-							<p><?php echo $ss_primary_list_item; ?></p>
-						</div>
-					<?php endwhile; ?>
+				<div class='secondary-list'>
+				<?php while( have_rows('ss_secondary_list') ) : the_row();
+					$ss_primary_list_item = get_sub_field('ss_secondary_list_item');
+				?>
+					<div class='secondary-list-item'>
+						<img src='<?php echo $theme_path; ?>/assets/icons/checkmark-teal.png'>
+						<p><?php echo $ss_primary_list_item; ?></p>
 					</div>
-				<?php endif; ?>		
+				<?php endwhile; ?>
+				</div>
 			</div>
+			<?php endif; ?>		
+			
 		</div>
 	</section>
 <?php endif; ?>

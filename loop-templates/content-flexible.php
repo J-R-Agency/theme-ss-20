@@ -432,7 +432,7 @@ if( have_rows('flexible_content_block') ):
 							$fcol_description = get_sub_field('fcol_description');
 							$fcol_link = get_sub_field('fcol_link');
 
-							if ( isset($fcol_link) ){
+							if ( $fcol_link ){
 							    $link_url = $fcol_link['url'];
 							    $link_title = $fcol_link['title'];
 							    $link_target = $fcol_link['target'] ? $link['target'] : '_self';

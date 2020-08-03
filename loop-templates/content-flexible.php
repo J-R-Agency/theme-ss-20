@@ -435,7 +435,7 @@ if( have_rows('flexible_content_block') ):
 							if ( $fcol_link ){
 							    $link_url = $fcol_link['url'];
 							    $link_title = $fcol_link['title'];
-							    $link_target = $fcol_link['target'] ? $link['target'] : '_self';
+							    $link_target = $fcol_link['target'] ? $fcol_link['target'] : '_self';
 
 							    if ( $link_title == "" ){
 							    	$link_title = $fcol_description;

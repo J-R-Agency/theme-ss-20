@@ -438,7 +438,6 @@ if( have_rows('flexible_content_block') ):
 							    $link_target = $fcol_link['target'] ? $link['target'] : '_self';
 
 							    if ( $link_title == "" ){
-							    	echo "IN";
 							    	$link_title = $fcol_description;
 							    }
 

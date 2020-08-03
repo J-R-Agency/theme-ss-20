@@ -441,7 +441,7 @@ if( have_rows('flexible_content_block') ):
 							    	$link_title = $fcol_description;
 							    }
 
-							    $link_start = "<a href=\"$link_url\" title=\"$link_title\">";
+							    $link_start = "<a href=\"$link_url\" title=\"$link_title\" target=\"$link_target\">";
 							    $link_end = "</a>";
 							} else {
 								unset($link_url);

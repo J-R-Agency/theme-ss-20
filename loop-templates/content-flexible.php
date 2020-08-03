@@ -430,9 +430,29 @@ if( have_rows('flexible_content_block') ):
 							<ul>";
 						while ( have_rows('fcol_list_item') ) : the_row();
 							$fcol_description = get_sub_field('fcol_description');
-							
+							$fcol_link = get_sub_field('fcol_link');
+
+							if ( isset($fcol_link) ){
+							    $link_url = $fcol_link['url'];
+							    $link_title = $fcol_link['title'];
+							    $link_target = $fcol_link['target'] ? $link['target'] : '_self';
+
+							    if ( $link_title == "" ){
+							    	$link_title = $fcol_description;
+							    }
+
+							    $link_start = "<a href=\"$link_url\" title=\"$link_title\">";
+							    $link_end = "</a>";
+							} else {
+								unset($link_url);
+								unset($link_title);
+								unset($link_target);
+								unset($link_start);
+								unset($link_end);
+							}
+
 							echo "
-								<li>".$fcol_description."</li>
+								<li>".$link_start.$fcol_description.$link_end."</li>
 							";
 								
 						endwhile;

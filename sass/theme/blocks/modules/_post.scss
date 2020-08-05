@@ -152,7 +152,7 @@ figure {
 			}			
 			span {
 				@include share-btn;
-				background-image: url('../assets/social-media/twitter-logo-teal.png');
+				background-image: url('../assets/social-media/twitter-logo-teal.svg');
 			}
 		}
 		
@@ -167,7 +167,7 @@ figure {
 			}				
 			span {
 				@include share-btn;
-				background-image: url('../assets/social-media/facebook-logo-teal.png');				
+				background-image: url('../assets/social-media/facebook-logo-teal.svg');				
 			}
 		}
 		
@@ -182,7 +182,7 @@ figure {
 			}						
 			span {
 				@include share-btn;
-				background-image: url('../assets/social-media/linkedin-logo-teal.png');				
+				background-image: url('../assets/social-media/linkedin-logo-teal.svg');				
 			}
 		}		
 	}

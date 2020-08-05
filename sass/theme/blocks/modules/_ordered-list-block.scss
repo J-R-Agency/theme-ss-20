@@ -1,21 +1,9 @@
-@mixin list {
-	flex-basis: 100%;
-	padding: 0;
-	@include respond-to('lg') {
-		padding: 0 3rem;
-	}
-	@include respond-to('xxl') {
-		padding: 0 10rem;
-	}	
-}
-
 .ordered-list-block {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	padding-left: 0;
 	padding-right: 0;
-	
 	background-size: 0;
 	
 	@include respond-to('lg') {
@@ -49,8 +37,7 @@
 				top left;		
 			background-repeat: no-repeat;
 		}		
-	}	
-	
+	}
 }
 
 .ordered-list-block-container {
@@ -67,7 +54,7 @@
  }
 
 .unordered-list {
-	@include list;	
+	flex-basis: 100%;	
 	display: flex;
 	justify-content: center;
 	margin: 0 auto;	
@@ -94,7 +81,7 @@
 }
 
 .numbered-list {
-	@include list;
+	flex-basis: 100%;
 	
 	ol {
 		padding: 0 3rem;
@@ -104,19 +91,14 @@
 			line-height: 1.5rem;
 			margin: 2rem 0;
 			max-width: 400px;
-			span {
-				font-size: 1rem;
-			}			
+						
 		}
 	}
 }
 
 .icon-list {
-	@include list;
 	flex-basis: 50%;
-	@include respond-to('xxl') {
-		padding: 0 5rem;
-	}
+
 	.icon-list-item {
 		display: flex;
 		flex-direction: column;
@@ -134,7 +116,7 @@
 			margin: 1rem;
 			@include respond-to('lg') {
 				margin: 0 0 0 2rem;
-				flex-basis: 60%;
+				flex-basis: 70%;
 			}
 		}
 		
@@ -144,7 +126,7 @@
 			height: 85px;
 			object-fit: contain;
 			@include respond-to('lg') {
-				flex-basis: 25%;
+				flex-basis: 20%;
 			}
 			@include respond-to('xxl') {
 				width: 100px;

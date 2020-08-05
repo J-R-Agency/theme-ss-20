@@ -47,7 +47,7 @@ $author_name = get_the_author_meta('display_name');
 		<div class='generic-wrapper'>
 			
 			<div class='share'>
-				Share <img src='<?php echo $theme_path; ?>/assets/icons/share-icon.png' alt="Share icon">
+				Share <img src='<?php echo $theme_path; ?>/assets/icons/share-icon.svg' alt="Share icon">
 			</div>
 			
 			<div class='share-btns'>

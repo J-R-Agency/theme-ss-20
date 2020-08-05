@@ -33,12 +33,25 @@
 
 .blog-card-title {
 	@include _fira-sans-bold;
-	height: 50px;
+	font-size: 18px;
+	height: 30px;
     overflow: hidden;
-	margin: 1rem 1rem 2rem 1rem;
+	margin: 1rem 0;
 	color: $dark-teal !important;
+}
+
+.blog-card-excerpt {
+	height: 30px;
+    overflow: hidden;
+	margin: 0 0 1rem 0;
+	color: $dark-teal !important;
+	p {
+		font-size: 16px;
+	}
 }
 
 .blog-card-author {
 	@include _fira-sans-regular;
+	font-size: 16px;
 }
+

@@ -611,7 +611,7 @@ if( have_rows('flexible_content_block') ):
 					    
 					     echo "
 					     	<a href='".$social_media_link['url']."'>
-					     		<img src=".$theme_path."'/assets/social-media/".$social_media_type."-logo-yellow.png'>
+					     		<img src=".$theme_path."'/assets/social-media/".$social_media_type."-logo-yellow.svg'>
 					     	</a>";
 					    endwhile;
 						echo "</div>";					

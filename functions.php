@@ -85,3 +85,19 @@ function first_sentence($content) {
 
 // Turn off contact form 7 auto styling
 add_filter('wpcf7_autop_or_not', '__return_false');
+
+// Trim excerpt
+function trim_excerpt($text) {
+	$string = "[...]";
+     $text = str_replace( $string, '...', $text);
+     return $text;
+    }
+add_filter('get_the_excerpt', 'trim_excerpt', 99);
+
+// Remove excerpt "read more" button
+function understrap_all_excerpts_get_more_link( $post_excerpt ) {
+
+	return $post_excerpt;
+}
+
+add_filter( 'wp_trim_excerpt', 'understrap_all_excerpts_get_more_link' );

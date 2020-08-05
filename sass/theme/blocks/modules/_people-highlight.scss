@@ -3,17 +3,19 @@
 		padding-right: 0;
 		text-align: center;	
 		@include respond-to('lg') {
-			flex-basis: 40%;
-			padding-right: 15rem;
+			flex-basis: 100%;
 			text-align: left;
 		}	
 	}
 	
 	&.single {
+		h2 {
+			text-align: center;
+		}
 		.people-wrapper {
-			@include respond-to('lg') {
-				flex-basis: 60%;
-			}
+			display: flex;
+			justify-content: center;
+			flex-basis: 100%;
 		}
 	}
 }

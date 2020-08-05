@@ -43,11 +43,20 @@ $theme_path = get_template_directory_uri();
 		</a>				
 	<?php endif; ?>
 	
+	<!-- TITLE -->
 	<a href='<?php the_permalink(); ?>' class='blog-card-title'>
 		<?php the_title(); ?>
 	</a>
+	
+	<!-- EXCERPT -->
+	<a href='<?php the_permalink(); ?>' class='blog-card-excerpt'>
+		<?php the_excerpt(); ?>
+	</a>
+	
+	<!-- AUTHOR -->
 	<p class='blog-card-author'>By <?php the_author(); ?></p>
 	
+	<!-- READ MORE BUTTON -->
 	<a class='btn' href='<?php the_permalink(); ?>'>
 		Read More
 	</a>

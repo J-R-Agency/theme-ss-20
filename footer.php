@@ -94,7 +94,7 @@ $theme_path = get_template_directory_uri();
 					        $social_media_type = get_sub_field('social_media_type', 'option');
 							$social_media_link = get_sub_field('social_media_link', 'option');
 					    ?>
-					        <a href='<?php echo $social_media_link['url']; ?>'><img src='<?php echo $theme_path; ?>/assets/social-media/<?php echo $social_media_type; ?>-logo-white.png'></a>
+					        <a href='<?php echo $social_media_link['url']; ?>'><img src='<?php echo $theme_path; ?>/assets/social-media/<?php echo $social_media_type; ?>-logo-white.svg'></a>
 					    <?php endwhile; ?>
 						</div>
 					<?php endif; ?>					

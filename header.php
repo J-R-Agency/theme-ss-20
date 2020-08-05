@@ -106,13 +106,14 @@ $theme_path = get_template_directory_uri();
 			
 			        // Get sub field values.
 			        $nb_text = get_sub_field('nb_text');
-					$nb_button_color = get_sub_field('nb_button_color');
+					$nb_link_color = get_sub_field('nb_link_color');
 					$nb_link = get_sub_field('nb_link');
+					
 			    ?>
 			        <p><?php echo $nb_text; ?></p>
 			        
 			        <?php if ($nb_link): ?>
-			        	<a class='btn <?php echo sanitize_title($nb_link['title']); ?>' href="<?php echo $nb_link['url']; ?>">
+			        	<a class='btn login <?php echo $nb_link_color; ?>' href="<?php echo $nb_link['url']; ?>">
 							<?php echo $nb_link['title']; ?>
 						</a>
 					<?php elseif (!$nb_link): ?>

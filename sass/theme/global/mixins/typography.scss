@@ -60,11 +60,11 @@ h1 {
 h2 {
 	@include _fira-sans-semibold;
 	margin-bottom: 1.5rem;
-	font-size: 24px;
+	font-size: 34px;
 }
 
 h3 {
 	@include _fira-sans-semibold;
-	margin-bottom: 1.5rem;
-	font-size: 18px;
+	margin-bottom: 1rem;
+	font-size: 22px;
 }

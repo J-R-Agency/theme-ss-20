@@ -85,7 +85,10 @@ blockquote {
 	}
 	&.half-width {
 		@include quote(50%);
-		margin-left: 2rem;
+		margin: 0;
+		@include respond-to('lg') {
+			margin-left: 2rem;
+		}
 	}
 }
 

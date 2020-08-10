@@ -84,7 +84,7 @@
 	flex-basis: 100%;
 	
 	ol {
-		padding: 0 3rem;
+		margin: 0 3rem;
 		
 		li {
 			font-size: 2rem;
@@ -98,6 +98,15 @@
 
 .icon-list {
 	flex-basis: 50%;
+	padding: 0;
+	
+	@include respond-to('md') {
+		padding: 0 3rem;
+	}
+	
+	@include respond-to('lg') {
+		padding: 0;
+	}
 
 	.icon-list-item {
 		display: flex;
@@ -105,7 +114,14 @@
 		align-items: center;
 		text-align: center;
 		flex-wrap: wrap;
-		@include respond-to('lg') {
+		@include icon-image(80px, 80px);
+		
+		@include respond-to('xxl') {
+			@include icon-image(80px, 80px);
+		}
+			
+		@include respond-to('md') {
+			@include icon-image(60px, 60px);
 			flex-direction: row;
 			padding: 2rem 0;
 			text-align: left;
@@ -114,7 +130,7 @@
 		p {
 			flex-basis: 100%;
 			margin: 1rem;
-			@include respond-to('lg') {
+			@include respond-to('md') {
 				margin: 0 0 0 2rem;
 				flex-basis: 70%;
 			}
@@ -122,16 +138,11 @@
 		
 		img {
 			flex-basis: 100%;
-			width: 85px;
-			height: 85px;
-			object-fit: contain;
-			@include respond-to('lg') {
-				flex-basis: 20%;
+
+			@include respond-to('md') {
+				flex-basis: 10%;
 			}
-			@include respond-to('xxl') {
-				width: 100px;
-				height: 100px;
-			}
+
 		}
 	}
 }

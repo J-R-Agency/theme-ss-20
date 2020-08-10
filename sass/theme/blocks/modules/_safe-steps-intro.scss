@@ -47,7 +47,12 @@
 	
 	ul {
 		padding: 0;
-		margin: 2rem 0;
+		margin: 2rem;
+		
+		@include respond-to('lg') {
+			margin: 2rem 0;
+		}
+		
 		li {
 			list-style-type: none;
 			display: flex;

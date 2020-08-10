@@ -1,9 +1,10 @@
 @mixin icon-image($icon-height, $icon-width) {
 	img {
-		margin: 1rem;
+		margin: 1rem 1rem 2rem 1rem;
 		height: $icon-height;
 		width: $icon-width;
 		object-fit: contain;
+		object-position: bottom;
 	}	
 }
 

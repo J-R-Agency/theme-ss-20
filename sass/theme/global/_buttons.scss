@@ -75,12 +75,14 @@
 	display: inline-flex;
 }
 
-input.wpcf7-form-control.wpcf7-submit {
+.wpcf7 input[type="submit"] {
+	box-sizing: content-box;
+	padding: 1rem 1.5rem;
 	width: max-content;
 	display: flex;
 	border: none;
 	color: white;
-	background-color: $teal;	
+	background-color: $teal;
 }
 
 .wpcf7 input:hover[type="submit"] {

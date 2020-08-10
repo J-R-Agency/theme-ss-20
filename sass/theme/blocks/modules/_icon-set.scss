@@ -53,13 +53,21 @@
 }
 
 .fcis-wrapper {
-	&.icon {
+	&.small {
 		@include icon-image(60px, 60px);
+		@include respond-to('xxl') {
+			@include icon-image(80px, 80px);
+		}
+	}
+
+	&.medium {
+		@include icon-image(80px, 80px);
 		@include respond-to('xxl') {
 			@include icon-image(100px, 100px);
 		}
-	}
-	&.logo {
+	}	
+	
+	&.large {
 		@include icon-image(150px, 150px);
 		@include respond-to('xxl') {
 			@include icon-image(200px, 200px);

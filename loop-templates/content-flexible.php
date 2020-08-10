@@ -108,7 +108,7 @@ if( have_rows('flexible_content_block') ):
 			$fcis_columns = get_sub_field('fcis_columns');
 			$fcis_title = get_sub_field('fcis_title');
 			$fcis_subtitle = get_sub_field('fcis_subtitle');
-			$fcis_icon_type = get_sub_field('fcis_icon_type');
+			$fcis_icon_size = get_sub_field('fcis_icon_size');
 			$fcis_icons = get_sub_field('fcis_icons');
 			$fcis_button = get_sub_field('fcis_button');
 			
@@ -139,7 +139,7 @@ if( have_rows('flexible_content_block') ):
 						$fcis_icon_description = get_sub_field('fcis_icon_description');
 						
 						echo "
-						<div class='fcis-wrapper column-".$fcis_columns." ".$fcis_icon_type."'>
+						<div class='fcis-wrapper column-".$fcis_columns." ".$fcis_icon_size."'>
 							<img src='".$fcis_icon['url']."' alt='".$fcis_icon['alt']."'>";
 							
 						if ($fcis_icon_title) {

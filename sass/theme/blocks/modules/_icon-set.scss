@@ -46,9 +46,11 @@
 .fcis-wrapper {
 	&.small {
 		@include icon-image(80px, 80px);
+		
 		@include respond-to('lg') {
 			@include icon-image(60px, 60px);
 		}
+		
 		@include respond-to('xxl') {
 			@include icon-image(80px, 80px);
 		}

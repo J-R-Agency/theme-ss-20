@@ -139,24 +139,7 @@ blockquote {
 }
 
 .cs-quote-block {
-	&.bg-white {
-		.cs-quote {
-			@include quote(100%);
-		}
-	}
-	&.bg-purple {
-		.cs-quote {
-			@include quote(100%);
-			.cs-citation {
-				@include respond-to('lg') {
-					justify-content: center;	
-				}		
-			}	
-		}	
-	}
-	&.bg-yellow {
-		.cs-quote {
-			@include quote(100%);
-		}
+	.cs-quote {
+		@include quote(100%);
 	}
 }

@@ -232,7 +232,7 @@ if( have_rows('flexible_content_block') ):
 			
        		echo "
        		<!-- Team Block -->
-       		<section class='team-banner generic-lg bg-yellow'>
+       		<section class='team-banner generic-lg bg-teal'>
        			<div class='generic-wrapper'>
        				<h2>".$fctb_title."</h2>
 	   				<p>".$fctb_subtitle."</p>
@@ -611,7 +611,7 @@ if( have_rows('flexible_content_block') ):
 					    
 					     echo "
 					     	<a href='".$social_media_link['url']."'>
-					     		<img src=".$theme_path."'/assets/social-media/".$social_media_type."-logo-yellow.svg'>
+					     		<img src=".$theme_path."'/assets/social-media/".$social_media_type."-logo-white.svg'>
 					     	</a>";
 					    endwhile;
 						echo "</div>";					

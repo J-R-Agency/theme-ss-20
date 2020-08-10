@@ -559,7 +559,7 @@ if( have_rows('flexible_content_block') ):
 	   											
 	   											echo "
 	   											<a href='".$social_media_link['url']."' target='_blank'>
-	   												<img src='".$theme_path."/assets/social-media/".$social_media_type."-logo-blue.png' alt='".$social_media_type."'>
+	   												<img src='".$theme_path."/assets/social-media/".$social_media_type."-logo-blue.svg' alt='".$social_media_type."'>
 	   											</a>
 	   											";
 	   										

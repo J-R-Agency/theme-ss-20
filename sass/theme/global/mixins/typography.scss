@@ -40,7 +40,7 @@ p, p > a, span, cite, li {
 }
 
 strong {
-	@include _fira-sans-bold;
+	@include _fira-sans-medium;
 	font-size: 18px;
 	@include respond-to('xxl') {
 		font-size: 21px;
@@ -52,19 +52,19 @@ a {
 }
 
 h1 {
-	@include _fira-sans-bold;
+	@include _fira-sans-medium;
 	margin-bottom: 1.5rem;
 	font-size: 38px;
 }
 
 h2 {
-	@include _fira-sans-semibold;
+	@include _fira-sans-medium;
 	margin-bottom: 1.5rem;
 	font-size: 34px;
 }
 
 h3 {
-	@include _fira-sans-semibold;
+	@include _fira-sans-medium;
 	margin-bottom: 1rem;
 	font-size: 22px;
 }

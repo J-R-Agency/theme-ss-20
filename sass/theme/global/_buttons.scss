@@ -11,7 +11,7 @@
 }
 
 @mixin btn {
-	padding: 0.3rem 1rem;
+	padding: 1.5rem 1.5rem;
 	border-radius: 5px;
 	margin: 0 1rem;
 	align-self: center;
@@ -19,6 +19,11 @@
 	color: white;
 	display: inline-flex;
 	align-items: center;
+	font-size: 18px;
+	
+	@include respond-to('xxl') {
+		font-size: 21px;
+	}
 	
 	&:after {
 		@include btn-arrow;

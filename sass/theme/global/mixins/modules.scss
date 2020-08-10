@@ -6,7 +6,7 @@
 	flex-direction: column;
 	
 	p {
-		@include _fira-sans-regular;
+		@include _fira-sans-light;
 		font-size: 1.7rem;
 		text-align: center;
 		line-height: 1.5em;

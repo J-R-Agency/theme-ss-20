@@ -10,7 +10,7 @@ blockquote {
 	   padding-left: 5rem; 
     }
 	p {
-		@include _fira-sans-regular;
+		@include _fira-sans-light;
 	}
 	
 	&.is-style-large {

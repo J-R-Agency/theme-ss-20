@@ -48,6 +48,12 @@ if( have_rows('flexible_case_study_blocks') ):
 			$csq_citation = get_sub_field('csq_citation');
 			$csq_portrait = get_sub_field('csq_portrait');
 			
+			$cite_alignment = '0';
+			
+			if (!$csq_portrait) {
+				$cite_alignment = '0 auto';
+			} 
+			
        		echo "
        		<!-- Quote Block -->
 			<blockquote class='cs-quote-block generic-lg bg-".$csq_background_color."'>
@@ -56,7 +62,7 @@ if( have_rows('flexible_case_study_blocks') ):
 						<p>".$csq_quote."</p>";
 				
 						if ($csq_citation) {
-						echo	"<div class='cs-citation'>";
+						echo	"<div class='cs-citation' style='margin:".$cite_alignment."'>";
 						}
 						
 						if ($csq_portrait) {

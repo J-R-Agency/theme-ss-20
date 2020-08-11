@@ -91,7 +91,11 @@
 			line-height: 1.5rem;
 			margin: 2rem 0;
 			max-width: 400px;
-						
+			span {
+				display: inline-block;
+			    vertical-align: middle;
+			    padding-left: 1rem;
+			}	
 		}
 	}
 }

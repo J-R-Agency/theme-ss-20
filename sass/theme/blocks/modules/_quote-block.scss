@@ -1,5 +1,19 @@
 blockquote {
 	margin: 0;
+	font-style: italic;
+	display: inline;
+	&:before {
+		content: '\201C';
+	    position: absolute;
+	    margin-left: -.4em;
+	    margin-top: .2em;
+	}
+	&:after {
+		content: '\201D';
+	    position: absolute;
+	    margin-right: -.4em;
+	    margin-top: .2em;
+	}
 }
 
 .wp-block-quote {

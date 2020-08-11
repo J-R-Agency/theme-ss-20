@@ -1,4 +1,4 @@
-blockquote {
+blockquote > p {
 	margin: 0;
 	font-style: italic;
 	display: inline;
@@ -6,13 +6,11 @@ blockquote {
 		content: '\201C';
 	    position: absolute;
 	    margin-left: -.4em;
-	    margin-top: .2em;
 	}
 	&:after {
 		content: '\201D';
 	    position: absolute;
 	    margin-right: -.4em;
-	    margin-top: .2em;
 	}
 }
 
@@ -103,6 +101,9 @@ blockquote {
 		@include respond-to('lg') {
 			margin-left: 2rem;
 		}
+		.fcqb-citation {
+			justify-content: flex-start;
+		}
 	}
 }
 
@@ -110,6 +111,8 @@ blockquote {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	margin: 2rem 0;
+	
 	@include respond-to('lg') {
 		justify-content: flex-end;
 	}

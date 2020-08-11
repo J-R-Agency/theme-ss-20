@@ -1,18 +1,28 @@
 // Quote
-@mixin quote ($fb)
+@mixin quote
 {
-	flex-basis: $fb;
-	display: flex;
-	flex-direction: column;
+	@include _fira-sans-light;
+	font-style: italic;
+	font-size: 28px;
+	text-align: center;
+	line-height: 1.5em;
 	
-	p {
-		@include _fira-sans-light;
-		font-size: 1.7rem;
-		text-align: center;
-		line-height: 1.5em;
-		@include respond-to('lg') {
-			text-align: left;
-		}
+	@include respond-to('lg') {
+		text-align: left;
+	}
+	
+}
+
+@mixin speechmarks {
+	&:before {
+		content: '\201C';
+	    position: absolute;
+	    margin-left: -.5em;
+	}
+	&:after {
+		content: '\201D';
+	    position: absolute;
+	    margin-right: -.5em;
 	}
 }
 

@@ -182,7 +182,7 @@ if( have_rows('flexible_content_block') ):
        elseif( get_row_layout() == 'fc_quote_block' ):
 			$fcqb_background_color = get_sub_field('fcqb_background_color');
 			$fcqb_image = get_sub_field('fcqb_image');
-			$fcqb_quote = get_sub_field('fcqb_quote');
+			$fcqb_quote = get_sub_field('fcqb_quote', false, false);
 			$fcqb_citation = get_sub_field('fcqb_citation');
 			
        		echo "
@@ -193,18 +193,18 @@ if( have_rows('flexible_content_block') ):
 				
 			if ($fcqb_image) {
 				$fb_class = 'half-width';
-			echo "<div class='fcqb-image'>
+			echo "<div class='quote-image'>
 					<img src='".$fcqb_image['url']."' alt='".$fcqb_image['alt']."'>
 				</div>";				
 			} else {
 				$fb_class = 'full-width';
 			}
 				
-			echo "<div class='fcqb-quote ".$fb_class."'>
+			echo "<div class='quote-quote ".$fb_class."'>
 					<blockquote>".$fcqb_quote."</blockquote>";
 			
 			if ($fcqb_citation['fcqb_name']) {
-			echo "<div class='fcqb-citation'>";
+			echo "<div class='quote-citation'>";
 			}
 			
 			if ($fcqb_citation['fcqb_portrait']) {

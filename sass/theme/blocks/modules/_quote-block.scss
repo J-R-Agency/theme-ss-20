@@ -1,34 +1,27 @@
-blockquote > p {
-	margin: 0;
-	font-style: italic;
-	display: inline;
-	&:before {
-		content: '\201C';
-	    position: absolute;
-	    margin-left: -.5em;
-	}
-	&:after {
-		content: '\201D';
-	    position: absolute;
-	    margin-right: -.5em;
-	}
-}
-
+// POSTS
 .wp-block-quote {
 	padding-left: 2rem;
     border-left: 1px solid $teal;
     margin: 5rem 0;
+    
     @include respond-to('lg') {
 	   padding-left: 5rem; 
     }
+    
 	p {
 		@include _fira-sans-light;
 	}
 	
 	&.is-style-large {
-		@include quote(100%);
+		margin: 5rem 0;
+		padding: 0;
 		border: 0;
-		p, cite {
+		
+		p {
+			@include quote;
+			@include speechmarks;
+		}
+		cite {
 			font-style: normal;
 		}
 	}
@@ -39,8 +32,14 @@ blockquote > p {
 	flex-direction: column;
 	flex-wrap: wrap;
 	align-items: center;
+	
 	@include respond-to('lg') {
 		flex-direction: row;
+	}
+	
+	blockquote {
+		@include quote;
+		@include speechmarks;
 	}
 	
 	// Background graphics
@@ -62,12 +61,11 @@ blockquote > p {
 				center right;
 			
 			background-repeat: no-repeat;			
-		}
-			
-	}
+		}	
+	} // End background graphics
 }
 
-.fcqb-image {
+.quote-image {
 	flex-basis: 40%;
 	height: 300px;
 	padding: 2rem;
@@ -90,13 +88,13 @@ blockquote > p {
 	}
 }
 
-.fcqb-quote {
+.quote-quote {
 	flex-basis: 60%;
 	&.full-width {
-		@include quote(100%);
+		flex-basis: 100%;
 	}
 	&.half-width {
-		@include quote(50%);
+		flex-basis: 50%;
 		margin: 0;
 		@include respond-to('lg') {
 			margin-left: 2rem;
@@ -107,11 +105,11 @@ blockquote > p {
 	}
 }
 
-.fcqb-citation {
+.quote-citation {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin: 2rem 0;
+	margin: 2rem 0 0 0;
 	
 	@include respond-to('lg') {
 		justify-content: flex-end;
@@ -126,37 +124,5 @@ blockquote > p {
 		padding: 0 1rem;
 		font-style: normal;
 		text-align: right;
-	}
-}
-
-/*-- CASE STUDY QUOTE --*/
-
-.cs-citation {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	
-	@include respond-to('lg') {
-		justify-content: end;	
-	}
-	
-	// Portrait
-	img {
-		width: 50px;
-		height: 50px;
-		object-fit: cover;
-		border-radius: 50%;
-	}
-	
-	// Citation
-	cite {
-		padding: 0 1rem;
-		font-style: normal;
-	}
-}
-
-.cs-quote-block {
-	.cs-quote {
-		@include quote(100%);
 	}
 }

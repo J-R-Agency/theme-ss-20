@@ -56,28 +56,30 @@ if( have_rows('flexible_case_study_blocks') ):
 			
        		echo "
        		<!-- Quote Block -->
-			<blockquote class='cs-quote-block generic-lg bg-".$csq_background_color."'>
-				<div class='generic-wrapper'>
-					<div class='cs-quote'>
-						<p>".$csq_quote."</p>";
+			<section class='generic-lg bg-".$csq_background_color."'>
+				<div class='quote-block generic-wrapper'>
+			";
 				
-						if ($csq_citation) {
-						echo	"<div class='cs-citation' style='margin:".$cite_alignment."'>";
-						}
+			echo "<div class='quote-quote full-width'>
+					<blockquote>".$csq_quote."</blockquote>";
+			
+			if ($csq_citation) {
+			echo "<div class='quote-citation'>";
+			}
+			
+			if ($csq_portrait) {
+			echo	"<img src='".$csq_portrait['url']."' alt='".$csq_portrait['alt']."'>";
+			}
 						
-						if ($csq_portrait) {
-							echo "<img src='".$csq_portrait['url']."' alt='".$csq_portrait['alt']."'>";
-						}
-						
-						if ($csq_citation) {	
-							echo "<cite> - ".$csq_citation."</cite>
-							</div>";				
-						}
-					
-			echo    "</div>
+			if ($csq_citation) {
+			echo	"<cite> - ".$csq_citation."</cite>
+				</div>";
+			}
+			
+			echo "</div>
 				</div>
-			</blockquote>
-       		";       		
+			</section>
+       		";        		
 
  	   	  // -------------------------- //
          // ---- CASE: VIDEO BLOCK ----//

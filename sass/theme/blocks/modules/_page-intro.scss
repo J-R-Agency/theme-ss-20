@@ -63,18 +63,37 @@
 
 .pi-image {
 	&.no-margin {
-		padding: 1rem 1rem 0 1rem;
+		margin: 1rem 1rem 0 1rem;
 		min-width: auto;
 		max-width: auto;
 		@include respond-to('lg') {
 			min-width: 700px;
 			max-width: 800px;
 		}
-	}
-	&.margin {
-		padding: 1rem;
-		@include respond-to('lg') {
-			padding: 1rem 3rem 3rem 3rem;
+		&.rounded {
+			border-radius: 0.25rem 0.25rem 0 0 !important;
 		}
+	}
+	
+	&.margin {
+		margin: 1rem;
+		@include respond-to('lg') {
+			margin: 1rem 3rem 3rem 3rem;
+		}
+		&.rounded {
+			border-radius: 0.25rem !important;	
+		}	
+	}
+	
+	&.sharp {
+		&.drop-shadow {
+			box-shadow: 2px -1px 5px 0px rgba(0,0,0,0.5);
+		}		
+	}
+	
+	&.rounded {
+		&.drop-shadow {
+			box-shadow: 2px -1px 5px 0px rgba(0,0,0,0.5);
+		}	
 	}
 }

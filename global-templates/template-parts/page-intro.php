@@ -79,9 +79,15 @@ global $post;
 				
 				if( get_row_layout() == 'pi_image' ):
 					$pi_image_file = get_sub_field('pi_image_file');
-					$pi_image_style = get_sub_field('pi_image_style');
+					$pi_image_styles = get_sub_field('pi_image_styles');
 					
-					echo "<img class='pi-image ".$pi_image_style."' src='".$pi_image_file['url']."' alt='".$pi_image_file['alt']."'>";
+					if (!$pi_image_styles['pi_drop_shadow']) {
+						$drop_shadow = '';
+					} else {
+						$drop_shadow = 'drop-shadow';
+					}
+					
+					echo "<img class='pi-image ".$pi_image_styles['pi_margins']." ".$pi_image_styles['pi_corners']." ".$drop_shadow."' src='".$pi_image_file['sizes']['large']."' alt='".$pi_image_file['alt']."'>";
 					
 				elseif( get_row_layout() == 'pi_video' ):
 					$pi_video = get_sub_field('pi_video');

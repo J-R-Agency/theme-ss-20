@@ -31,7 +31,7 @@ defined( 'ABSPATH' ) || exit;
 				
 				echo "
 				<a href='".$social_media_link_url."' target='_blank'>
-					<img src='".$theme_path."/assets/social-media/".$social_media_type."-logo-blue.png'>
+					<img src='".$theme_path."/assets/social-media/".$social_media_type."-logo-blue.svg'>
 				</a>";	
 					
 			endwhile;

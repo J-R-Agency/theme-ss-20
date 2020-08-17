@@ -80,6 +80,7 @@
 		justify-content: space-between;
 		
 		@include respond-to('lg') {
+			justify-content: flex-start;
 			flex-direction: column;
 			flex-basis: 33%;
 			padding-left: 3rem;
@@ -88,6 +89,9 @@
 		
 		.contact-left {
 			flex-basis: 45%;
+			@include respond-to('lg') {
+				flex-basis: auto;
+			}
 		}
 		
 		.footer-social-media {
@@ -113,8 +117,12 @@
 	
 	#footer-address {
 		@include _fira-sans-regular;
-		margin: 1rem 0;
+		margin: 1.5rem 0 0 0;
 		flex-basis: 45%;
 		font-size: 13px;
+		@include respond-to('lg') {
+			margin: 1rem 0 0 0;
+			flex-basis: auto;
+		}
 	}
 }

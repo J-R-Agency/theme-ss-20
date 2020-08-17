@@ -69,6 +69,7 @@
 	flex-basis: 40%;
 	height: 300px;
 	padding: 2rem;
+	
 	@include respond-to('md') {
 		height: 450px;
 	}
@@ -78,6 +79,8 @@
 	img {
 		height: 100%;
 		width: 100%;
+		box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.5);
+
 		object-fit: cover;
 		@include respond-to('md') {
 			object-position: top;

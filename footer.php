@@ -76,30 +76,31 @@ $theme_path = get_template_directory_uri();
 			</div>
 			
 			<div class='footer-contact'>
-				<h3>Contact</h3>
-				
-				<div class='footer-social-media'>
-					<?php
-					wp_nav_menu(
-						array(
-							'theme_location'  => 'contact-menu'
-						)
-					);
-					?>
-					<?php if( have_rows('social_media', 'option') ): ?>
-						<div class='sm-icons'>
-					    <?php while( have_rows('social_media', 'option') ): the_row(); 
-					
-					        // Get sub field values.
-					        $social_media_type = get_sub_field('social_media_type', 'option');
-							$social_media_link = get_sub_field('social_media_link', 'option');
-					    ?>
-					        <a href='<?php echo $social_media_link['url']; ?>'><img src='<?php echo $theme_path; ?>/assets/social-media/<?php echo $social_media_type; ?>-logo-white.svg'></a>
-					    <?php endwhile; ?>
-						</div>
-					<?php endif; ?>					
-								
-				</div> <!-- end social media -->
+				<div class='contact-left'>
+					<h3>Contact</h3>
+					<div class='footer-social-media'>
+						<?php
+						wp_nav_menu(
+							array(
+								'theme_location'  => 'contact-menu'
+							)
+						);
+						?>
+						<?php if( have_rows('social_media', 'option') ): ?>
+							<div class='sm-icons'>
+						    <?php while( have_rows('social_media', 'option') ): the_row(); 
+						
+						        // Get sub field values.
+						        $social_media_type = get_sub_field('social_media_type', 'option');
+								$social_media_link = get_sub_field('social_media_link', 'option');
+						    ?>
+						        <a href='<?php echo $social_media_link['url']; ?>'><img src='<?php echo $theme_path; ?>/assets/social-media/<?php echo $social_media_type; ?>-logo-white.svg'></a>
+						    <?php endwhile; ?>
+							</div>
+						<?php endif; ?>					
+									
+					</div> <!-- end social media -->
+				</div>
 				
 				<?php if( have_rows('information', 'option') ): ?>
 					<div id='footer-address'>

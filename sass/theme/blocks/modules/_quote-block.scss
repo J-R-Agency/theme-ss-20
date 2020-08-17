@@ -47,11 +47,10 @@
 		&.bg-purple {
 			background-image:
 				url('../assets/bg-graphics/pill-white-1.png');
-				
 			background-position:
 				bottom right;
-			
 			background-repeat: no-repeat;
+			background-blend-mode: soft-light;
 		}
 		&.bg-yellow {
 			background-image:

@@ -88,13 +88,13 @@
 	
 	&.sharp {
 		&.drop-shadow {
-			box-shadow: 2px -2px 5px 0px rgba(0,0,0,0.5);
+			box-shadow: 0 2px 6px 0 rgba(29,53,55,0.15), 0 8px 18px 0 rgba(20,100,104,0.25);
 		}		
 	}
 	
 	&.rounded {
 		&.drop-shadow {
-			box-shadow: 2px -2px 5px 0px rgba(0,0,0,0.5);
+			box-shadow: 0 2px 6px 0 rgba(29,53,55,0.15), 0 8px 18px 0 rgba(20,100,104,0.25);
 		}	
 	}
 }

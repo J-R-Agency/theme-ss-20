@@ -213,7 +213,7 @@
 	ul {
 		column-count: 1;
 		color: $purple;
-		list-style-image: url('../assets/icons/checkmark-purple.png');
+		list-style-image: url('../assets/icons/checkmark-purple.svg');
 		@include _poppins-semibold;
 		li {
 			padding: 0.5rem 0;

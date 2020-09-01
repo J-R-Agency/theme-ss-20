@@ -184,6 +184,13 @@ if( have_rows('flexible_content_block') ):
 			$fcqb_image = get_sub_field('fcqb_image');
 			$fcqb_quote = get_sub_field('fcqb_quote', false, false);
 			$fcqb_citation = get_sub_field('fcqb_citation');
+			$fcqb_quotation_marks = get_sub_field('fcqb_quotation_marks');
+			
+			if ($fcqb_quotation_marks) {
+				$fcqb_include_quotes = 'include-quotes';
+			} else {
+				$fcqb_include_quotes = 'exclude-quotes';
+			}
 			
        		echo "
        		<!-- Quote Block -->
@@ -201,7 +208,7 @@ if( have_rows('flexible_content_block') ):
 			}
 				
 			echo "<div class='quote-quote ".$fb_class."'>
-					<blockquote>".$fcqb_quote."</blockquote>";
+					<blockquote class='".$fcqb_include_quotes."'>".$fcqb_quote."</blockquote>";
 			
 			if ($fcqb_citation['fcqb_name']) {
 			echo "<div class='quote-citation'>";

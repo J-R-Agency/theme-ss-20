@@ -39,7 +39,10 @@
 	
 	blockquote {
 		@include quote;
-		@include speechmarks;
+		
+		&.include-quotes {
+			@include speechmarks;
+		}
 	}
 	
 	// Background graphics

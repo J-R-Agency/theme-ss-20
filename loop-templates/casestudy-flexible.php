@@ -47,6 +47,13 @@ if( have_rows('flexible_case_study_blocks') ):
 			$csq_quote = get_sub_field('csq_quote', false, false);
 			$csq_citation = get_sub_field('csq_citation');
 			$csq_portrait = get_sub_field('csq_portrait');
+			$csq_quotation_marks = get_sub_field('csq_quotation_marks');
+
+			if ($csq_quotation_marks) {
+				$csq_include_quotes = 'include-quotes';
+			} else {
+				$csq_include_quotes = 'exclude-quotes';
+			}
 			
 			$cite_alignment = '0';
 			
@@ -61,7 +68,7 @@ if( have_rows('flexible_case_study_blocks') ):
 			";
 				
 			echo "<div class='quote-quote full-width'>
-					<blockquote>".$csq_quote."</blockquote>";
+					<blockquote class='".$csq_include_quotes."'>".$csq_quote."</blockquote>";
 			
 			if ($csq_citation) {
 			echo "<div class='quote-citation'>";

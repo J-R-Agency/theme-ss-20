@@ -74,9 +74,18 @@ span.wpcf7-list-item {
 }
 
 // Error
+
+.wpcf7 .wpcf7-validation-errors {
+	background-color: transparent;
+	border: none !important;
+}
+
 .wpcf7-form-control-wrap {
 	width: 100%;
+	display: flex;
+	justify-content: flex-end;
 	flex-grow: 1;
+	
 	@include respond-to('lg') {
 		width: auto;
 	}
@@ -89,5 +98,5 @@ span.wpcf7-list-item {
 	padding: 0.25rem;
 	border-radius: 5px;
 	top: -20px;
-	width: 180px;
+	width: max-content;
 }

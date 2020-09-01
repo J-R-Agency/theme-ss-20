@@ -16,7 +16,7 @@ get_header();
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
-<section class="generic-lg bg-white">
+<section class="container generic-lg bg-white">
 	
 	<h1 class='archive-title'>Archive</h1>
 	

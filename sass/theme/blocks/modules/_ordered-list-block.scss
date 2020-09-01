@@ -23,11 +23,12 @@
 	&.bg-teal {
 		@include respond-to('lg') {
 			background-image:
-				url('../assets/bg-graphics/arrow-white-3.png') !important;				
+				url('../assets/bg-graphics/arrow-white-3.png');				
 			background-position:
 				bottom right !important;		
-			background-repeat: no-repeat !important;
+			background-repeat: no-repeat;
 			background-blend-mode: soft-light;
+			background-size: auto;
 		}		
 	}
 	&.bg-light-teal {
@@ -67,7 +68,7 @@
 			display: flex;
 			align-items: center;
 			&:before {
-				background-image: url(../assets/icons/btn-arrow-yellow.png);
+				background-image: url(../assets/icons/btn-arrow-yellow.svg);
 				background-repeat: no-repeat;
 				background-size: 20px;
 				background-position: center;

@@ -89,6 +89,10 @@ span.wpcf7-list-item {
 	@include respond-to('lg') {
 		width: auto;
 	}
+	
+	&.your-contact-choice {
+		justify-content: flex-start;
+	}
 }
 
 .wpcf7 .wpcf7-not-valid-tip {
